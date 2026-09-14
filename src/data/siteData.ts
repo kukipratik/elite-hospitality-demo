@@ -67,6 +67,15 @@ export const SITE_DATA = {
 
     // Operating Hours (Verified from Instagram & Google)
     hours: 'Sunday – Friday: 08:00 AM – 05:00 PM (Saturday Closed)',
+
+    // Verified Social Media Handles
+    socials: {
+      facebook: 'https://www.facebook.com/eliteschoolofhospitality/',
+      instagram: 'https://www.instagram.com/eliteschoolofhospitality/',
+      tiktok: 'https://www.tiktok.com/@eliteschoolofhospitality',
+      whatsapp: 'https://wa.me/9779843338838',
+      maps: 'https://maps.google.com/?cid=15334009058329259233'
+    },
   },
 
   // Live-Verified Proof Metrics (Checked Sept 2026)

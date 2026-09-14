@@ -107,17 +107,22 @@ const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
             <div class="collage-accent-line"></div>
           </div>
 
-          <!-- Secondary Stepped Vertical Photo -->
+          <!-- Secondary Stepped Vertical Video Reel -->
           <div class="collage-sub-frame">
-            <img
-              src="/images/kitchen/chef_technique.jpg"
-              alt="Culinary Technique Masterclass at Elite Kathmandu"
-              class="collage-img-sub"
-              width="320"
-              height="420"
-            />
+            <video
+              src="/video/hero_practical_reel.mp4"
+              poster="/video/hero_practical_reel_poster.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              class="collage-img-sub collage-video-sub"
+              aria-label="Actual Practical Session Reel at Elite Kitchen, Old Baneshwor"
+            ></video>
             <div class="sub-frame-caption">
-              <span>Actual Practical Session</span>
+              <span class="caption-live-tag">
+                <span class="pulse-dot"></span> Actual Practical Session
+              </span>
               <strong>Elite Kitchen, Old Baneshwor</strong>
             </div>
           </div>
@@ -209,15 +214,19 @@ const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
       <!-- Flagship Feature Spread: DCA -->
       <div class="flagship-feature-spread">
         <div class="flagship-media-col">
-          <img
-            src="/images/kitchen/cooking_demo.jpg"
-            alt="Practical Kitchen Cooking Demo at Elite"
-            class="flagship-feature-img"
-            width="800"
-            height="520"
-          />
+          <video
+            src="/video/chef_qualification_reel.mp4"
+            poster="/video/chef_qualification_reel_poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="flagship-feature-video"
+            aria-label="Professional Chef Qualification Practical Session at Elite Kitchen"
+          ></video>
           <div class="flagship-media-tag">
-            <span class="micro-label text-white">FLAGSHIP QUALIFICATION</span>
+            <span class="pulse-dot"></span>
+            <span class="micro-label text-white">LIVE PRACTICAL DEMO</span>
             <span class="flagship-duration">6 Months Full-Time</span>
           </div>
         </div>
@@ -904,6 +913,8 @@ const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    display: block;
+    background-color: var(--color-bg-cream);
   }
 
   .sub-frame-caption {
@@ -921,6 +932,37 @@ const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
     color: var(--color-orange);
     font-size: 0.625rem;
     letter-spacing: 0.08em;
+  }
+
+  .caption-live-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #25d366;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    animation: pulseDot 2s infinite;
+  }
+
+  @keyframes pulseDot {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px rgba(37, 211, 102, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
   }
 
   /* =========================================================================
@@ -999,8 +1041,8 @@ const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
   .flagship-feature-spread {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
     background-color: var(--color-bg-warm);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xs);
@@ -1009,24 +1051,33 @@ const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
 
   @media (min-width: 1024px) {
     .flagship-feature-spread {
-      grid-template-columns: 1.15fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
     }
   }
 
   .flagship-media-col {
     position: relative;
     width: 100%;
-    height: 100%;
     min-height: 380px;
-    background-color: var(--color-bg-cream);
+    background-color: #0b132b;
     overflow: hidden;
   }
 
+  @media (min-width: 1024px) {
+    .flagship-media-col {
+      min-height: 100%;
+    }
+  }
+
+  .flagship-feature-video,
   .flagship-feature-img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 15%;
+    object-position: center;
+    display: block;
   }
 
   .flagship-media-tag {
@@ -1638,10 +1689,43 @@ const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
     });
   }
 
+  function initVideoAutoplay() {
+    const videos = document.querySelectorAll<HTMLVideoElement>(".collage-video-sub, .flagship-feature-video");
+    if (!videos.length) return;
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target as HTMLVideoElement;
+            if (entry.isIntersecting) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      videos.forEach((video) => {
+        observer.observe(video);
+      });
+    } else {
+      videos.forEach((video) => {
+        video.play().catch(() => {});
+      });
+    }
+  }
+
   // Run on mount
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initCourseFilters);
+    document.addEventListener("DOMContentLoaded", () => {
+      initCourseFilters();
+      initVideoAutoplay();
+    });
   } else {
     initCourseFilters();
+    initVideoAutoplay();
   }
 </script>
