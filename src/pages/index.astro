@@ -225,6 +225,30 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
       <!-- Editorial Hairline Divider -->
       <div class="hairline-divider my-2xl"></div>
 
+      <!-- Specialized Disciplines Header & Intent Tabs (CIB Architectural Model) -->
+      <div class="courses-sub-header">
+        <div>
+          <span class="micro-label">SPECIALIZED DISCIPLINES</span>
+          <h3 class="courses-sub-title">EXPLORE ALL VOCATIONAL PATHWAYS</h3>
+        </div>
+        
+        <!-- Intent-Based Filter Tabs -->
+        <div class="course-filter-bar" role="tablist" aria-label="Filter courses by discipline">
+          <button type="button" class="filter-tab is-active" data-filter="all" role="tab" aria-selected="true">
+            All Disciplines <span class="tab-count">(6)</span>
+          </button>
+          <button type="button" class="filter-tab" data-filter="diploma" role="tab" aria-selected="false">
+            Professional Diplomas <span class="tab-count">(2)</span>
+          </button>
+          <button type="button" class="filter-tab" data-filter="beverage" role="tab" aria-selected="false">
+            Beverage & Coffee Studio <span class="tab-count">(2)</span>
+          </button>
+          <button type="button" class="filter-tab" data-filter="artisan" role="tab" aria-selected="false">
+            Artisan Crafts <span class="tab-count">(2)</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Other Specialized Disciplines Grid (<15% Boxed, Editorial Architecture) -->
       <div class="courses-editorial-grid">
         {otherCourses.map((course, idx) => (
@@ -445,9 +469,10 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         </div>
       </div>
 
-      <!-- Editorial Typographic Reviews List (Direct on White Canvas) -->
+      <!-- Editorial Typographic Reviews List (Direct on White Canvas, Unboxed Magazine Spread) -->
       <div class="editorial-reviews-grid">
         <div class="editorial-review-item">
+          <div class="review-index">01</div>
           <div class="review-stars">★★★★★</div>
           <blockquote class="review-text serif-quote">
             “Elite is the best place to learn professional culinary skills in Kathmandu. The instructors give personal attention to knife cuts, sauce reduction, and real kitchen discipline. The 60+ days nonstop practical made all the difference.”
@@ -459,6 +484,7 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         </div>
 
         <div class="editorial-review-item">
+          <div class="review-index">02</div>
           <div class="review-stars">★★★★★</div>
           <blockquote class="review-text serif-quote">
             “The hands-on environment here is completely different from ordinary colleges. In the barista lab, you don’t just watch—you extract, steam milk, and pour latte art every single class.”
@@ -470,6 +496,7 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         </div>
 
         <div class="editorial-review-item">
+          <div class="review-index">03</div>
           <div class="review-stars">★★★★★</div>
           <blockquote class="review-text serif-quote">
             “Clean commercial workstations, passionate chefs, and genuine guidance for hotel internships. Best decision for anyone serious about a career in hospitality.”
@@ -507,6 +534,14 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
             <div class="campus-detail-row">
               <span class="detail-label">Physical Campus:</span>
               <p class="detail-value">{SITE_DATA.institution.address}</p>
+            </div>
+
+            <div class="campus-detail-row">
+              <span class="detail-label">Landmark & Navigation:</span>
+              <p class="detail-value">
+                150m from Pipalbot Chowk, Devkota Sadak <br />
+                <span class="coord-tag">Plus Code:</span> <code class="plus-code">{SITE_DATA.institution.plusCode}</code>
+              </p>
             </div>
 
             <div class="campus-detail-row">
@@ -924,6 +959,77 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
     gap: 1rem;
   }
 
+  .courses-sub-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 992px) {
+    .courses-sub-header {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+
+  .courses-sub-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2vw, 1.625rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-navy);
+    line-height: 1.2;
+    margin-top: 0.35rem;
+  }
+
+  .course-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .filter-tab {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: var(--color-navy);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .filter-tab:hover {
+    border-color: var(--color-navy);
+    background-color: var(--color-bg-warm);
+  }
+
+  .filter-tab.is-active {
+    background-color: var(--color-navy);
+    color: #FFFFFF;
+    border-color: var(--color-navy);
+  }
+
+  .tab-count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .filter-tab.is-active .tab-count {
+    color: var(--color-orange-light);
+    opacity: 1;
+  }
+
   .courses-editorial-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1187,10 +1293,19 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
   .editorial-review-item {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    background: #FFFFFF;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xs);
+    padding-top: 1.5rem;
+    background: transparent;
+    border: none;
+    border-top: 2px solid var(--color-navy);
+  }
+
+  .review-index {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.75rem;
+    color: var(--color-orange);
+    line-height: 1;
+    margin-bottom: 0.75rem;
   }
 
   .review-stars {
@@ -1320,4 +1435,62 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
   .map-direct-link:hover {
     text-decoration: underline;
   }
+
+  .coord-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .plus-code {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    background: var(--color-bg-warm);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--color-border);
+    color: var(--color-navy);
+    font-weight: 700;
+  }
 </style>
+
+<script>
+  function initCourseFilters() {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
+    const cards = document.querySelectorAll<HTMLElement>('.cib-course-card');
+    if (!tabs.length || !cards.length) return;
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+        
+        // Toggle tab styles
+        tabs.forEach(t => {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Toggle card visibility
+        cards.forEach(card => {
+          const category = card.getAttribute('data-filter-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
+    });
+  }
+
+  // Run on mount
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCourseFilters);
+  } else {
+    initCourseFilters();
+  }
+</script>

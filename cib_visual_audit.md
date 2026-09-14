@@ -57,3 +57,20 @@ It feels like a contemporary culinary arts manifesto:
 | **CIB Methodology**: Two-column layout with offset photo frame, highlighting real commercial kitchen vs lecture halls | **Elite Kitchen Reality**: "Not A Lecture Hall. A Working Kitchen." — 60+ days nonstop cooking, knife drills, mother sauces, ODC catering |
 | **CIB Campus / Space**: Architectural imagery, workshop atmosphere | **Elite Pipalbot Campus**: Devkota Sadak, Old Baneshwor — real kitchen station, neon Elite Bar, barista espresso machines |
 | **CIB Testimonials**: Typographic quotes with student names and career paths, no card borders | **Elite Student Stories**: Authentic Google 5-star student reviews set as large serif quotes on ivory canvas |
+
+---
+
+## 4. Deep Inspection: CIB `/campus` & `/presentation`
+
+### A. CIB Campus (`https://cib.education/en/campus`)
+- **Headline Architecture**: Massive grotesque title `CIB Creative hub` with primary accent color on the final word (`hub` in `#FF4A00`), followed by a 1-line mission statement.
+- **Hero Image Framing**: Huge un-cropped group documentary photograph of students celebrating together in the central atrium.
+- **Interactive Sticky Helper**: Floating minimal white card (`Hey! Talk with us. Talk with Marina`) positioned unobtrusively on the bottom right of the hero media.
+- **Section Dividers**: Thin hairline tabs (`The space | Where we are`) acting as clean section anchors without bulky pill containers.
+
+### B. CIB Presentation (`https://cib.education/en/presentation`)
+- **Cinematic Opener**: Full-width documentary video cover with centered high-contrast serif typography (`CUESTIÓN DE FUTURO`) and a sleek circular play trigger.
+- **The Watermark Manifesto**: Giant quotation marks `“ ”` in subtle 4% gray watermark behind the core institution objective:
+  *"The objective of the school is to teach people to build their own future"*.
+- **Executive & Chef Leadership Spread**: High-contrast two-column split featuring founders/chefs in commercial whites and dark suits, paired with clean typography and sharp rectangular button (`Professional culinary courses`).
+
