@@ -25,92 +25,194 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     </div>
   </nav>
 
-  <!-- 2. COURSE HERO -->
-  <section class="course-hero-section">
-    <div class="container-wide course-hero-grid">
-      <div class="hero-copy-col">
-        <div class="eyebrow">
-          <span>Flagship Professional Qualification</span>
-        </div>
-
-        <h1 class="course-headline">
-          DIPLOMA IN <br />
-          <span class="text-orange">CULINARY ARTS</span> (DCA)
-        </h1>
-
-        <p class="course-serif-lead">
-          The definitive professional chef program in Kathmandu. Built around <strong>60+ days of nonstop commercial kitchen practicals</strong>, the execution of <strong>Ten complete 4-course menus</strong>, artisan bakery, sushi mastery, and structured <strong>3 to 6 months hotel internships in Nepal</strong>.
-        </p>
-
-        <!-- Actions -->
-        <div class="hero-actions">
-          <a 
-            href={whatsappLink} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="btn btn-cib-solid"
-          >
-            Inquire via WhatsApp &rarr;
-          </a>
-          <button type="button" class="btn btn-cib-outline" data-open-inquiry-modal data-preselect-course="Diploma in Culinary Arts (DCA)">
-            Schedule Kitchen Visit
-          </button>
-        </div>
-
-        <div class="hero-quick-meta">
-          <span class="meta-item"><strong>Location:</strong> Pipalbot, Old Baneshwor</span>
-          <span class="meta-item"><strong>Cap:</strong> 16 Students / Station</span>
-          <span class="meta-item"><strong>Status:</strong> 2026 Admissions Open</span>
-        </div>
-      </div>
-
-      <!-- Right Visual -->
-      <div class="hero-visual-col">
-        <div class="hero-img-frame">
-          <img 
-            src="/images/kitchen/searing_chicken.jpg" 
-            alt="Live Hot Kitchen Searing at Elite School of Hospitality" 
-            class="hero-main-img"
-            width="680" 
-            height="480"
-            fetchpriority="high"
-          />
-          <div class="hero-accent-border"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. UNBOXED SPECS STRIP -->
-  <section class="specs-bar-section">
+  <!-- 2. DCA ACADEMIC MASTHEAD -->
+  <section class="dca-masthead-section">
     <div class="container-wide">
-      <div class="unboxed-specs-grid">
-        <div class="spec-unit">
-          <span class="spec-label">PROGRAM DURATION</span>
-          <div class="spec-val">6 Months</div>
-          <span class="spec-sub">Full-Time Intensive</span>
+      <div class="dca-masthead-grid">
+        <!-- Left Editorial Academic Column -->
+        <div class="dca-editorial-col">
+          <div class="dca-taxo-row">
+            <span class="dca-code-badge">PROGRAM CODE // ESHM-DCA</span>
+            <span class="dca-type-badge">6-MONTH VOCATIONAL DIPLOMA</span>
+            <span class="dca-status-badge">
+              <span class="pulse-dot"></span> ADMISSIONS 2026 OPEN
+            </span>
+          </div>
+
+          <h1 class="dca-masthead-title">
+            DIPLOMA IN<br />
+            <span class="text-orange">CULINARY ARTS</span>
+          </h1>
+
+          <p class="dca-masthead-lead">
+            Kathmandu’s premier hands-on culinary qualification engineered for aspiring commercial line chefs and future hospitality leaders. Built around <strong>60+ days of nonstop commercial kitchen practicals</strong>, the execution of <strong>Ten complete 4-course banquet services</strong>, artisan bakery, sushi mastery, and structured <strong>hotel & resort internships in Nepal</strong>.
+          </p>
+
+          <!-- Action Cluster: Primary WhatsApp + In-person Campus Visit Link -->
+          <div class="dca-action-strip">
+            <a 
+              href={whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-cib-solid dca-primary-btn"
+            >
+              <span>Inquire via WhatsApp</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <button 
+              type="button" 
+              class="dca-visit-trigger" 
+              data-open-inquiry-modal 
+              data-preselect-course="Diploma in Culinary Arts (DCA)"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Book Kitchen Lab Tour</span>
+              <span class="arrow">&rarr;</span>
+            </button>
+          </div>
+
+          <!-- Fast Institutional Key Metrics (Integrated, Clean, Unboxed Grid) -->
+          <div class="dca-metrics-row">
+            <div class="dca-metric-cell">
+              <span class="dca-metric-label">PRACTICAL TRAINING</span>
+              <div class="dca-metric-val">60+ <span class="dca-metric-unit">Days</span></div>
+              <span class="dca-metric-sub">Nonstop Kitchen Shifts</span>
+            </div>
+
+            <div class="dca-metric-cell">
+              <span class="dca-metric-label">BANQUET EXAMS</span>
+              <div class="dca-metric-val">10 <span class="dca-metric-unit">Menus</span></div>
+              <span class="dca-metric-sub">4-Course Executions</span>
+            </div>
+
+            <div class="dca-metric-cell">
+              <span class="dca-metric-label">HOTEL INTERNSHIP</span>
+              <div class="dca-metric-val">3–6 <span class="dca-metric-unit">Mos</span></div>
+              <span class="dca-metric-sub">Nepal Luxury Hotels</span>
+            </div>
+
+            <div class="dca-metric-cell">
+              <span class="dca-metric-label">STATION COHORT</span>
+              <div class="dca-metric-val">16 <span class="dca-metric-unit">Max</span></div>
+              <span class="dca-metric-sub">Chefs Per Shift</span>
+            </div>
+          </div>
         </div>
 
-        <div class="spec-unit">
-          <span class="spec-label">KITCHEN PRACTICAL</span>
-          <div class="spec-val text-orange">60+ Days</div>
-          <span class="spec-sub">Daily Station Cooking</span>
-        </div>
+        <!-- Right Media + Architectural Specification Dossier Column -->
+        <div class="dca-visual-col">
+          <div class="dca-media-cluster">
+            <div class="dca-photo-wrapper">
+              <img 
+                src="/images/kitchen/searing_chicken.jpg" 
+                alt="Live Hot Kitchen Searing at Elite School of Hospitality" 
+                class="dca-masthead-img"
+                width="640" 
+                height="440"
+                fetchpriority="high"
+              />
+              <div class="dca-photo-caption">
+                <span class="caption-tag">LIVE KITCHEN LAB</span>
+                <span class="caption-text">Hot station pan-searing & saucing practical at Pipalbot campus</span>
+              </div>
+            </div>
 
-        <div class="spec-unit">
-          <span class="spec-label">BANQUET MENUS</span>
-          <div class="spec-val">10 Menus</div>
-          <span class="spec-sub">Complete 4-Course Services</span>
-        </div>
+            <!-- Architectural Institutional Course Specification Dossier -->
+            <div class="dca-spec-dossier">
+              <div class="dossier-header">
+                <div class="dossier-code-wrap">
+                  <span class="dossier-code">COURSE SPECIFICATION // DCA-2026</span>
+                  <span class="dossier-title">Academic & Practicum Dossier</span>
+                </div>
+                <div class="dossier-status-pill">
+                  <span class="status-dot"></span> 2026 INTAKE
+                </div>
+              </div>
 
-        <div class="spec-unit">
-          <span class="spec-label">HOTEL INTERNSHIP</span>
-          <div class="spec-val">3–6 Months</div>
-          <span class="spec-sub">Hotels & Resorts in Nepal</span>
+              <div class="dossier-table">
+                <div class="dossier-row">
+                  <span class="dossier-dt">Program Duration</span>
+                  <span class="dossier-dd">6 Months (Full-Time Daily Practical)</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-dt">Practical Ratio</span>
+                  <span class="dossier-dd highlight">80% Commercial Kitchen / 20% Theory</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-dt">Specialist Modules</span>
+                  <span class="dossier-dd">Artisan Bakery, Knife Speed, Sushi Rolling</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-dt">Campus Facility</span>
+                  <span class="dossier-dd">Pipalbot, Old Baneshwor, Kathmandu</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-dt">Industry Credentials</span>
+                  <span class="dossier-dd">ESHM DCA Diploma + ODC Banqueting Cert</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-dt">Admissions Desk</span>
+                  <span class="dossier-dd contact-links">
+                    <a href="tel:014471162">01-4471162</a> &bull; <a href="tel:9851239109">9851239109</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- 3. STICKY SYLLABUS SUBNAV BAR -->
+  <nav class="dca-subnav-bar" id="dca-subnav" aria-label="Course Sections">
+    <div class="container-wide">
+      <div class="dca-subnav-inner">
+        <ul class="dca-subnav-links">
+          <li>
+            <a href="#curriculum" class="subnav-link active">
+              <span class="subnav-idx">01</span>
+              <span class="subnav-text">Curriculum Modules</span>
+            </a>
+          </li>
+          <li>
+            <a href="#menus" class="subnav-link">
+              <span class="subnav-idx">02</span>
+              <span class="subnav-text">Ten 4-Course Menus</span>
+            </a>
+          </li>
+          <li>
+            <a href="#placement" class="subnav-link">
+              <span class="subnav-idx">03</span>
+              <span class="subnav-text">Hotel Placement & ODC</span>
+            </a>
+          </li>
+          <li>
+            <a href="#admissions" class="subnav-link">
+              <span class="subnav-idx">04</span>
+              <span class="subnav-text">Admissions & Batches</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="dca-subnav-action">
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="dca-subnav-cta">
+            <span>Inquire for DCA</span>
+            <span class="cta-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <!-- 4. CURRICULUM MODULES DEEP DIVE -->
   <section class="section section-warm" id="curriculum">
@@ -319,34 +421,97 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
   }
 
   /* =========================================================================
-     2. COURSE HERO
+     2. DCA ACADEMIC MASTHEAD
      ========================================================================= */
-  .course-hero-section {
+  .dca-masthead-section {
     position: relative;
-    padding-top: clamp(3.5rem, 6vw, 6rem);
-    padding-bottom: clamp(4rem, 7vw, 6.5rem);
+    padding-top: clamp(2.5rem, 5vw, 4.25rem);
+    padding-bottom: clamp(3rem, 5vw, 4.75rem);
     background-color: #FFFFFF;
     border-bottom: 1px solid var(--color-border);
   }
 
-  .course-hero-grid {
+  .dca-masthead-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(3rem, 5vw, 5rem);
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2.5rem, 4vw, 4.5rem);
+    align-items: start;
   }
 
   @media (min-width: 1024px) {
-    .course-hero-grid {
-      grid-template-columns: 1.15fr 0.95fr;
+    .dca-masthead-grid {
+      grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
     }
   }
 
-  .course-headline {
+  .dca-editorial-col,
+  .dca-visual-col {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Academic Taxonomy Badges */
+  .dca-taxo-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .dca-code-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-navy);
+    background-color: var(--color-bg-warm);
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+  }
+
+  .dca-type-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-orange);
+    background-color: rgba(224, 76, 28, 0.06);
+    padding: 0.35rem 0.75rem;
+    border: 1px solid rgba(224, 76, 28, 0.22);
+    border-radius: var(--radius-xs);
+  }
+
+  .dca-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #166534;
+    background-color: #f0fdf4;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-xs);
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #16a34a;
+    display: inline-block;
+  }
+
+  /* Academic Headline */
+  .dca-masthead-title {
     font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4.6vw, 4.15rem);
     font-weight: 900;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1.04;
+    line-height: 1.02;
     letter-spacing: -0.035em;
     color: var(--color-navy);
     margin-bottom: 1.5rem;
@@ -356,104 +521,110 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     color: var(--color-orange);
   }
 
-  .course-serif-lead {
+  /* Editorial Lead */
+  .dca-masthead-lead {
     font-family: var(--font-serif);
-    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
-    line-height: 1.42;
+    font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
+    line-height: 1.5;
     color: var(--color-navy);
     margin-bottom: 2.25rem;
     max-width: 58ch;
   }
 
-  .hero-actions {
+  /* Actions */
+  .dca-action-strip {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 1.25rem;
+    margin-bottom: 2.75rem;
   }
 
-  .hero-quick-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    font-size: 0.8125rem;
-    color: var(--color-text-secondary);
-    padding-top: 1.5rem;
+  @media (max-width: 640px) {
+    .dca-action-strip {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.875rem;
+      margin-bottom: 2rem;
+    }
+
+    .dca-primary-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .dca-visit-trigger {
+      justify-content: center;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .dca-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .dca-visit-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--color-navy);
+    cursor: pointer;
+    padding: 0.5rem 0.25rem;
+    transition: color var(--transition-fast);
+  }
+
+  .dca-visit-trigger:hover {
+    color: var(--color-orange);
+  }
+
+  .dca-visit-trigger .arrow {
+    transition: transform var(--transition-fast);
+  }
+
+  .dca-visit-trigger:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Unboxed Integrated Fast Metrics */
+  .dca-metrics-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1.25rem;
+    padding-top: 1.75rem;
     border-top: 1px solid var(--color-border);
   }
 
-  .hero-quick-meta strong {
-    color: var(--color-navy);
-  }
-
-  .hero-img-frame {
-    position: relative;
-    width: 92%;
-    border-radius: var(--radius-xs);
-    overflow: hidden;
-    box-shadow: var(--shadow-hover);
-  }
-
-  .hero-main-img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 11;
-    object-fit: cover;
-  }
-
-  .hero-accent-border {
-    position: absolute;
-    inset: 1rem -1rem -1rem 1rem;
-    border: 1.5px solid var(--color-orange);
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  /* =========================================================================
-     3. SPECS STRIP
-     ========================================================================= */
-  .specs-bar-section {
-    background-color: var(--color-bg-warm);
-    border-bottom: 1px solid var(--color-border);
-    padding: 2.5rem 0;
-  }
-
-  .unboxed-specs-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
   @media (min-width: 640px) {
-    .unboxed-specs-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .unboxed-specs-grid {
+    .dca-metrics-row {
       grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
     }
   }
 
-  .spec-unit {
+  .dca-metric-cell {
     display: flex;
     flex-direction: column;
   }
 
-  .spec-label {
+  .dca-metric-label {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     color: var(--color-orange);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
   }
 
-  .spec-val {
+  .dca-metric-val {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-size: clamp(1.85rem, 2.75vw, 2.4rem);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.03em;
@@ -461,9 +632,284 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     margin-bottom: 0.25rem;
   }
 
-  .spec-sub {
-    font-size: 0.8125rem;
+  .dca-metric-unit {
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--color-text-secondary);
+    letter-spacing: normal;
+  }
+
+  .dca-metric-sub {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.35;
+  }
+
+  /* Right Visual Cluster */
+  .dca-media-cluster {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .dca-photo-wrapper {
+    position: relative;
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-warm);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .dca-masthead-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+  }
+
+  .dca-photo-caption {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.75rem;
+  }
+
+  .caption-tag {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    background-color: var(--color-navy);
+    color: #FFFFFF;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .caption-text {
+    color: var(--color-text-secondary);
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  /* Architectural Course Specification Dossier */
+  .dca-spec-dossier {
+    background-color: var(--color-bg-warm);
+    border: 1px solid var(--color-border-medium);
+    border-radius: var(--radius-xs);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 16px rgba(11, 19, 43, 0.03);
+  }
+
+  .dossier-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 0.85rem;
+  }
+
+  .dossier-code {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-orange);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .dossier-title {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 800;
+    color: var(--color-navy);
+  }
+
+  .dossier-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    color: var(--color-navy);
+    white-space: nowrap;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-orange);
+  }
+
+  .dossier-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .dossier-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.8125rem;
+    gap: 0.75rem;
+    border-bottom: 1px dashed rgba(11, 19, 43, 0.09);
+    padding-bottom: 0.5rem;
+  }
+
+  .dossier-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .dossier-dt {
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .dossier-dd {
+    font-weight: 700;
+    color: var(--color-navy);
+    text-align: right;
+    font-size: 0.8125rem;
+    word-break: break-word;
+  }
+
+  .dossier-dd.highlight {
+    color: var(--color-orange);
+  }
+
+  .contact-links a {
+    color: var(--color-navy);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-links a:hover {
+    color: var(--color-orange);
+  }
+
+  /* =========================================================================
+     3. STICKY SYLLABUS SUBNAV BAR
+     ========================================================================= */
+  .dca-subnav-bar {
+    position: sticky;
+    top: 76px;
+    z-index: 990;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 2px 10px rgba(11, 19, 43, 0.03);
+  }
+
+  .dca-subnav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+
+  .dca-subnav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+  }
+
+  .dca-subnav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subnav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+    padding: 0 0.25rem;
+    white-space: nowrap;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .subnav-link:hover {
+    color: var(--color-navy);
+  }
+
+  .subnav-link.active {
+    color: var(--color-navy);
+    border-bottom-color: var(--color-orange);
+  }
+
+  .subnav-idx {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--color-orange);
+    font-weight: 700;
+  }
+
+  .dca-subnav-action {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .dca-subnav-action {
+      display: block;
+    }
+  }
+
+  .dca-subnav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-orange);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color var(--transition-fast);
+  }
+
+  .dca-subnav-cta .cta-arrow {
+    transition: transform var(--transition-fast);
+  }
+
+  .dca-subnav-cta:hover .cta-arrow {
+    transform: translateX(3px);
+  }
+
+  /* Section anchor scroll offset for sticky headers */
+  #curriculum,
+  #menus,
+  #placement,
+  #admissions {
+    scroll-margin-top: 136px;
   }
 
   /* =========================================================================
@@ -758,3 +1204,102 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     color: var(--color-orange);
   }
 </style>
+
+<script>
+  import gsap from 'gsap';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. DCA Masthead Editorial Animation
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      const dcaTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      const taxoItems = document.querySelectorAll('.dca-taxo-row > *');
+      if (taxoItems.length) {
+        dcaTl.fromTo(
+          taxoItems,
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 }
+        );
+      }
+
+      if (document.querySelector('.dca-masthead-title')) {
+        dcaTl.fromTo(
+          '.dca-masthead-title',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5 },
+          '-=0.25'
+        );
+      }
+
+      if (document.querySelector('.dca-masthead-lead')) {
+        dcaTl.fromTo(
+          '.dca-masthead-lead',
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.45 },
+          '-=0.3'
+        );
+      }
+
+      if (document.querySelector('.dca-action-strip')) {
+        dcaTl.fromTo(
+          '.dca-action-strip',
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.4 },
+          '-=0.3'
+        );
+      }
+
+      const metricCells = document.querySelectorAll('.dca-metric-cell');
+      if (metricCells.length) {
+        dcaTl.fromTo(
+          metricCells,
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: 0.5, stagger: 0.08 },
+          '-=0.3'
+        );
+      }
+
+      if (document.querySelector('.dca-visual-col')) {
+        dcaTl.fromTo(
+          '.dca-visual-col',
+          { opacity: 0, y: 25, scale: 0.98 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power2.out' },
+          '-=0.5'
+        );
+      }
+    }
+
+    // 2. Syllabus Subnav Active Spy
+    const sections = ['curriculum', 'menus', 'placement', 'admissions'];
+    const subnavLinks = document.querySelectorAll('.dca-subnav-links .subnav-link');
+
+    if (subnavLinks.length && 'IntersectionObserver' in window) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '-140px 0px -60% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            subnavLinks.forEach((link) => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    }
+  });
+</script>
