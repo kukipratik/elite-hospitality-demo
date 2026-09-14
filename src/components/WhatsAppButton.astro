@@ -1,0 +1,113 @@
+---
+import { SITE_DATA } from '../data/siteData';
+
+interface Props {
+  courseTitle?: string;
+}
+
+const { courseTitle } = Astro.props;
+const whatsappLink = SITE_DATA.getWhatsAppLink(courseTitle);
+---
+
+<aside class="floating-whatsapp-wrap" aria-label="WhatsApp quick contact">
+  <a 
+    href={whatsappLink} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="floating-whatsapp-btn"
+    aria-label="Direct WhatsApp chat with Elite admissions"
+  >
+    <div class="whatsapp-icon-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+    </div>
+    <div class="whatsapp-label-box">
+      <span class="online-indicator"></span>
+      <span class="label-text">Chat with Elite</span>
+    </div>
+  </a>
+</aside>
+
+<style>
+  .floating-whatsapp-wrap {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+  }
+
+  .floating-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    background: #111A24;
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    border-radius: var(--radius-full);
+    padding: 0.4rem 1.15rem 0.4rem 0.4rem;
+    gap: 0.65rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(37, 211, 102, 0.2);
+    transition: all var(--transition-normal);
+  }
+
+  .floating-whatsapp-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 28px rgba(37, 211, 102, 0.35);
+    border-color: rgba(37, 211, 102, 0.8);
+  }
+
+  .whatsapp-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: var(--color-whatsapp);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .whatsapp-label-box {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .online-indicator {
+    width: 8px;
+    height: 8px;
+    background: var(--color-whatsapp);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--color-whatsapp);
+  }
+
+  .label-text {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 640px) {
+    .floating-whatsapp-wrap {
+      bottom: 1.25rem;
+      right: 1.25rem;
+    }
+    .whatsapp-label-box {
+      display: none;
+    }
+    .floating-whatsapp-btn {
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+    .whatsapp-icon-wrap {
+      width: 52px;
+      height: 52px;
+    }
+  }
+</style>

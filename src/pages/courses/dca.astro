@@ -1,0 +1,1227 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_DATA } from '../../data/siteData';
+
+const dcaCourse = SITE_DATA.courses.find(c => c.id === 'dca') || SITE_DATA.courses[0];
+const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
+---
+
+<BaseLayout 
+  title="Diploma in Culinary Arts (DCA) | Elite School of Hospitality Management"
+  description="Kathmandu's premier 6-month professional chef qualification at Pipalbot, Old Baneshwor. 60+ days nonstop kitchen practicals, ten 4-course menus, artisan bakery, sushi, and guaranteed hotel internships."
+  currentPath="/courses/dca"
+  courseTitleForWa="Diploma in Culinary Arts (DCA)"
+>
+  <!-- 1. BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb navigation">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li class="separator">/</li>
+        <li><a href="/#courses">Courses</a></li>
+        <li class="separator">/</li>
+        <li aria-current="page" class="active">Diploma in Culinary Arts (DCA)</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- 2. COURSE HERO -->
+  <section class="course-hero-section">
+    <div class="container">
+      <div class="course-hero-grid">
+        <div class="hero-left fade-in">
+          <div class="hero-badges">
+            <span class="tag tag-copper">Flagship Diploma</span>
+            <span class="tag tag-outline">6 Months Intensive</span>
+            <span class="tag tag-outline">Batch 2026</span>
+          </div>
+
+          <h1 class="course-title">
+            Diploma in <br />
+            <span class="font-serif italic text-copper">Culinary Arts (DCA)</span>
+          </h1>
+
+          <p class="course-lead">
+            The definitive professional chef qualification in Kathmandu. Built around 
+            <strong>60+ days nonstop commercial kitchen practicals</strong>, the execution of 
+            <strong>Ten full 4-course menus</strong>, artisan bakery, Japanese sushi, and guaranteed 
+            <strong>3–6 month hotel internships</strong>.
+          </p>
+
+          <div class="hero-action-buttons">
+            <a 
+              href={whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-primary btn-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span>Inquire for Upcoming Intake</span>
+            </a>
+
+            <button type="button" class="btn btn-secondary btn-lg" data-open-modal="true" data-course-context="Diploma in Culinary Arts (DCA)">
+              <span>Schedule Kitchen Visit</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-right fade-in">
+          <div class="hero-image-card">
+            <img 
+              src="/images/kitchen/searing_chicken.jpg" 
+              alt="Culinary Arts pan searing at Elite School of Hospitality Management" 
+              class="hero-img"
+              width="650"
+              height="500"
+            />
+            <div class="hero-card-floating-badge">
+              <span class="badge-accent-dot"></span>
+              <span>Daily Live Kitchen Burners</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="course-specs-strip fade-in">
+        <div class="spec-item">
+          <span class="spec-tit">Duration</span>
+          <span class="spec-val text-copper">{dcaCourse.duration}</span>
+          <span class="spec-note">Full-time vocational training</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-tit">Kitchen Practical</span>
+          <span class="spec-val text-gold">60+ Days Nonstop</span>
+          <span class="spec-note">No filler theory days</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-tit">Service Menus</span>
+          <span class="spec-val">10 Complete Sets</span>
+          <span class="spec-note">Full 4-course banquet service</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-tit">Class Shifts</span>
+          <span class="spec-val">Morning / Afternoon</span>
+          <span class="spec-note">07:00–11:00 AM / 11:30–03:30 PM</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-tit">Batch Limit</span>
+          <span class="spec-val">16 Students Max</span>
+          <span class="spec-note">Strict 1:1 chef mentoring</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-tit">Industry Internship</span>
+          <span class="spec-val text-copper">3 to 6 Months</span>
+          <span class="spec-note">Nepal & overseas placements</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. THE 60+ DAYS NONSTOP KITCHEN PRACTICAL -->
+  <section class="section practical-deep-dive">
+    <div class="container">
+      <div class="deep-dive-grid">
+        <div class="dive-text fade-in">
+          <span class="tag tag-copper">Our Core Philosophy</span>
+          <h2 class="dive-title">
+            The 60+ Days Nonstop Practical: <br />
+            <span class="font-serif italic text-copper">Why Daily Cooking Matters</span>
+          </h2>
+          <p class="dive-lead">
+            Most culinary colleges teach through textbook lectures with occasional cooking demonstrations once a week. 
+            At Elite, we believe a chef’s reflexes can only be formed at the burner, pan in hand.
+          </p>
+          <div class="dive-paragraphs">
+            <p>
+              Over <strong>sixty uninterrupted practical days</strong> in our commercial kitchen, you will cut, sear, roast, 
+              simmer, and plate daily. You will learn the sound of a pan at the right temperature, the aroma of a properly caramelized mirepoix, 
+              and the exact muscle memory required to mince onions in seconds.
+            </p>
+            <p>
+              Every student is assigned dedicated burner and workstation space. You are not watching a teacher cook on a stage — 
+              <strong>you are executing the dishes yourself</strong>, from raw protein prep to the final sauce drizzle.
+            </p>
+          </div>
+
+          <div class="stats-callout-row">
+            <div class="callout-box">
+              <span class="callout-num">60+</span>
+              <span class="callout-text">Daily Kitchen Sessions</span>
+            </div>
+            <div class="callout-box">
+              <span class="callout-num">100%</span>
+              <span class="callout-text">Fresh Ingredients Provided</span>
+            </div>
+            <div class="callout-box">
+              <span class="callout-num">1:1</span>
+              <span class="callout-text">Senior Chef Guidance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dive-media fade-in">
+          <div class="image-stack">
+            <img 
+              src="/images/kitchen/chef_technique.jpg" 
+              alt="Elite School chef teaching fine culinary technique" 
+              class="img-stack-top"
+              width="600"
+              height="450"
+            />
+            <div class="quote-overlay-card">
+              <p class="quote-txt">“You cannot learn the heat of a commercial wok or the emulsion of a butter sauce from a slide presentation. You learn it by doing it 60 days in a row.”</p>
+              <span class="quote-author">— Executive Chef Instructor, Elite Kathmandu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE SIGNATURE TEN 4-COURSE MENUS -->
+  <section class="section menus-section">
+    <div class="container">
+      <div class="section-head-editorial fade-in">
+        <span class="tag tag-gold">Signature Requirement</span>
+        <h2 class="section-title">
+          The Ten 4-Course Menu Executions: <br />
+          <span class="font-serif italic text-gold">Mastering Restaurant Service Timing</span>
+        </h2>
+        <p class="section-subtitle">
+          Cooking single dishes in isolation is easy. Coordinating an entire 4-course banquet meal so that appetizers, soups, 
+          pastas, and main proteins leave the pass at the correct temperature is the hallmark of a true professional chef.
+        </p>
+      </div>
+
+      <div class="course-menus-grid">
+        <div class="menu-stage-card fade-in">
+          <div class="stage-num">01</div>
+          <h3 class="stage-title">Appetizers & Salads</h3>
+          <p class="stage-desc">
+            Vinaigrette emulsification, crisp salad composition, classical hors d'oeuvres, carpaccios, terrines, and modern artistic cold plating.
+          </p>
+          <div class="stage-dishes">
+            <span>Classical Caesar</span> · <span>Greek Tartare</span> · <span>Warm Duck Confit Salad</span>
+          </div>
+        </div>
+
+        <div class="menu-stage-card fade-in">
+          <div class="stage-num">02</div>
+          <h3 class="stage-title">Classical Soups</h3>
+          <p class="stage-desc">
+            Clarified consommés, veloutés, vegetable purees, seafood chowders, and crouton accompaniments with flawless seasoning balance.
+          </p>
+          <div class="stage-dishes">
+            <span>French Onion Soup</span> · <span>Cream of Forest Mushroom</span> · <span>Chicken Consommé</span>
+          </div>
+        </div>
+
+        <div class="menu-stage-card fade-in">
+          <div class="stage-num">03</div>
+          <h3 class="stage-title">Pastas & Risottos</h3>
+          <p class="stage-desc">
+            Fresh egg pasta kneading, rolling, stuffed raviolis, potato gnocchi, and creamy risotto mantecatura with cold butter and parmesan.
+          </p>
+          <div class="stage-dishes">
+            <span>Handmade Tortellini</span> · <span>Saffron Risotto</span> · <span>Fettuccine Carbonara</span>
+          </div>
+        </div>
+
+        <div class="menu-stage-card fade-in">
+          <div class="stage-num">04</div>
+          <h3 class="stage-title">Main Entrées & Plating</h3>
+          <p class="stage-desc">
+            Pan-seared poultry, roasted meat joints, pan basting with fresh herbs and butter, red wine reductions, starch purees, and architectural presentation.
+          </p>
+          <div class="stage-dishes">
+            <span>Pan-Seared Breast with Jus</span> · <span>Herb-Crusted Fish</span> · <span>Glazed Seasonal Medley</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. COMPREHENSIVE 6-MODULE CURRICULUM -->
+  <section class="section curriculum-section">
+    <div class="container">
+      <div class="section-head-editorial fade-in">
+        <span class="tag tag-copper">Full Syllabus Breakdown</span>
+        <h2 class="section-title">
+          Six In-Depth Modules: <br />
+          <span class="font-serif italic text-copper">From Foundation to Executive Mastery</span>
+        </h2>
+        <p class="section-subtitle">
+          A meticulously sequenced curriculum structured to take you from foundational knife safety to running a high-speed commercial kitchen pass.
+        </p>
+      </div>
+
+      <div class="curriculum-stack">
+        {dcaCourse.modules.map((mod, index) => (
+          <div class="module-row fade-in">
+            <div class="module-header-col">
+              <span class="mod-idx">Module 0{index + 1}</span>
+              <h3 class="mod-title">{mod.title}</h3>
+            </div>
+            <div class="module-body-col">
+              <p class="mod-desc">{mod.description}</p>
+              <div class="mod-topics-list">
+                {mod.topics.map((t) => (
+                  <span class="mod-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. DOCUMENTARY KITCHEN PHOTO GALLERY -->
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="section-head-editorial fade-in">
+        <span class="tag tag-gold">Campus Life</span>
+        <h2 class="section-title">
+          Inside the Kitchen: <br />
+          <span class="font-serif italic text-gold">Life on the Line</span>
+        </h2>
+        <p class="section-subtitle">
+          Authentic moments captured during live practical sessions, graduation ceremonies, and auditorium lectures at our Old Baneshwor campus.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item item-large fade-in">
+          <img 
+            src="/images/kitchen/cooking_demo.jpg" 
+            alt="Elite School students during practical cooking class" 
+            loading="eager" 
+            width="800" 
+            height="500"
+          />
+          <div class="gallery-caption">
+            <strong>Live Station Cooking</strong>
+            <span>Active student participation under chef supervision</span>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in">
+          <img 
+            src="/images/kitchen/culinary_auditorium.jpg" 
+            alt="Culinary demonstration and theory lecture auditorium" 
+            loading="eager" 
+            width="500" 
+            height="350"
+          />
+          <div class="gallery-caption">
+            <strong>Auditorium Demonstrations</strong>
+            <span>Masterclass view for technique breakdown</span>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-in">
+          <img 
+            src="/images/kitchen/certificate_ceremony.jpg" 
+            alt="Elite School graduation and certificate ceremony" 
+            loading="eager" 
+            width="500" 
+            height="350"
+          />
+          <div class="gallery-caption">
+            <strong>Graduation Day</strong>
+            <span>Industry-recognized qualification certificates</span>
+          </div>
+        </div>
+
+        <div class="gallery-item item-wide fade-in">
+          <img 
+            src="/images/practical/students_uniform.jpg" 
+            alt="Elite School students in professional chef and hospitality uniform" 
+            loading="eager" 
+            width="800" 
+            height="400"
+          />
+          <div class="gallery-caption">
+            <strong>Professional Pride</strong>
+            <span>Full chef jackets, aprons, and professional kitchen discipline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. INTERNSHIP & CAREER ROADMAP -->
+  <section class="section career-section">
+    <div class="container">
+      <div class="career-wrapper fade-in">
+        <div class="career-header">
+          <span class="tag tag-copper">Industry Pathways</span>
+          <h2 class="career-title">3 to 6 Months Guaranteed Internship & Global Pathways</h2>
+          <p class="career-desc">
+            Elite ensures every DCA graduate transitions smoothly from campus to the industry. We coordinate structured 
+            internships across Nepal’s premier hotel brands, luxury boutique resorts, and fine dining establishments, 
+            backed by real Outdoor Catering (ODC) banquet experience.
+          </p>
+        </div>
+
+        <div class="career-grid">
+          <div class="career-card">
+            <div class="c-icon">🏨</div>
+            <h4 class="c-name">Hotel & Resort Internships</h4>
+            <p class="c-txt">3 to 6 months of hands-on line cook training in five-star hotel kitchens across Kathmandu, Pokhara, and Chitwan.</p>
+          </div>
+
+          <div class="career-card">
+            <div class="c-icon">🎖️</div>
+            <h4 class="c-name">ODC Banqueting Certification</h4>
+            <p class="c-txt">Experience real-world high-volume catering for 500+ guest wedding galas, corporate dinners, and diplomatic functions.</p>
+          </div>
+
+          <div class="career-card">
+            <div class="c-icon">✈️</div>
+            <h4 class="c-name">Overseas Employment Pathways</h4>
+            <p class="c-txt">Graduates leverage Elite’s portfolio and industry recommendation to secure Commis Chef positions in Dubai, Qatar, Maldives, and Europe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-head-editorial fade-in">
+        <span class="tag tag-gold">Got Questions?</span>
+        <h2 class="section-title">
+          Frequently Asked <span class="font-serif italic text-gold">Questions</span>
+        </h2>
+        <p class="section-subtitle">
+          Everything you need to know about the Diploma in Culinary Arts admissions, fees, and requirements.
+        </p>
+      </div>
+
+      <div class="faq-accordion-wrap fade-in">
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>What are the entry requirements for the Diploma in Culinary Arts (DCA)?</span>
+            <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Applicants should have completed SLC, SEE, or +2 (Grade 12) from any recognized academic stream (Science, Management, Humanities). We also welcome passionate career-switchers who wish to launch a commercial cooking career. No prior kitchen experience is required — we train from foundational basics.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Are cooking ingredients provided by the academy?</span>
+            <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes, 100% of all practical cooking ingredients are provided by Elite. This includes fresh chicken, meats, fish, seasonal vegetables, dairy, flours, pastry supplies, sushi nori, sushi rice, and artisan chocolate supplies. There are zero hidden material fees.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>What are the daily class timings and shift options?</span>
+            <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>We operate two distinct daily batches: a Morning Shift (07:00 AM – 11:00 AM) and an Afternoon Shift (11:30 AM – 03:30 PM), running Sunday through Friday. You can choose the shift that fits your schedule best during registration.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Do students receive professional uniforms and toolkits?</span>
+            <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Upon admission, every student receives the official Elite School chef uniform (chef jacket, apron, toque/cap) and gets hands-on access to commercial German-style knives and prep tools on campus.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How do I inquire about current tuition fees and installment options?</span>
+            <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Tuition fees and batch installment schedules are provided during an in-person campus consultation or directly via WhatsApp (+977 984-3338838). We offer flexible fee payments divided into multiple installments across the 6-month term.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL CTA ENROLLMENT BAR -->
+  <section class="section dca-enroll-cta">
+    <div class="container">
+      <div class="enroll-box fade-in">
+        <div class="enroll-content">
+          <span class="tag tag-copper">Upcoming 2026 Batch</span>
+          <h2 class="enroll-title">Secure One of 16 Dedicated Kitchen Workstations</h2>
+          <p class="enroll-desc">
+            Batches fill quickly due to our strict 16-seat per workstation cap. Connect directly with our admissions chef on WhatsApp or visit our Pipalbot, Old Baneshwor campus today.
+          </p>
+          <div class="enroll-btn-row">
+            <a 
+              href={whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-primary btn-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span>Chat with Admissions on WhatsApp</span>
+            </a>
+
+            <button type="button" class="btn btn-secondary btn-lg" data-open-modal="true" data-course-context="Diploma in Culinary Arts (DCA)">
+              <span>Schedule Free Trial Class</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Breadcrumb Navigation */
+  .breadcrumb-bar {
+    padding: 1rem 0;
+    background: #0B1017;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.82rem;
+    color: var(--color-muted);
+  }
+
+  .breadcrumbs a {
+    color: var(--color-cream-dim);
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--color-copper);
+  }
+
+  .breadcrumbs .separator {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .breadcrumbs .active {
+    color: var(--color-copper-light);
+    font-weight: 600;
+  }
+
+  /* Course Hero Section */
+  .course-hero-section {
+    padding: 4.5rem 0 3.5rem;
+    background: radial-gradient(circle at 80% 20%, rgba(217, 119, 54, 0.12) 0%, transparent 60%),
+                var(--color-dark-surface);
+    position: relative;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .course-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .course-title {
+    font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.4rem;
+    color: var(--color-cream);
+  }
+
+  .course-lead {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--color-cream-dim);
+    margin-bottom: 2.2rem;
+    max-width: 600px;
+  }
+
+  .hero-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .hero-image-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--color-border);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .hero-card-floating-badge {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(9, 13, 18, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-cream);
+  }
+
+  .badge-accent-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-copper);
+    box-shadow: 0 0 8px var(--color-copper);
+  }
+
+  /* Quick Specs Strip */
+  .course-specs-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    background: var(--color-dark-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+  }
+
+  .spec-item {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding-right: 1rem;
+  }
+
+  .spec-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .spec-tit {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .spec-val {
+    font-size: 1.15rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--color-cream);
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+
+  .spec-note {
+    font-size: 0.72rem;
+    color: var(--color-cream-dim);
+  }
+
+  /* Practical Deep Dive Section */
+  .practical-deep-dive {
+    background: #090D12;
+  }
+
+  .deep-dive-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4.5rem;
+    align-items: center;
+  }
+
+  .dive-title {
+    font-size: clamp(2rem, 3.4vw, 3.2rem);
+    line-height: 1.15;
+    font-weight: 800;
+    margin: 1.2rem 0;
+  }
+
+  .dive-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--color-cream);
+    margin-bottom: 1.5rem;
+  }
+
+  .dive-paragraphs p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--color-cream-dim);
+    margin-bottom: 1.2rem;
+  }
+
+  .stats-callout-row {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .callout-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .callout-num {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--color-copper);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .callout-text {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+  }
+
+  .image-stack {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--color-border);
+  }
+
+  .img-stack-top {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .quote-overlay-card {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: rgba(9, 13, 18, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+  }
+
+  .quote-txt {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--color-cream);
+    font-style: italic;
+    margin-bottom: 0.6rem;
+  }
+
+  .quote-author {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-copper);
+  }
+
+  /* Menus Section */
+  .menus-section {
+    background: var(--color-dark-surface);
+  }
+
+  .section-head-editorial {
+    max-width: 780px;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 1rem 0;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--color-cream-dim);
+  }
+
+  .course-menus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .menu-stage-card {
+    background: var(--color-dark-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.2rem 1.8rem;
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+  }
+
+  .menu-stage-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(229, 169, 60, 0.4);
+  }
+
+  .stage-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+  }
+
+  .stage-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--color-cream);
+  }
+
+  .stage-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-cream-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .stage-dishes {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Curriculum Section */
+  .curriculum-section {
+    background: #090D12;
+  }
+
+  .curriculum-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .module-row {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    background: var(--color-dark-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.2rem;
+    transition: border-color var(--transition-normal);
+  }
+
+  .module-row:hover {
+    border-color: rgba(217, 119, 54, 0.35);
+  }
+
+  .mod-idx {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-copper);
+    margin-bottom: 0.5rem;
+  }
+
+  .mod-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1.3;
+  }
+
+  .mod-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-cream-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .mod-topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .mod-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    color: var(--color-cream);
+  }
+
+  .mod-chip svg {
+    color: var(--color-copper);
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    background: var(--color-dark-surface);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    aspect-ratio: 4 / 3;
+    min-height: 260px;
+    background: var(--color-dark-card);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .item-large {
+    grid-column: span 2;
+    aspect-ratio: 16 / 10;
+    min-height: 340px;
+  }
+
+  .item-wide {
+    grid-column: span 3;
+    aspect-ratio: 21 / 9;
+    min-height: 280px;
+  }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(9, 13, 18, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .gallery-caption strong {
+    font-size: 0.95rem;
+    color: var(--color-cream);
+  }
+
+  .gallery-caption span {
+    font-size: 0.78rem;
+    color: var(--color-cream-dim);
+  }
+
+  /* Career Section */
+  .career-section {
+    background: #090D12;
+  }
+
+  .career-wrapper {
+    background: linear-gradient(135deg, rgba(217, 119, 54, 0.08) 0%, rgba(17, 23, 32, 0.95) 100%);
+    border: 1px solid rgba(217, 119, 54, 0.25);
+    border-radius: var(--radius-xl);
+    padding: 3.5rem;
+  }
+
+  .career-header {
+    max-width: 720px;
+    margin-bottom: 2.5rem;
+  }
+
+  .career-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0.8rem 0;
+    color: var(--color-cream);
+  }
+
+  .career-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-cream-dim);
+  }
+
+  .career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .career-card {
+    background: rgba(9, 13, 18, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1.8rem;
+  }
+
+  .c-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .c-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--color-cream);
+  }
+
+  .c-txt {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--color-cream-dim);
+    margin: 0;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background: var(--color-dark-surface);
+  }
+
+  .faq-accordion-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: var(--color-dark-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+  }
+
+  .faq-item[open] {
+    border-color: rgba(217, 119, 54, 0.4);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 1.8rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-arrow {
+    transition: transform var(--transition-fast);
+    color: var(--color-copper);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-arrow {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.8rem 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--color-cream-dim);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 1.2rem;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  /* Final Enrollment Banner */
+  .dca-enroll-cta {
+    background: #090D12;
+    padding: 3rem 0 6rem;
+  }
+
+  .enroll-box {
+    background: linear-gradient(135deg, rgba(217, 119, 54, 0.15) 0%, rgba(17, 23, 32, 0.95) 100%);
+    border: 1px solid rgba(217, 119, 54, 0.35);
+    border-radius: var(--radius-xl);
+    padding: 4.5rem 3rem;
+    text-align: center;
+  }
+
+  .enroll-content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .enroll-title {
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    line-height: 1.15;
+    font-weight: 800;
+    margin: 1.2rem 0;
+    color: var(--color-cream);
+  }
+
+  .enroll-desc {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--color-cream-dim);
+    margin-bottom: 2.5rem;
+  }
+
+  .enroll-btn-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .course-hero-grid,
+    .deep-dive-grid {
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    .course-specs-strip {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .spec-item:nth-child(3) {
+      border-right: none;
+    }
+
+    .module-row {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .item-large,
+    .item-wide {
+      grid-column: auto;
+      aspect-ratio: 16 / 10;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .course-specs-strip {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .spec-item {
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 1rem;
+    }
+
+    .spec-item:last-child,
+    .spec-item:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    .stats-callout-row {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .career-wrapper,
+    .enroll-box {
+      padding: 3rem 1.5rem;
+    }
+  }
+</style>

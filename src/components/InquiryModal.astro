@@ -1,0 +1,350 @@
+---
+import { SITE_DATA } from '../data/siteData';
+---
+
+<div class="modal-backdrop" id="inquiryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <!-- Close Button -->
+    <button type="button" class="modal-close" data-close-inquiry-modal aria-label="Close modal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <div class="modal-crest">
+        <img src="/images/brand/logo.jpg" alt="Elite Crest" width="40" height="40" />
+      </div>
+      <div>
+        <span class="eyebrow">Admissions & Campus Visit</span>
+        <h3 class="modal-title" id="modalTitle">Connect with Elite</h3>
+      </div>
+    </div>
+    
+    <p class="modal-lead">
+      Fill in your details below. This will instantly launch a pre-filled WhatsApp chat directly with our admissions counseling team at Pipalbot, Old Baneshwor.
+    </p>
+
+    <!-- Static Interactive Form -->
+    <form class="modal-form" id="inquiryForm">
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="studentName" class="form-label">Full Name *</label>
+        <input 
+          type="text" 
+          id="studentName" 
+          name="studentName" 
+          class="form-input" 
+          placeholder="e.g. Aayush Sharma" 
+          required 
+        />
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="studentPhone" class="form-label">Contact Number (WhatsApp) *</label>
+        <input 
+          type="tel" 
+          id="studentPhone" 
+          name="studentPhone" 
+          class="form-input" 
+          placeholder="e.g. 9841XXXXXX" 
+          required 
+        />
+      </div>
+
+      <!-- Program Selection -->
+      <div class="form-group">
+        <label for="courseSelect" class="form-label">Program of Interest *</label>
+        <select id="courseSelect" name="courseSelect" class="form-select" required>
+          <option value="Diploma in Culinary Arts (DCA)">Diploma in Culinary Arts (DCA) — Flagship</option>
+          <option value="Diploma in Hotel Management (DHM)">Diploma in Hotel Management (DHM)</option>
+          <option value="Professional Barista Training">Professional Barista Training</option>
+          <option value="Bakery & Pastry Arts">Professional Bakery & Pastry Arts</option>
+          <option value="Bartending & Flair Mixology">Bartending & Flair Mixology</option>
+          <option value="Professional Sushi Training">Professional Sushi Masterclass</option>
+          <option value="Housekeeping & Front Office Operations">Housekeeping & Front Office Operations</option>
+        </select>
+      </div>
+
+      <!-- Inquiry Purpose -->
+      <div class="form-group">
+        <label for="inquiryPurpose" class="form-label">What would you like to know? *</label>
+        <select id="inquiryPurpose" name="inquiryPurpose" class="form-select" required>
+          <option value="Course fees, upcoming batch dates, and class shifts">Course fees, upcoming batch dates, and shifts</option>
+          <option value="Scheduling an in-person campus and kitchen lab tour">Schedule an in-person campus & kitchen tour</option>
+          <option value="Internship placement details in Nepal and abroad">Internship & career placement details</option>
+          <option value="General admission counseling and eligibility">General admission counseling</option>
+        </select>
+      </div>
+
+      <!-- Submit CTA -->
+      <button type="submit" class="btn btn-whatsapp btn-lg w-full submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+        Send Details via WhatsApp
+      </button>
+
+      <p class="form-disclaimer">
+        🔒 Direct connection to Elite's official WhatsApp ({SITE_DATA.institution.whatsappDisplay}). No marketing spam.
+      </p>
+    </form>
+  </div>
+</div>
+
+<style>
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: rgba(4, 7, 10, 0.85);
+    backdrop-filter: blur(14px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .modal-backdrop.is-open {
+    display: flex;
+    opacity: 1;
+  }
+
+  .modal-card {
+    background: #0E141D;
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: clamp(1.5rem, 3.5vw, 2.2rem);
+    position: relative;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+    transform: translateY(20px);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
+
+  .modal-card::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .modal-card::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .modal-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+
+  .modal-card::-webkit-scrollbar-thumb:hover {
+    background: var(--color-copper);
+  }
+
+  .modal-backdrop.is-open .modal-card {
+    transform: translateY(0);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+  }
+
+  .modal-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-crest {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #000;
+  }
+
+  .modal-crest img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modal-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .modal-lead {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .form-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-input, .form-select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--color-copper);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .form-select option {
+    background: #0E141D;
+    color: #fff;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .submit-btn {
+    margin-top: 0.5rem;
+  }
+
+  .form-disclaimer {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 0.25rem;
+  }
+</style>
+
+<script>
+  import { SITE_DATA } from '../data/siteData';
+
+  const modal = document.getElementById('inquiryModal');
+  const openButtons = document.querySelectorAll('[data-open-inquiry-modal], [data-open-modal]');
+  const closeButtons = document.querySelectorAll('[data-close-inquiry-modal]');
+  const form = document.getElementById('inquiryForm') as HTMLFormElement | null;
+  const courseSelect = document.getElementById('courseSelect') as HTMLSelectElement | null;
+
+  // Open handler with optional pre-selected course
+  openButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const preselectedCourse = target.getAttribute('data-preselect-course') || target.getAttribute('data-course-context');
+      if (preselectedCourse && courseSelect) {
+        // Try exact match or partial match
+        const matchingOption = Array.from(courseSelect.options).find(opt => 
+          opt.value.toLowerCase().includes(preselectedCourse.toLowerCase()) ||
+          preselectedCourse.toLowerCase().includes(opt.value.toLowerCase())
+        );
+        if (matchingOption) {
+          courseSelect.value = matchingOption.value;
+        }
+      }
+      if (modal) {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close handler
+  function closeModal() {
+    if (modal) {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  closeButtons.forEach((btn) => {
+    btn.addEventListener('click', closeModal);
+  });
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // Handle Form Submission -> WhatsApp Synthesizer
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const name = formData.get('studentName') as string;
+      const phone = formData.get('studentPhone') as string;
+      const course = formData.get('courseSelect') as string;
+      const purpose = formData.get('inquiryPurpose') as string;
+
+      const message = `Namaste Elite School of Hospitality Management!\n\n` +
+        `*Name:* ${name}\n` +
+        `*Contact:* ${phone}\n` +
+        `*Program of Interest:* ${course}\n` +
+        `*Inquiry Purpose:* ${purpose}\n\n` +
+        `I would like to receive details on upcoming batch dates, fees, and campus visit scheduling. Thank you!`;
+
+      const waUrl = `https://wa.me/${SITE_DATA.institution.whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank');
+      closeModal();
+    });
+  }
+</script>

@@ -1,0 +1,70 @@
+:root {
+  /* Core Culinary Dark Palette */
+  --color-bg-dark: #090D12;
+  --color-surface-dark: #101620;
+  --color-surface-elevated: #161E2B;
+  --color-surface-glass: rgba(16, 22, 32, 0.85);
+  
+  /* Borders */
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+  --color-border-active: rgba(217, 119, 54, 0.4);
+  
+  /* Text Dark Mode */
+  --color-text-primary: #F8F6F0;
+  --color-text-secondary: #9DA6B5;
+  --color-text-muted: #5E6776;
+  --color-text-light: #FFFFFF;
+
+  /* Culinary Accents */
+  --color-copper: #D97736;
+  --color-copper-light: #F08C4A;
+  --color-copper-glow: rgba(217, 119, 54, 0.2);
+  --color-gold: #E5A93C;
+  --color-gold-light: #F3BF5D;
+  --color-gold-glow: rgba(229, 169, 60, 0.2);
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #20BA5A;
+
+  /* Editorial Light Mode Alternation */
+  --color-bg-light: #F6F4ED;
+  --color-surface-light: #FFFFFF;
+  --color-text-dark: #0E131A;
+  --color-text-dark-muted: #5A6270;
+  --color-border-light: rgba(14, 19, 26, 0.1);
+
+  /* Typography Stack */
+  --font-display: 'Syne', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  /* Layout Containers */
+  --container-max: 1380px;
+  --container-wide: 1540px;
+  --container-reading: 860px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* Radius (Deliberately restrained, NEVER generic 32px bubbles) */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions & Motion */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}

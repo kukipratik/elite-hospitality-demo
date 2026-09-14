@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import InquiryModal from '../components/InquiryModal.astro';
+import { SITE_DATA } from '../data/siteData';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  currentPath?: string;
+  courseTitleForWa?: string;
+}
+
+const {
+  title = `${SITE_DATA.institution.name} | ${SITE_DATA.institution.tagline}`,
+  description = 'Kathmandu’s premier hands-on hospitality and culinary arts academy. 60+ days nonstop kitchen practicals, ten 4-course menus, dedicated Elite Bar, specialty barista lab, and structured hotel internships.',
+  ogImage = '/images/brand/cover.jpg',
+  currentPath = '/',
+  courseTitleForWa
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, 'https://elite.pratiklama.com.np').toString();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO DEMO SAFETY REQUIREMENT: NOINDEX NOFOLLOW -->
+  <meta name="robots" content="noindex,nofollow" />
+  
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content={SITE_DATA.institution.name} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Preconnect to Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+  <!-- Header -->
+  <Header currentPath={currentPath} />
+
+  <!-- Main Slot -->
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+  <!-- Interactive WhatsApp Floating Trigger -->
+  <WhatsAppButton courseTitle={courseTitleForWa} />
+
+  <!-- Interactive Inquiry & Campus Visit Modal -->
+  <InquiryModal />
+
+  <!-- GSAP Motion Layer -->
+  <script>
+    import { initGlobalAnimations } from '../scripts/animations';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobalAnimations();
+    });
+  </script>
+</body>
+</html>

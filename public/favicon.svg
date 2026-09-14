@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0B0F14"/>
+  <!-- Elite Star with Chef Hat in brand colors -->
+  <path d="M32 10L36.8 23.2H50.8L39.5 31.4L43.8 44.8L32 36.4L20.2 44.8L24.5 31.4L13.2 23.2H27.2L32 10Z" fill="url(#star_grad)" stroke="#D97736" stroke-width="1.5"/>
+  <!-- Chef Toque detail in center -->
+  <path d="M28 26C26.5 24 28 21 31 21C31.5 19 34 19 35 21C37 21 38 23 37 25C38.5 26.5 37.5 29 36 29H28C26.8 29 26.5 27 28 26Z" fill="#F8F6F0"/>
+  <rect x="28" y="29.5" width="8" height="2.5" rx="1" fill="#E5A93C"/>
+  <defs>
+    <linearGradient id="star_grad" x1="13.2" y1="10" x2="50.8" y2="44.8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D97736"/>
+      <stop offset="0.5" stop-color="#E5A93C"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+</svg>
