@@ -20,6 +20,14 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* Ensure sticky header does not obscure anchor navigation targets */
+section[id],
+div[id],
+header[id],
+footer[id] {
+  scroll-margin-top: 86px;
+}
+
 body {
   min-height: 100vh;
   overflow-x: hidden;

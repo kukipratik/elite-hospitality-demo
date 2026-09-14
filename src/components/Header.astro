@@ -20,18 +20,128 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
       </div>
     </a>
 
-    <!-- Desktop Navigation: Flat, Clean, No Pill Badges -->
+    <!-- Desktop Navigation: Architectural, Zero-Wrap, CIB Programs Dropdown -->
     <nav class="desktop-nav" aria-label="Primary Navigation">
-      <a href="/#courses" class={`nav-link ${currentPath === '/#courses' ? 'active' : ''}`}>Programs</a>
-      <a href="/courses/dca" class={`nav-link ${currentPath === '/courses/dca' ? 'active' : ''}`}>Culinary Arts (DCA)</a>
-      <a href="/#methodology" class="nav-link">Why Elite</a>
-      <a href="/#practical" class="nav-link">Experience</a>
-      <a href="/#campus" class="nav-link">Campus</a>
+      <!-- Programs with Interactive Dropdown Sheet -->
+      <div class="nav-item-dropdown" id="navDropdown">
+        <a 
+          href="/#courses" 
+          class={`nav-link dropdown-trigger ${currentPath === '/#courses' ? 'active' : ''}`}
+          aria-haspopup="true"
+          aria-expanded="false"
+          id="programsTrigger"
+        >
+          <span>Programs</span>
+          <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Dropdown Menu Sheet (Light Mode Editorial Card) -->
+        <div class="dropdown-menu" role="menu" aria-labelledby="programsTrigger">
+          <div class="dropdown-inner">
+            <!-- Left: Flagship Showcase -->
+            <div class="dropdown-col flagship-col">
+              <span class="dropdown-category-label">FLAGSHIP QUALIFICATION</span>
+              <a href="/courses/dca" class="dropdown-flagship-card">
+                <div class="flagship-card-meta">
+                  <span class="badge-flagship">6 MONTHS INTENSIVE</span>
+                  <span class="badge-accent">60+ DAYS PRACTICAL</span>
+                </div>
+                <h4 class="flagship-card-title">Diploma in Culinary Arts (DCA)</h4>
+                <p class="flagship-card-desc">
+                  Professional line chef training with ten 4-course European menu masterclasses, artisan bakery, sushi, and hotel internship in Nepal.
+                </p>
+                <span class="flagship-card-link">View Full DCA Curriculum &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Right: Specialized Tracks Grid -->
+            <div class="dropdown-col disciplines-col">
+              <span class="dropdown-category-label">SPECIALIZED TRACKS</span>
+              <div class="disciplines-grid">
+                <a href="/#courses" class="discipline-item">
+                  <span class="discipline-tag tag-diploma">1 YEAR</span>
+                  <div class="discipline-info">
+                    <strong class="discipline-title">Diploma in Hotel Management (DHM)</strong>
+                    <span class="discipline-sub">F&B, Front Office, Housekeeping</span>
+                  </div>
+                </a>
+
+                <a href="/#courses" class="discipline-item">
+                  <span class="discipline-tag tag-beverage">1 MONTH</span>
+                  <div class="discipline-info">
+                    <strong class="discipline-title">Professional Barista Training</strong>
+                    <span class="discipline-sub">Espresso Science & Swan Latte Art</span>
+                  </div>
+                </a>
+
+                <a href="/#courses" class="discipline-item">
+                  <span class="discipline-tag tag-artisan">2 MONTHS</span>
+                  <div class="discipline-info">
+                    <strong class="discipline-title">Professional Bakery & Pastry Arts</strong>
+                    <span class="discipline-sub">Boulangerie, Entremets & Cakes</span>
+                  </div>
+                </a>
+
+                <a href="/#courses" class="discipline-item">
+                  <span class="discipline-tag tag-beverage">1 MONTH</span>
+                  <div class="discipline-info">
+                    <strong class="discipline-title">Bartending & Flair Mixology</strong>
+                    <span class="discipline-sub">The Elite Bar Studio Sessions</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Dropdown Footer Action -->
+              <div class="dropdown-bottom-row">
+                <a href="/#courses" class="dropdown-all-link">
+                  <span>Explore All 7 Vocational Disciplines</span>
+                  <span class="link-arrow">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct Navigation Links -->
+      <a 
+        href="/courses/dca" 
+        class={`nav-link ${currentPath === '/courses/dca' ? 'active' : ''}`}
+        data-nav-item="dca"
+      >
+        Culinary Arts
+      </a>
+
+      <a 
+        href="/#methodology" 
+        class="nav-link" 
+        data-nav-section="methodology"
+      >
+        Why Elite
+      </a>
+
+      <a 
+        href="/#internship" 
+        class="nav-link" 
+        data-nav-section="internship"
+      >
+        Experience
+      </a>
+
+      <a 
+        href="/#campus" 
+        class="nav-link" 
+        data-nav-section="campus"
+      >
+        Campus
+      </a>
     </nav>
 
-    <!-- Header Actions: Direct Phone + Architectural WhatsApp Button -->
+    <!-- Header Actions: Direct Phone + Architectural Inquire + WhatsApp -->
     <div class="header-actions">
-      <a href={`tel:${SITE_DATA.institution.primaryPhone.replace('-', '')}`} class="header-phone">
+      <a href={`tel:${SITE_DATA.institution.primaryPhone.replace('-', '')}`} class="header-phone" title="Admissions Desk Phone">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
@@ -43,13 +153,13 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
       </button>
 
       <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-header-wa" aria-label="WhatsApp admissions chat">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
         </svg>
         <span>WhatsApp</span>
       </a>
 
-      <!-- Mobile Hamburger -->
+      <!-- Mobile Hamburger Toggle -->
       <button type="button" class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -57,18 +167,51 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     </div>
   </div>
 
-  <!-- Mobile Drawer -->
+  <!-- Mobile Drawer: CIB Editorial Layout with Category Indices -->
   <div class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <span class="micro-label">ACADEMIC DISCIPLINES & CAMPUS</span>
+      </div>
+
       <nav class="mobile-nav">
-        <a href="/#courses" class="mobile-nav-link">All Programs</a>
-        <a href="/courses/dca" class="mobile-nav-link">Diploma in Culinary Arts (DCA)</a>
-        <a href="/#methodology" class="mobile-nav-link">Why Elite</a>
-        <a href="/#practical" class="mobile-nav-link">Kitchen Training (60+ Days)</a>
-        <a href="/#video-gallery" class="mobile-nav-link">Inside Elite Reels</a>
-        <a href="/#internship" class="mobile-nav-link">Internship & ODC</a>
-        <a href="/#reviews" class="mobile-nav-link">Student Reviews</a>
-        <a href="/#campus" class="mobile-nav-link">Location & Visit</a>
+        <a href="/#courses" class="mobile-nav-link">
+          <span class="mobile-nav-num">01</span>
+          <span class="mobile-nav-text">All Academic Programs</span>
+        </a>
+
+        <a href="/courses/dca" class="mobile-nav-link highlight-dca">
+          <span class="mobile-nav-num">02</span>
+          <div class="mobile-nav-stacked">
+            <span class="mobile-nav-text">Diploma in Culinary Arts (DCA)</span>
+            <span class="mobile-nav-sub">Flagship · 60+ Days Kitchen Practical</span>
+          </div>
+        </a>
+
+        <a href="/#methodology" class="mobile-nav-link">
+          <span class="mobile-nav-num">03</span>
+          <span class="mobile-nav-text">Why Elite (Kitchen Reality vs Lecture)</span>
+        </a>
+
+        <a href="/#video-gallery" class="mobile-nav-link">
+          <span class="mobile-nav-num">04</span>
+          <span class="mobile-nav-text">Inside Elite (Documentary Video Reels)</span>
+        </a>
+
+        <a href="/#internship" class="mobile-nav-link">
+          <span class="mobile-nav-num">05</span>
+          <span class="mobile-nav-text">Internship & ODC Certification</span>
+        </a>
+
+        <a href="/#reviews" class="mobile-nav-link">
+          <span class="mobile-nav-num">06</span>
+          <span class="mobile-nav-text">Student Reviews (4.7★ Google Verified)</span>
+        </a>
+
+        <a href="/#campus" class="mobile-nav-link">
+          <span class="mobile-nav-num">07</span>
+          <span class="mobile-nav-text">Pipalbot Campus & Google Map</span>
+        </a>
       </nav>
 
       <div class="mobile-actions">
@@ -76,13 +219,13 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
           Chat on WhatsApp
         </a>
         <button type="button" class="btn-cib-outline w-full text-center" data-open-inquiry-modal>
-          Inquire / Book Campus Visit
+          Book an In-Person Campus Tour
         </button>
       </div>
 
       <div class="mobile-footer">
         <p class="mobile-address">Pipalbot, Old Baneshwor, Devkota Sadak, Kathmandu</p>
-        <p class="mobile-contact">Call: {SITE_DATA.institution.primaryPhone} / {SITE_DATA.institution.mobilePhone}</p>
+        <p class="mobile-contact">Direct Desk: {SITE_DATA.institution.primaryPhone} / {SITE_DATA.institution.mobilePhone}</p>
       </div>
     </div>
   </div>
@@ -150,52 +293,275 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--color-text-secondary);
-    margin-top: 2px;
+    margin-top: 3px;
+    white-space: nowrap;
   }
 
   /* Desktop Nav */
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 2.25rem;
+    gap: 2rem;
+    height: 76px;
   }
 
   .nav-link {
+    display: inline-flex;
+    align-items: center;
+    height: 76px;
     font-family: var(--font-display);
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-navy);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.015em;
     position: relative;
-    padding: 0.4rem 0;
-    transition: color var(--transition-fast);
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--color-orange);
-    transition: width var(--transition-normal);
+    padding: 0 0.25rem;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    text-decoration: none;
   }
 
   .nav-link:hover {
     color: var(--color-orange);
   }
 
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 100%;
+  .nav-link.active {
+    color: var(--color-orange);
+    border-bottom-color: var(--color-orange);
+  }
+
+  /* Programs Dropdown */
+  .nav-item-dropdown {
+    position: relative;
+    height: 76px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .dropdown-trigger {
+    gap: 0.35rem;
+    cursor: pointer;
+  }
+
+  .dropdown-chevron {
+    transition: transform var(--transition-fast);
+  }
+
+  .nav-item-dropdown:hover .dropdown-chevron,
+  .nav-item-dropdown:focus-within .dropdown-chevron {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 76px;
+    left: -1.5rem;
+    width: 680px;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    box-shadow: 0 20px 45px rgba(11, 19, 43, 0.12);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    z-index: 1001;
+  }
+
+  .nav-item-dropdown:hover .dropdown-menu,
+  .nav-item-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .dropdown-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 1.35fr;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+
+  .dropdown-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-category-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.85rem;
+  }
+
+  /* Flagship Showcase Card in Dropdown */
+  .dropdown-flagship-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background-color: var(--color-bg-warm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    text-decoration: none;
+    height: 100%;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .dropdown-flagship-card:hover {
+    border-color: var(--color-orange);
+    background-color: #FFFFFF;
+  }
+
+  .flagship-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .badge-flagship {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    background-color: var(--color-navy);
+    color: #FFFFFF;
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+  }
+
+  .badge-accent {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    background-color: var(--color-orange);
+    color: #FFFFFF;
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+  }
+
+  .flagship-card-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--color-navy);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .flagship-card-desc {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.85rem;
+    flex-grow: 1;
+  }
+
+  .flagship-card-link {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-orange);
+  }
+
+  /* Disciplines Grid */
+  .disciplines-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .discipline-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: var(--radius-xs);
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+  }
+
+  .discipline-item:hover {
+    background-color: var(--color-bg-warm);
+  }
+
+  .discipline-tag {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+    min-width: 54px;
+    text-align: center;
+  }
+
+  .tag-diploma {
+    background-color: var(--color-navy);
+    color: #FFFFFF;
+  }
+
+  .tag-beverage {
+    background-color: var(--color-emerald);
+    color: #FFFFFF;
+  }
+
+  .tag-artisan {
+    background-color: var(--color-magenta);
+    color: #FFFFFF;
+  }
+
+  .discipline-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .discipline-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.2;
+  }
+
+  .discipline-sub {
+    font-size: 0.6875rem;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+  }
+
+  .dropdown-bottom-row {
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .dropdown-all-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .dropdown-all-link:hover {
+    color: var(--color-orange-hover);
+    text-decoration: underline;
   }
 
   /* Header Actions */
   .header-actions {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.15rem;
+    flex-shrink: 0;
   }
 
   .header-phone {
@@ -206,7 +572,9 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     font-size: 0.8125rem;
     font-weight: 600;
     color: var(--color-navy);
+    white-space: nowrap;
     transition: color var(--transition-fast);
+    text-decoration: none;
   }
 
   .header-phone:hover {
@@ -223,6 +591,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     border: 1.5px solid var(--color-border-medium);
     border-radius: var(--radius-xs);
     color: var(--color-navy);
+    white-space: nowrap;
     transition: all var(--transition-fast);
   }
 
@@ -246,7 +615,9 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     border-radius: var(--radius-xs);
     background-color: var(--color-orange);
     color: #FFFFFF;
+    white-space: nowrap;
     transition: all var(--transition-fast);
+    text-decoration: none;
   }
 
   .btn-header-wa:hover {
@@ -261,9 +632,11 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     padding: 6px;
+    border-radius: var(--radius-xs);
+    background: transparent;
   }
 
   .mobile-toggle .bar {
@@ -293,31 +666,70 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     border-top: 1px solid var(--color-border);
     overflow-y: auto;
     z-index: 999;
-    padding: 2rem var(--gutter);
+    padding: 1.75rem var(--gutter) 3rem;
   }
 
   .mobile-drawer.open {
     display: block;
   }
 
+  .mobile-drawer-header {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1.25rem;
+  }
+
   .mobile-nav {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.5rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--color-border);
   }
 
   .mobile-nav-link {
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--color-navy);
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: var(--radius-xs);
     text-decoration: none;
+    transition: background-color var(--transition-fast);
   }
 
   .mobile-nav-link:hover {
+    background-color: var(--color-bg-warm);
+  }
+
+  .mobile-nav-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--color-orange);
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-text {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-navy);
+  }
+
+  .mobile-nav-stacked {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-nav-sub {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+
+  .highlight-dca {
+    background-color: var(--color-bg-warm);
+    border: 1px solid var(--color-border);
   }
 
   .mobile-actions {
@@ -332,14 +744,11 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     padding: 0.85rem 1.25rem;
     font-size: 0.8125rem;
     border-radius: var(--radius-xs);
+    text-align: center;
   }
 
   .mobile-actions .w-full {
     width: 100%;
-  }
-
-  .text-center {
-    text-align: center;
   }
 
   .mobile-footer {
@@ -354,6 +763,34 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     color: var(--color-navy);
   }
 
+  /* ==========================================================================
+     RESPONSIVE BREAKPOINTS (ZERO WRAPPING AT ANY RES)
+     ========================================================================== */
+  
+  /* Laptops and Narrow Desktops: tighten gaps, hide secondary copy */
+  @media (max-width: 1240px) {
+    .desktop-nav {
+      gap: 1.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.8125rem;
+    }
+
+    .brand-tagline {
+      display: none;
+    }
+
+    .header-phone {
+      display: none;
+    }
+
+    .dropdown-menu {
+      width: 620px;
+    }
+  }
+
+  /* Tablets & Under: Switch to Mobile Drawer */
   @media (max-width: 1024px) {
     .desktop-nav {
       display: none;
@@ -368,6 +805,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     }
   }
 
+  /* Mobile Devices (<640px) */
   @media (max-width: 640px) {
     .btn-header-inquire {
       display: none;
@@ -393,7 +831,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
 </style>
 
 <script>
-  // Header scroll detection & Mobile drawer toggle
+  // 1. Header scroll detection (backdrop blur)
   const header = document.getElementById('mainHeader');
   const toggleBtn = document.getElementById('mobileMenuToggle');
   const drawer = document.getElementById('mobileDrawer');
@@ -406,6 +844,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     }
   }, { passive: true });
 
+  // 2. Mobile Drawer Toggle
   toggleBtn?.addEventListener('click', () => {
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
     toggleBtn.setAttribute('aria-expanded', (!isExpanded).toString());
@@ -423,4 +862,35 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
       document.body.style.overflow = '';
     });
   });
+
+  // 3. Scrollspy: Highlight active section in desktop nav when on homepage
+  if (typeof window !== 'undefined' && (window.location.pathname === '/' || window.location.pathname === '')) {
+    const navSections = [
+      { id: 'courses', link: document.querySelector('.dropdown-trigger') },
+      { id: 'methodology', link: document.querySelector('[data-nav-section="methodology"]') },
+      { id: 'internship', link: document.querySelector('[data-nav-section="internship"]') },
+      { id: 'campus', link: document.querySelector('[data-nav-section="campus"]') }
+    ];
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const match = navSections.find(s => s.id === entry.target.id);
+          if (match && match.link) {
+            document.querySelectorAll('.desktop-nav .nav-link').forEach(l => l.classList.remove('active'));
+            match.link.classList.add('active');
+          }
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    });
+
+    navSections.forEach(sec => {
+      const el = document.getElementById(sec.id);
+      if (el) observer.observe(el);
+    });
+  }
 </script>
