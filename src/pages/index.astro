@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CourseCard from '../components/CourseCard.astro';
-import VideoPlayer from '../components/VideoPlayer.astro';
-import { SITE_DATA } from '../data/siteData';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CourseCard from "../components/CourseCard.astro";
+import VideoPlayer from "../components/VideoPlayer.astro";
+import { SITE_DATA } from "../data/siteData";
 
-const flagshipCourse = SITE_DATA.courses.find(c => c.isFlagship) || SITE_DATA.courses[0];
-const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
+const flagshipCourse =
+  SITE_DATA.courses.find((c) => c.isFlagship) || SITE_DATA.courses[0];
+const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
 ---
 
-<BaseLayout 
+<BaseLayout
   title="Elite School of Hospitality Management | Kathmandu, Nepal"
   description="Kathmandu's premier practical hospitality academy at Pipalbot, Old Baneshwor. 60+ days nonstop commercial kitchen practicals, ten 4-course menus, dedicated Elite Bar, specialty barista studio, and structured hotel internships."
   currentPath="/"
@@ -29,7 +30,10 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         </h1>
 
         <p class="hero-serif-lead">
-          Kathmandu’s premier hands-on culinary academy. Where students transition into disciplined professional chefs through 60+ days of nonstop commercial kitchen practicals and structured hotel internships.
+          Kathmandu’s premier hands-on culinary academy. Where students
+          transition into disciplined professional chefs through 60+ days of
+          nonstop commercial kitchen practicals and structured hotel
+          internships.
         </p>
 
         <!-- Hairline Action Cluster -->
@@ -37,17 +41,37 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           <a href="/courses/dca" class="btn btn-cib-solid">
             Explore Flagship DCA &rarr;
           </a>
-          <button type="button" class="btn btn-cib-outline" data-open-inquiry-modal>
+          <button
+            type="button"
+            class="btn btn-cib-outline"
+            data-open-inquiry-modal
+          >
             Book Campus Tour
           </button>
         </div>
 
         <!-- Direct WhatsApp Micro-Link -->
         <div class="hero-wa-note">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="wa-icon">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="wa-icon"
+          >
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"
+            ></path>
           </svg>
-          <span>Direct Admissions Desk: <a href={SITE_DATA.getWhatsAppLink()} target="_blank" rel="noopener noreferrer" class="wa-num">{SITE_DATA.institution.whatsappDisplay}</a> (08:00 AM – 05:00 PM)</span>
+          <span
+            >Direct Admissions Desk: <a
+              href={SITE_DATA.getWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="wa-num">{SITE_DATA.institution.whatsappDisplay}</a
+            > (08:00 AM – 05:00 PM)</span
+          >
         </div>
 
         <!-- Unboxed Metrics Line -->
@@ -74,11 +98,11 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         <div class="stepped-collage">
           <!-- Primary Action Photo with Offset Frame -->
           <div class="collage-main-frame">
-            <img 
-              src="/images/kitchen/searing_chicken.jpg" 
-              alt="Elite Culinary Student Searing Pan on Commercial Flame" 
+            <img
+              src="/images/kitchen/searing_chicken.jpg"
+              alt="Elite Culinary Student Searing Pan on Commercial Flame"
               class="collage-img-main"
-              width="640" 
+              width="640"
               height="440"
               fetchpriority="high"
             />
@@ -87,11 +111,11 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
 
           <!-- Secondary Stepped Vertical Photo -->
           <div class="collage-sub-frame">
-            <img 
-              src="/images/kitchen/chef_technique.jpg" 
-              alt="Culinary Technique Masterclass at Elite Kathmandu" 
+            <img
+              src="/images/kitchen/chef_technique.jpg"
+              alt="Culinary Technique Masterclass at Elite Kathmandu"
               class="collage-img-sub"
-              width="320" 
+              width="320"
               height="420"
             />
             <div class="sub-frame-caption">
@@ -114,7 +138,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
       <div class="manifesto-header">
         <span class="micro-label">The Elite Philosophy</span>
         <blockquote class="manifesto-quote serif-quote">
-          “In a craft defined by knife precision, fire control, and timing under pressure, lectures are never enough. Elite is built around the daily rhythm of a working commercial kitchen.”
+          “In a craft defined by knife precision, fire control, and timing under
+          pressure, lectures are never enough. Elite is built around the daily
+          rhythm of a working commercial kitchen.”
         </blockquote>
       </div>
 
@@ -122,26 +148,41 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
       <div class="unboxed-stats-grid">
         <div class="unboxed-stat-item">
           <div class="stat-number-unboxed">60<span class="accent">+</span></div>
-          <div class="stat-label-unboxed">Days Nonstop Commercial Kitchen Practical</div>
-          <p class="stat-subtext">Hands-on cooking every single morning and afternoon shift.</p>
+          <div class="stat-label-unboxed">
+            Days Nonstop Commercial Kitchen Practical
+          </div>
+          <p class="stat-subtext">
+            Hands-on cooking every single morning and afternoon shift.
+          </p>
         </div>
 
         <div class="unboxed-stat-item">
           <div class="stat-number-unboxed">10</div>
-          <div class="stat-label-unboxed">Complete 4-Course Menu Masterclasses</div>
-          <p class="stat-subtext">Appetizers, classical soups, pasta precision, and hotel-grade entrees.</p>
+          <div class="stat-label-unboxed">
+            Complete 4-Course Menu Masterclasses
+          </div>
+          <p class="stat-subtext">
+            Appetizers, classical soups, pasta precision, and hotel-grade
+            entrees.
+          </p>
         </div>
 
         <div class="unboxed-stat-item">
-          <div class="stat-number-unboxed">4.7<span class="accent">★</span></div>
+          <div class="stat-number-unboxed">
+            4.7<span class="accent">★</span>
+          </div>
           <div class="stat-label-unboxed">Google Rating Across 74 Reviews</div>
-          <p class="stat-subtext">89% five-star student ratings verified on Google Maps.</p>
+          <p class="stat-subtext">
+            89% five-star student ratings verified on Google Maps.
+          </p>
         </div>
 
         <div class="unboxed-stat-item">
           <div class="stat-number-unboxed">3–6</div>
           <div class="stat-label-unboxed">Months Hotel & Resort Internship</div>
-          <p class="stat-subtext">Nepal hotel, resort & fine dining placement with ODC certification.</p>
+          <p class="stat-subtext">
+            Nepal hotel, resort & fine dining placement with ODC certification.
+          </p>
         </div>
       </div>
     </div>
@@ -155,21 +196,26 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
       <div class="section-header-editorial">
         <div>
           <span class="eyebrow">Academic Disciplines</span>
-          <h2 class="headline-xl">CHOOSE YOUR <span class="text-orange">PATH.</span></h2>
+          <h2 class="headline-xl">
+            CHOOSE YOUR <span class="text-orange">PATH.</span>
+          </h2>
         </div>
         <p class="lead-text">
-          Whether your goal is to command a commercial line kitchen, master hotel management, or specialize in third-wave specialty espresso and mixology, our programs provide rigorous hands-on training from day one.
+          Whether your goal is to command a commercial line kitchen, master
+          hotel management, or specialize in third-wave specialty espresso and
+          mixology, our programs provide rigorous hands-on training from day
+          one.
         </p>
       </div>
 
       <!-- Flagship Feature Spread: DCA -->
       <div class="flagship-feature-spread">
         <div class="flagship-media-col">
-          <img 
-            src="/images/kitchen/cooking_demo.jpg" 
-            alt="Practical Kitchen Cooking Demo at Elite" 
+          <img
+            src="/images/kitchen/cooking_demo.jpg"
+            alt="Practical Kitchen Cooking Demo at Elite"
             class="flagship-feature-img"
-            width="800" 
+            width="800"
             height="520"
           />
           <div class="flagship-media-tag">
@@ -184,25 +230,32 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           </div>
           <h3 class="flagship-title">Professional Chef Qualification</h3>
           <p class="flagship-desc">
-            Our premier qualification built for serious culinary professionals. Over 60 continuous practical kitchen days covering classical culinary foundations, master sauces, commercial pan-searing, bakery & pastry, sushi art, and chocolate crafting.
+            Our premier qualification built for serious culinary professionals.
+            Over 60 continuous practical kitchen days covering classical
+            culinary foundations, master sauces, commercial pan-searing, bakery
+            & pastry, sushi art, and chocolate crafting.
           </p>
 
           <ul class="flagship-highlights-list">
             <li>
               <span class="bullet-dot"></span>
-              <strong>60+ Days Nonstop Practical:</strong> Workstation sanitation, butchery cuts, high-heat sautéing, and flame wok cooking.
+              <strong>60+ Days Nonstop Practical:</strong> Workstation sanitation,
+              butchery cuts, high-heat sautéing, and flame wok cooking.
             </li>
             <li>
               <span class="bullet-dot"></span>
-              <strong>Ten 4-Course Menu Executions:</strong> Classical French & European multi-course banquets timed to fine-dining standards.
+              <strong>Ten 4-Course Menu Executions:</strong> Classical French & European
+              multi-course banquets timed to fine-dining standards.
             </li>
             <li>
               <span class="bullet-dot"></span>
-              <strong>Multi-Disciplinary Modules:</strong> Professional Bakery, Sushi Rolling, Chocolate Tempering & Fruit Carving.
+              <strong>Multi-Disciplinary Modules:</strong> Professional Bakery, Sushi
+              Rolling, Chocolate Tempering & Fruit Carving.
             </li>
             <li>
               <span class="bullet-dot"></span>
-              <strong>Hotel & Resort Internship:</strong> 3 to 6 months placement in Nepal with official ODC banqueting certificate.
+              <strong>Hotel & Resort Internship:</strong> 3 to 6 months placement
+              in Nepal with official ODC banqueting certificate.
             </li>
           </ul>
 
@@ -210,10 +263,10 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
             <a href="/courses/dca" class="btn btn-cib-solid">
               View Complete DCA Curriculum &rarr;
             </a>
-            <a 
-              href={SITE_DATA.getWhatsAppLink('Diploma in Culinary Arts (DCA)')} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={SITE_DATA.getWhatsAppLink("Diploma in Culinary Arts (DCA)")}
+              target="_blank"
+              rel="noopener noreferrer"
               class="btn btn-cib-outline"
             >
               Inquire on WhatsApp
@@ -231,19 +284,47 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           <span class="micro-label">SPECIALIZED DISCIPLINES</span>
           <h3 class="courses-sub-title">EXPLORE ALL VOCATIONAL PATHWAYS</h3>
         </div>
-        
+
         <!-- Intent-Based Filter Tabs -->
-        <div class="course-filter-bar" role="tablist" aria-label="Filter courses by discipline">
-          <button type="button" class="filter-tab is-active" data-filter="all" role="tab" aria-selected="true">
+        <div
+          class="course-filter-bar"
+          role="tablist"
+          aria-label="Filter courses by discipline"
+        >
+          <button
+            type="button"
+            class="filter-tab is-active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+          >
             All Disciplines <span class="tab-count">(6)</span>
           </button>
-          <button type="button" class="filter-tab" data-filter="diploma" role="tab" aria-selected="false">
+          <button
+            type="button"
+            class="filter-tab"
+            data-filter="diploma"
+            role="tab"
+            aria-selected="false"
+          >
             Professional Diplomas <span class="tab-count">(2)</span>
           </button>
-          <button type="button" class="filter-tab" data-filter="beverage" role="tab" aria-selected="false">
+          <button
+            type="button"
+            class="filter-tab"
+            data-filter="beverage"
+            role="tab"
+            aria-selected="false"
+          >
             Beverage & Coffee Studio <span class="tab-count">(2)</span>
           </button>
-          <button type="button" class="filter-tab" data-filter="artisan" role="tab" aria-selected="false">
+          <button
+            type="button"
+            class="filter-tab"
+            data-filter="artisan"
+            role="tab"
+            aria-selected="false"
+          >
             Artisan Crafts <span class="tab-count">(2)</span>
           </button>
         </div>
@@ -251,9 +332,11 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
 
       <!-- Other Specialized Disciplines Grid (<15% Boxed, Editorial Architecture) -->
       <div class="courses-editorial-grid">
-        {otherCourses.map((course, idx) => (
-          <CourseCard course={course} index={idx} />
-        ))}
+        {
+          otherCourses.map((course, idx) => (
+            <CourseCard course={course} index={idx} />
+          ))
+        }
       </div>
     </div>
   </section>
@@ -273,7 +356,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           </h2>
 
           <p class="methodology-lead">
-            Hospitality is an embodied discipline. You cannot learn knife balance, oil temperature, emulsion stability, or table service from a textbook slide.
+            Hospitality is an embodied discipline. You cannot learn knife
+            balance, oil temperature, emulsion stability, or table service from
+            a textbook slide.
           </p>
 
           <div class="pillars-editorial-list">
@@ -282,7 +367,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
               <div class="pillar-body">
                 <h4 class="pillar-heading">Dedicated Commercial Stations</h4>
                 <p class="pillar-text">
-                  Every student operates real high-power gas burners, stainless steel prep tables, commercial ovens, and heavy-gauge cookware rather than observer benches.
+                  Every student operates real high-power gas burners, stainless
+                  steel prep tables, commercial ovens, and heavy-gauge cookware
+                  rather than observer benches.
                 </p>
               </div>
             </div>
@@ -290,9 +377,13 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
             <div class="pillar-row">
               <div class="pillar-num">02</div>
               <div class="pillar-body">
-                <h4 class="pillar-heading">The Elite Bar — Mixology & Flair Studio</h4>
+                <h4 class="pillar-heading">
+                  The Elite Bar — Mixology & Flair Studio
+                </h4>
                 <p class="pillar-text">
-                  A custom neon-lit training bar equipped with speed rails, glassware, spirit jiggers, and shaker tins. Students master real service speed and flair techniques.
+                  A custom neon-lit training bar equipped with speed rails,
+                  glassware, spirit jiggers, and shaker tins. Students master
+                  real service speed and flair techniques.
                 </p>
               </div>
             </div>
@@ -302,7 +393,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
               <div class="pillar-body">
                 <h4 class="pillar-heading">Specialty Espresso Barista Lab</h4>
                 <p class="pillar-text">
-                  Commercial dual-boiler espresso machinery, burr grinders, and milk frothing stations. Training covers extraction yield, sensory tasting, and swan latte art.
+                  Commercial dual-boiler espresso machinery, burr grinders, and
+                  milk frothing stations. Training covers extraction yield,
+                  sensory tasting, and swan latte art.
                 </p>
               </div>
             </div>
@@ -310,9 +403,13 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
             <div class="pillar-row">
               <div class="pillar-num">04</div>
               <div class="pillar-body">
-                <h4 class="pillar-heading">ODC Banqueting & Event Certification</h4>
+                <h4 class="pillar-heading">
+                  ODC Banqueting & Event Certification
+                </h4>
                 <p class="pillar-text">
-                  Outdoor Catering (ODC) experience managing real event banquets and fine dining galas, leading to certified event credentials upon graduation.
+                  Outdoor Catering (ODC) experience managing real event banquets
+                  and fine dining galas, leading to certified event credentials
+                  upon graduation.
                 </p>
               </div>
             </div>
@@ -322,22 +419,22 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         <!-- Right Visual Collage -->
         <div class="methodology-media">
           <div class="methodology-photo-wrapper">
-            <img 
-              src="/images/kitchen/culinary_auditorium.jpg" 
-              alt="Elite Culinary Masterclass Session" 
+            <img
+              src="/images/kitchen/culinary_auditorium.jpg"
+              alt="Elite Culinary Masterclass Session"
               class="methodology-main-img"
-              width="700" 
+              width="700"
               height="500"
             />
             <div class="methodology-frame-accent"></div>
           </div>
 
           <div class="methodology-bar-card">
-            <img 
-              src="/images/bar/elite_bar_neon.jpg" 
-              alt="The Elite Bar Mixology Session" 
+            <img
+              src="/images/bar/elite_bar_neon.jpg"
+              alt="The Elite Bar Mixology Session"
               class="bar-sub-img"
-              width="400" 
+              width="400"
               height="280"
             />
             <div class="bar-caption">
@@ -358,17 +455,21 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
       <div class="section-header-editorial">
         <div>
           <span class="eyebrow">Documentary Evidence</span>
-          <h2 class="headline-xl">INSIDE THE <span class="text-orange">KITCHEN.</span></h2>
+          <h2 class="headline-xl">
+            INSIDE THE <span class="text-orange">KITCHEN.</span>
+          </h2>
         </div>
         <p class="lead-text">
-          Watch authentic moments recorded directly during practical sessions at our Pipalbot campus. Live pan searing, swan latte art, and high-energy bar flair.
+          Watch authentic moments recorded directly during practical sessions at
+          our Pipalbot campus. Live pan searing, swan latte art, and high-energy
+          bar flair.
         </p>
       </div>
 
       <!-- 3 Video Reels Grid -->
       <div class="reels-editorial-grid">
-        <VideoPlayer 
-          videoSrc="/video/elite_reel_1.mp4" 
+        <VideoPlayer
+          videoSrc="/video/elite_reel_1.mp4"
           posterSrc="/images/kitchen/searing_chicken.jpg"
           title="Hot Kitchen Pan-Searing & High Flame Cooking"
           tag="Kitchen Practical"
@@ -376,8 +477,8 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           id="reel-kitchen"
         />
 
-        <VideoPlayer 
-          videoSrc="/video/elite_reel_2.mp4" 
+        <VideoPlayer
+          videoSrc="/video/elite_reel_2.mp4"
           posterSrc="/images/barista/latte_tasting.jpg"
           title="Specialty Espresso Extraction & Swan Latte Art"
           tag="Barista Studio"
@@ -385,8 +486,8 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           id="reel-barista"
         />
 
-        <VideoPlayer 
-          videoSrc="/video/elite_reel_3.mp4" 
+        <VideoPlayer
+          videoSrc="/video/elite_reel_3.mp4"
           posterSrc="/images/bar/elite_bar_neon.jpg"
           title="The Elite Bar: Mixology & Flair Routine"
           tag="The Elite Bar"
@@ -404,9 +505,13 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
     <div class="container-wide">
       <div class="experience-header">
         <span class="eyebrow">Career Launchpad</span>
-        <h2 class="headline-lg">REAL-WORLD INDUSTRY <span class="text-orange">IMMERSION.</span></h2>
+        <h2 class="headline-lg">
+          REAL-WORLD INDUSTRY <span class="text-orange">IMMERSION.</span>
+        </h2>
         <p class="lead-text">
-          Elite does not leave students at the classroom door. Our programs transition seamlessly into structured hotel and fine dining placements across Nepal.
+          Elite does not leave students at the classroom door. Our programs
+          transition seamlessly into structured hotel and fine dining placements
+          across Nepal.
         </p>
       </div>
 
@@ -416,7 +521,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           <div class="exp-index">01</div>
           <h3 class="exp-title">3 to 6 Months Hotel & Resort Internship</h3>
           <p class="exp-desc">
-            Structured practical internships in Nepal’s prominent hotels, boutique resorts, and fine dining establishments. Students gain verified line experience under executive chefs and F&B directors.
+            Structured practical internships in Nepal’s prominent hotels,
+            boutique resorts, and fine dining establishments. Students gain
+            verified line experience under executive chefs and F&B directors.
           </p>
           <div class="exp-tag-row">
             <span class="micro-label">VERIFIED SCOPE</span>
@@ -428,7 +535,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           <div class="exp-index">02</div>
           <h3 class="exp-title">ODC (Outdoor Catering) Certification</h3>
           <p class="exp-desc">
-            Students actively participate in large-scale banqueting and high-end outdoor events, earning official ODC credentials that demonstrate capability to handle high-volume service.
+            Students actively participate in large-scale banqueting and high-end
+            outdoor events, earning official ODC credentials that demonstrate
+            capability to handle high-volume service.
           </p>
           <div class="exp-tag-row">
             <span class="micro-label">CERTIFIED</span>
@@ -438,9 +547,14 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
 
         <div class="exp-column">
           <div class="exp-index">03</div>
-          <h3 class="exp-title">Institutional Workshops & Practical Collaborations</h3>
+          <h3 class="exp-title">
+            Institutional Workshops & Practical Collaborations
+          </h3>
           <p class="exp-desc">
-            Elite has welcomed and conducted practical culinary training sessions with visiting hospitality students from colleges across Kathmandu including Janapremi College and The Times International College.
+            Elite has welcomed and conducted practical culinary training
+            sessions with visiting hospitality students from colleges across
+            Kathmandu including Janapremi College and The Times International
+            College.
           </p>
           <div class="exp-tag-row">
             <span class="micro-label">OBSERVED PROOF</span>
@@ -461,7 +575,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
       <div class="section-header-editorial">
         <div>
           <span class="eyebrow">Verified Feedback</span>
-          <h2 class="headline-xl">RATED <span class="text-orange">4.7 STARS</span> ON GOOGLE.</h2>
+          <h2 class="headline-xl">
+            RATED <span class="text-orange">4.7 STARS</span> ON GOOGLE.
+          </h2>
         </div>
         <div class="reviews-summary-badge">
           <span class="stars">★★★★★</span>
@@ -475,11 +591,15 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           <div class="review-index">01</div>
           <div class="review-stars">★★★★★</div>
           <blockquote class="review-text serif-quote">
-            “Elite is the best place to learn professional culinary skills in Kathmandu. The instructors give personal attention to knife cuts, sauce reduction, and real kitchen discipline. The 60+ days nonstop practical made all the difference.”
+            “Elite is the best place to learn professional culinary skills in
+            Kathmandu. The instructors give personal attention to knife cuts,
+            sauce reduction, and real kitchen discipline. The 60+ days nonstop
+            practical made all the difference.”
           </blockquote>
           <div class="review-author-meta">
             <strong class="author-name">Pradeep Lama</strong>
-            <span class="author-tag">Verified Google Review · DCA Graduate</span>
+            <span class="author-tag">Verified Google Review · DCA Graduate</span
+            >
           </div>
         </div>
 
@@ -487,11 +607,15 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           <div class="review-index">02</div>
           <div class="review-stars">★★★★★</div>
           <blockquote class="review-text serif-quote">
-            “The hands-on environment here is completely different from ordinary colleges. In the barista lab, you don’t just watch—you extract, steam milk, and pour latte art every single class.”
+            “The hands-on environment here is completely different from ordinary
+            colleges. In the barista lab, you don’t just watch—you extract,
+            steam milk, and pour latte art every single class.”
           </blockquote>
           <div class="review-author-meta">
             <strong class="author-name">Aashish Thapa</strong>
-            <span class="author-tag">Verified Google Review · Barista & F&B</span>
+            <span class="author-tag"
+              >Verified Google Review · Barista & F&B</span
+            >
           </div>
         </div>
 
@@ -499,17 +623,26 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           <div class="review-index">03</div>
           <div class="review-stars">★★★★★</div>
           <blockquote class="review-text serif-quote">
-            “Clean commercial workstations, passionate chefs, and genuine guidance for hotel internships. Best decision for anyone serious about a career in hospitality.”
+            “Clean commercial workstations, passionate chefs, and genuine
+            guidance for hotel internships. Best decision for anyone serious
+            about a career in hospitality.”
           </blockquote>
           <div class="review-author-meta">
             <strong class="author-name">Prajwol Shrestha</strong>
-            <span class="author-tag">Verified Google Review · Hospitality Student</span>
+            <span class="author-tag"
+              >Verified Google Review · Hospitality Student</span
+            >
           </div>
         </div>
       </div>
 
       <div class="reviews-footer-action">
-        <a href={SITE_DATA.institution.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-cib-outline">
+        <a
+          href={SITE_DATA.institution.googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-cib-outline"
+        >
           Read All 74 Reviews on Google Maps &rarr;
         </a>
       </div>
@@ -525,9 +658,13 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         <!-- Left: Address & Booking -->
         <div class="campus-info-col">
           <span class="eyebrow">Visit Us in Kathmandu</span>
-          <h2 class="headline-lg">SEE THE KITCHENS <span class="text-orange">IN PERSON.</span></h2>
+          <h2 class="headline-lg">
+            SEE THE KITCHENS <span class="text-orange">IN PERSON.</span>
+          </h2>
           <p class="lead-text">
-            We welcome prospective students and parents for an in-person walk-through of our commercial kitchen stations, dedicated neon bar, and barista studio.
+            We welcome prospective students and parents for an in-person
+            walk-through of our commercial kitchen stations, dedicated neon bar,
+            and barista studio.
           </p>
 
           <div class="campus-contact-details">
@@ -540,15 +677,20 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
               <span class="detail-label">Landmark & Navigation:</span>
               <p class="detail-value">
                 150m from Pipalbot Chowk, Devkota Sadak <br />
-                <span class="coord-tag">Plus Code:</span> <code class="plus-code">{SITE_DATA.institution.plusCode}</code>
+                <span class="coord-tag">Plus Code:</span>
+                <code class="plus-code">{SITE_DATA.institution.plusCode}</code>
               </p>
             </div>
 
             <div class="campus-detail-row">
               <span class="detail-label">Direct Inquiries:</span>
               <p class="detail-value">
-                <a href={`tel:${SITE_DATA.institution.primaryPhone}`}>{SITE_DATA.institution.primaryPhone}</a> / 
-                <a href={`tel:${SITE_DATA.institution.mobilePhone}`}>{SITE_DATA.institution.mobilePhone}</a>
+                <a href={`tel:${SITE_DATA.institution.primaryPhone}`}
+                  >{SITE_DATA.institution.primaryPhone}</a
+                > /
+                <a href={`tel:${SITE_DATA.institution.mobilePhone}`}
+                  >{SITE_DATA.institution.mobilePhone}</a
+                >
               </p>
             </div>
 
@@ -559,13 +701,20 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
           </div>
 
           <div class="campus-actions">
-            <button type="button" class="btn btn-cib-solid" data-open-inquiry-modal>
+            <button
+              type="button"
+              class="btn btn-cib-solid"
+              data-open-inquiry-modal
+            >
               Book a Campus Visit
             </button>
-            <a 
-              href={SITE_DATA.getWhatsAppLink(undefined, 'Campus Visit Booking')} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={SITE_DATA.getWhatsAppLink(
+                undefined,
+                "Campus Visit Booking",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
               class="btn btn-cib-outline"
             >
               Chat on WhatsApp
@@ -576,20 +725,24 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
         <!-- Right: Interactive Google Map -->
         <div class="campus-map-col">
           <div class="campus-map-container">
-            <iframe 
-              src={SITE_DATA.institution.googleMapsEmbedUrl} 
-              width="100%" 
-              height="460" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
+            <iframe
+              src={SITE_DATA.institution.googleMapsEmbedUrl}
+              width="100%"
+              height="460"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="Elite School of Hospitality Location Map"
-            ></iframe>
+              title="Elite School of Hospitality Location Map"></iframe>
           </div>
           <div class="map-caption-bar">
             <span>Pipalbot, Old Baneshwor, Kathmandu</span>
-            <a href={SITE_DATA.institution.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="map-direct-link">
+            <a
+              href={SITE_DATA.institution.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="map-direct-link"
+            >
               Open Full Directions &rarr;
             </a>
           </div>
@@ -607,7 +760,7 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
     position: relative;
     padding-top: clamp(3.5rem, 6vw, 6rem);
     padding-bottom: clamp(4.5rem, 8vw, 7.5rem);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-bottom: 1px solid var(--color-border);
   }
 
@@ -744,9 +897,9 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
     width: 50%;
     border-radius: var(--radius-xs);
     overflow: hidden;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0 16px 36px rgba(11, 19, 43, 0.14);
-    border: 4px solid #FFFFFF;
+    border: 4px solid #ffffff;
   }
 
   .collage-img-sub {
@@ -758,7 +911,7 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
   .sub-frame-caption {
     padding: 0.65rem 0.85rem;
     font-size: 0.6875rem;
-    background: #FFFFFF;
+    background: #ffffff;
     color: var(--color-navy);
     display: flex;
     flex-direction: column;
@@ -892,7 +1045,7 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
   }
 
   .text-white {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .flagship-duration {
@@ -1015,7 +1168,7 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
 
   .filter-tab.is-active {
     background-color: var(--color-navy);
-    color: #FFFFFF;
+    color: #ffffff;
     border-color: var(--color-navy);
   }
 
@@ -1145,7 +1298,7 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
     width: 65%;
     margin-left: auto;
     margin-top: -3.5rem;
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xs);
     overflow: hidden;
@@ -1458,29 +1611,29 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
 
 <script>
   function initCourseFilters() {
-    const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
-    const cards = document.querySelectorAll<HTMLElement>('.cib-course-card');
+    const tabs = document.querySelectorAll<HTMLButtonElement>(".filter-tab");
+    const cards = document.querySelectorAll<HTMLElement>(".cib-course-card");
     if (!tabs.length || !cards.length) return;
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const filter = tab.getAttribute('data-filter');
-        
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const filter = tab.getAttribute("data-filter");
+
         // Toggle tab styles
-        tabs.forEach(t => {
-          t.classList.remove('is-active');
-          t.setAttribute('aria-selected', 'false');
+        tabs.forEach((t) => {
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected", "false");
         });
-        tab.classList.add('is-active');
-        tab.setAttribute('aria-selected', 'true');
+        tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
 
         // Toggle card visibility
-        cards.forEach(card => {
-          const category = card.getAttribute('data-filter-category');
-          if (filter === 'all' || category === filter) {
-            card.classList.remove('is-hidden');
+        cards.forEach((card) => {
+          const category = card.getAttribute("data-filter-category");
+          if (filter === "all" || category === filter) {
+            card.classList.remove("is-hidden");
           } else {
-            card.classList.add('is-hidden');
+            card.classList.add("is-hidden");
           }
         });
       });
@@ -1488,8 +1641,8 @@ const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
   }
 
   // Run on mount
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCourseFilters);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCourseFilters);
   } else {
     initCourseFilters();
   }

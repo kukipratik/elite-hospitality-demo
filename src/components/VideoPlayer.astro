@@ -8,12 +8,19 @@ interface Props {
   id: string;
 }
 
-const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.props;
+const {
+  videoSrc,
+  posterSrc,
+  title,
+  tag,
+  durationText = "0:15",
+  id,
+} = Astro.props;
 ---
 
 <div class="video-card-wrap" data-video-card id={`card-${id}`}>
   <div class="video-container">
-    <video 
+    <video
       id={id}
       class="reel-video"
       src={videoSrc}
@@ -21,33 +28,75 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
       playsinline
       muted
       loop
-      preload="metadata"
-    ></video>
-    
+      preload="metadata"></video>
+
     <!-- Video Overlay Gradient -->
     <div class="video-overlay"></div>
 
     <!-- Play/Pause Button Overlay -->
-    <button type="button" class="video-play-btn" data-video-toggle={id} aria-label={`Play or pause video: ${title}`}>
-      <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+    <button
+      type="button"
+      class="video-play-btn"
+      data-video-toggle={id}
+      aria-label={`Play or pause video: ${title}`}
+    >
+      <svg
+        class="icon-play"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <polygon points="5 3 19 12 5 21 5 3"></polygon>
       </svg>
-      <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <svg
+        class="icon-pause"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <rect x="6" y="4" width="4" height="16"></rect>
         <rect x="14" y="4" width="4" height="16"></rect>
       </svg>
     </button>
 
     <!-- Mute/Unmute Toggle -->
-    <button type="button" class="video-mute-btn" data-video-mute={id} aria-label="Toggle mute state">
-      <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button
+      type="button"
+      class="video-mute-btn"
+      data-video-mute={id}
+      aria-label="Toggle mute state"
+    >
+      <svg
+        class="icon-muted"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
         <line x1="23" y1="9" x2="17" y2="15"></line>
         <line x1="17" y1="9" x2="23" y2="15"></line>
       </svg>
-      <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg
+        class="icon-unmuted"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+        ></path>
       </svg>
     </button>
 
@@ -70,10 +119,12 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     position: relative;
     border-radius: var(--radius-xs);
     overflow: hidden;
-    background: #0B132B;
+    background: #0b132b;
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-subtle);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    transition:
+      transform var(--transition-normal),
+      box-shadow var(--transition-normal);
   }
 
   .video-card-wrap:hover {
@@ -86,7 +137,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     width: 100%;
     aspect-ratio: 9 / 16;
     max-height: 520px;
-    background: #060B18;
+    background: #060b18;
     overflow: hidden;
   }
 
@@ -99,7 +150,13 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
   .video-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 60%, rgba(11, 19, 43, 0.85) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(11, 19, 43, 0.85) 100%
+    );
     pointer-events: none;
     transition: opacity var(--transition-normal);
   }
@@ -113,7 +170,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     height: 54px;
     border-radius: 50%;
     background: rgba(232, 93, 4, 0.9);
-    color: #FFFFFF;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,7 +215,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     border-radius: var(--radius-xs);
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
-    color: #FFFFFF;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,7 +259,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     letter-spacing: 0.08em;
     padding: 0.25rem 0.55rem;
     background: var(--color-orange);
-    color: #FFFFFF;
+    color: #ffffff;
     border-radius: var(--radius-xs);
   }
 
@@ -213,7 +270,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     padding: 0.25rem 0.55rem;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
-    color: #FFFFFF;
+    color: #ffffff;
     border-radius: var(--radius-xs);
   }
 
@@ -223,7 +280,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     left: 1.25rem;
     right: 1.25rem;
     z-index: 2;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .video-title {
@@ -232,7 +289,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     font-weight: 800;
     line-height: 1.3;
     margin-bottom: 0.25rem;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .video-source {
@@ -242,51 +299,60 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('[data-video-card]');
-    
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll("[data-video-card]");
+
     cards.forEach((card) => {
-      const video = card.querySelector('video') as HTMLVideoElement | null;
-      const toggleBtn = card.querySelector('[data-video-toggle]') as HTMLButtonElement | null;
-      const muteBtn = card.querySelector('[data-video-mute]') as HTMLButtonElement | null;
+      const video = card.querySelector("video") as HTMLVideoElement | null;
+      const toggleBtn = card.querySelector(
+        "[data-video-toggle]",
+      ) as HTMLButtonElement | null;
+      const muteBtn = card.querySelector(
+        "[data-video-mute]",
+      ) as HTMLButtonElement | null;
 
       if (!video) return;
 
       const togglePlay = () => {
         if (video.paused) {
-          video.play().then(() => {
-            card.classList.add('is-playing');
-          }).catch(() => {
-            // Autoplay policy fallback
-          });
+          video
+            .play()
+            .then(() => {
+              card.classList.add("is-playing");
+            })
+            .catch(() => {
+              // Autoplay policy fallback
+            });
         } else {
           video.pause();
-          card.classList.remove('is-playing');
+          card.classList.remove("is-playing");
         }
       };
 
-      toggleBtn?.addEventListener('click', (e) => {
+      toggleBtn?.addEventListener("click", (e) => {
         e.stopPropagation();
         togglePlay();
       });
 
-      card.addEventListener('click', (e) => {
-        if ((e.target as HTMLElement).closest('[data-video-mute]')) return;
+      card.addEventListener("click", (e) => {
+        if ((e.target as HTMLElement).closest("[data-video-mute]")) return;
         togglePlay();
       });
 
-      muteBtn?.addEventListener('click', (e) => {
+      muteBtn?.addEventListener("click", (e) => {
         e.stopPropagation();
         video.muted = !video.muted;
         if (video.muted) {
-          card.classList.remove('is-unmuted');
+          card.classList.remove("is-unmuted");
         } else {
-          card.classList.add('is-unmuted');
+          card.classList.add("is-unmuted");
         }
       });
 
-      video.addEventListener('play', () => card.classList.add('is-playing'));
-      video.addEventListener('pause', () => card.classList.remove('is-playing'));
+      video.addEventListener("play", () => card.classList.add("is-playing"));
+      video.addEventListener("pause", () =>
+        card.classList.remove("is-playing"),
+      );
     });
   });
 </script>

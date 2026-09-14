@@ -1,12 +1,13 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { SITE_DATA } from '../../data/siteData';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_DATA } from "../../data/siteData";
 
-const dcaCourse = SITE_DATA.courses.find(c => c.id === 'dca') || SITE_DATA.courses[0];
+const dcaCourse =
+  SITE_DATA.courses.find((c) => c.id === "dca") || SITE_DATA.courses[0];
 const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
 ---
 
-<BaseLayout 
+<BaseLayout
   title="Diploma in Culinary Arts (DCA) | Elite School of Hospitality Management"
   description="Kathmandu's premier 6-month professional chef qualification at Pipalbot, Old Baneshwor. 60+ days nonstop kitchen practicals, ten 4-course menus, artisan bakery, sushi, and structured hotel internships in Nepal."
   currentPath="/courses/dca"
@@ -20,7 +21,9 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
         <li class="separator">/</li>
         <li><a href="/#courses">Programs</a></li>
         <li class="separator">/</li>
-        <li aria-current="page" class="active">Diploma in Culinary Arts (DCA)</li>
+        <li aria-current="page" class="active">
+          Diploma in Culinary Arts (DCA)
+        </li>
       </ol>
     </div>
   </nav>
@@ -45,31 +48,59 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
           </h1>
 
           <p class="dca-masthead-lead">
-            Kathmandu’s premier hands-on culinary qualification engineered for aspiring commercial line chefs and future hospitality leaders. Built around <strong>60+ days of nonstop commercial kitchen practicals</strong>, the execution of <strong>Ten complete 4-course banquet services</strong>, artisan bakery, sushi mastery, and structured <strong>hotel & resort internships in Nepal</strong>.
+            Kathmandu’s premier hands-on culinary qualification engineered for
+            aspiring commercial line chefs and future hospitality leaders. Built
+            around <strong
+              >60+ days of nonstop commercial kitchen practicals</strong
+            >, the execution of <strong
+              >Ten complete 4-course banquet services</strong
+            >, artisan bakery, sushi mastery, and structured <strong
+              >hotel & resort internships in Nepal</strong
+            >.
           </p>
 
           <!-- Action Cluster: Primary WhatsApp + In-person Campus Visit Link -->
           <div class="dca-action-strip">
-            <a 
-              href={whatsappLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               class="btn btn-cib-solid dca-primary-btn"
             >
               <span>Inquire via WhatsApp</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
 
-            <button 
-              type="button" 
-              class="dca-visit-trigger" 
-              data-open-inquiry-modal 
+            <button
+              type="button"
+              class="dca-visit-trigger"
+              data-open-inquiry-modal
               data-preselect-course="Diploma in Culinary Arts (DCA)"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
                 <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -84,25 +115,33 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
           <div class="dca-metrics-row">
             <div class="dca-metric-cell">
               <span class="dca-metric-label">PRACTICAL TRAINING</span>
-              <div class="dca-metric-val">60+ <span class="dca-metric-unit">Days</span></div>
+              <div class="dca-metric-val">
+                60+ <span class="dca-metric-unit">Days</span>
+              </div>
               <span class="dca-metric-sub">Nonstop Kitchen Shifts</span>
             </div>
 
             <div class="dca-metric-cell">
               <span class="dca-metric-label">BANQUET EXAMS</span>
-              <div class="dca-metric-val">10 <span class="dca-metric-unit">Menus</span></div>
+              <div class="dca-metric-val">
+                10 <span class="dca-metric-unit">Menus</span>
+              </div>
               <span class="dca-metric-sub">4-Course Executions</span>
             </div>
 
             <div class="dca-metric-cell">
               <span class="dca-metric-label">HOTEL INTERNSHIP</span>
-              <div class="dca-metric-val">3–6 <span class="dca-metric-unit">Mos</span></div>
+              <div class="dca-metric-val">
+                3–6 <span class="dca-metric-unit">Mos</span>
+              </div>
               <span class="dca-metric-sub">Nepal Luxury Hotels</span>
             </div>
 
             <div class="dca-metric-cell">
               <span class="dca-metric-label">STATION COHORT</span>
-              <div class="dca-metric-val">16 <span class="dca-metric-unit">Max</span></div>
+              <div class="dca-metric-val">
+                16 <span class="dca-metric-unit">Max</span>
+              </div>
               <span class="dca-metric-sub">Chefs Per Shift</span>
             </div>
           </div>
@@ -112,17 +151,20 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
         <div class="dca-visual-col">
           <div class="dca-media-cluster">
             <div class="dca-photo-wrapper">
-              <img 
-                src="/images/kitchen/searing_chicken.jpg" 
-                alt="Live Hot Kitchen Searing at Elite School of Hospitality" 
+              <img
+                src="/images/kitchen/searing_chicken.jpg"
+                alt="Live Hot Kitchen Searing at Elite School of Hospitality"
                 class="dca-masthead-img"
-                width="640" 
+                width="640"
                 height="440"
                 fetchpriority="high"
               />
               <div class="dca-photo-caption">
                 <span class="caption-tag">LIVE KITCHEN LAB</span>
-                <span class="caption-text">Hot station pan-searing & saucing practical at Pipalbot campus</span>
+                <span class="caption-text"
+                  >Hot station pan-searing & saucing practical at Pipalbot
+                  campus</span
+                >
               </div>
             </div>
 
@@ -130,8 +172,11 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
             <div class="dca-spec-dossier">
               <div class="dossier-header">
                 <div class="dossier-code-wrap">
-                  <span class="dossier-code">COURSE SPECIFICATION // DCA-2026</span>
-                  <span class="dossier-title">Academic & Practicum Dossier</span>
+                  <span class="dossier-code"
+                    >COURSE SPECIFICATION // DCA-2026</span
+                  >
+                  <span class="dossier-title">Academic & Practicum Dossier</span
+                  >
                 </div>
                 <div class="dossier-status-pill">
                   <span class="status-dot"></span> 2026 INTAKE
@@ -141,28 +186,40 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
               <div class="dossier-table">
                 <div class="dossier-row">
                   <span class="dossier-dt">Program Duration</span>
-                  <span class="dossier-dd">6 Months (Full-Time Daily Practical)</span>
+                  <span class="dossier-dd"
+                    >6 Months (Full-Time Daily Practical)</span
+                  >
                 </div>
                 <div class="dossier-row">
                   <span class="dossier-dt">Practical Ratio</span>
-                  <span class="dossier-dd highlight">80% Commercial Kitchen / 20% Theory</span>
+                  <span class="dossier-dd highlight"
+                    >80% Commercial Kitchen / 20% Theory</span
+                  >
                 </div>
                 <div class="dossier-row">
                   <span class="dossier-dt">Specialist Modules</span>
-                  <span class="dossier-dd">Artisan Bakery, Knife Speed, Sushi Rolling</span>
+                  <span class="dossier-dd"
+                    >Artisan Bakery, Knife Speed, Sushi Rolling</span
+                  >
                 </div>
                 <div class="dossier-row">
                   <span class="dossier-dt">Campus Facility</span>
-                  <span class="dossier-dd">Pipalbot, Old Baneshwor, Kathmandu</span>
+                  <span class="dossier-dd"
+                    >Pipalbot, Old Baneshwor, Kathmandu</span
+                  >
                 </div>
                 <div class="dossier-row">
                   <span class="dossier-dt">Industry Credentials</span>
-                  <span class="dossier-dd">ESHM DCA Diploma + ODC Banqueting Cert</span>
+                  <span class="dossier-dd"
+                    >ESHM DCA Diploma + ODC Banqueting Cert</span
+                  >
                 </div>
                 <div class="dossier-row">
                   <span class="dossier-dt">Admissions Desk</span>
                   <span class="dossier-dd contact-links">
-                    <a href="tel:014471162">01-4471162</a> &bull; <a href="tel:9851239109">9851239109</a>
+                    <a href="tel:014471162">01-4471162</a> &bull; <a
+                      href="tel:9851239109">9851239109</a
+                    >
                   </span>
                 </div>
               </div>
@@ -205,7 +262,12 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
         </ul>
 
         <div class="dca-subnav-action">
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="dca-subnav-cta">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dca-subnav-cta"
+          >
             <span>Inquire for DCA</span>
             <span class="cta-arrow">&rarr;</span>
           </a>
@@ -220,35 +282,43 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
       <div class="section-header-editorial">
         <div>
           <span class="eyebrow">Comprehensive Syllabus</span>
-          <h2 class="headline-xl">THE DCA <span class="text-orange">CURRICULUM.</span></h2>
+          <h2 class="headline-xl">
+            THE DCA <span class="text-orange">CURRICULUM.</span>
+          </h2>
         </div>
         <p class="lead-text">
-          A rigorous 6-module curriculum engineered to transition students from kitchen fundamentals to commercial speed, plating artistry, and banquet readiness.
+          A rigorous 6-module curriculum engineered to transition students from
+          kitchen fundamentals to commercial speed, plating artistry, and
+          banquet readiness.
         </p>
       </div>
 
       <div class="modules-editorial-grid">
-        {dcaCourse.modules.map((mod, index) => (
-          <div class="module-editorial-card">
-            <div class="module-header-line">
-              <span class="module-index">MODULE {String(index + 1).padStart(2, '0')}</span>
+        {
+          dcaCourse.modules.map((mod, index) => (
+            <div class="module-editorial-card">
+              <div class="module-header-line">
+                <span class="module-index">
+                  MODULE {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <h3 class="module-title">{mod.title}</h3>
+              <p class="module-desc">{mod.description}</p>
+
+              <div class="module-topics-block">
+                <span class="topics-label">CORE COMPETENCIES:</span>
+                <ul class="topics-list">
+                  {mod.topics.map((topic) => (
+                    <li>
+                      <span class="topic-bullet" />
+                      <span>{topic}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <h3 class="module-title">{mod.title}</h3>
-            <p class="module-desc">{mod.description}</p>
-            
-            <div class="module-topics-block">
-              <span class="topics-label">CORE COMPETENCIES:</span>
-              <ul class="topics-list">
-                {mod.topics.map(topic => (
-                  <li>
-                    <span class="topic-bullet"></span>
-                    <span>{topic}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -264,17 +334,24 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
             <span class="text-orange">4-COURSE MENUS.</span>
           </h2>
           <p class="menus-lead serif-quote">
-            “Cooking a single dish is hobby cookery. Cooking and coordinating ten full 4-course banquet services under commercial time constraints is what separates an amateur from an executive chef.”
+            “Cooking a single dish is hobby cookery. Cooking and coordinating
+            ten full 4-course banquet services under commercial time constraints
+            is what separates an amateur from an executive chef.”
           </p>
           <p class="menus-body">
-            Every DCA candidate at Elite must execute ten complete 4-course menus: an appetizer or dressed salad, a classical clear or puree soup, an authentic pasta or starch course, and a showcased protein entrée with emulsified reduction sauces.
+            Every DCA candidate at Elite must execute ten complete 4-course
+            menus: an appetizer or dressed salad, a classical clear or puree
+            soup, an authentic pasta or starch course, and a showcased protein
+            entrée with emulsified reduction sauces.
           </p>
 
           <div class="menus-course-breakdown">
             <div class="course-stage">
               <span class="stage-num">Course 1</span>
               <strong>Appetizers & Salads</strong>
-              <p>Carpaccios, vinaigrettes, cured preparations, and plate balance.</p>
+              <p>
+                Carpaccios, vinaigrettes, cured preparations, and plate balance.
+              </p>
             </div>
             <div class="course-stage">
               <span class="stage-num">Course 2</span>
@@ -284,22 +361,26 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
             <div class="course-stage">
               <span class="stage-num">Course 3</span>
               <strong>Pasta & Starch</strong>
-              <p>Handmade pasta, risotto precision, gnocchi, and sauce glazing.</p>
+              <p>
+                Handmade pasta, risotto precision, gnocchi, and sauce glazing.
+              </p>
             </div>
             <div class="course-stage">
               <span class="stage-num">Course 4</span>
               <strong>Showcase Entrées</strong>
-              <p>Searing poultry, meats, fish, vegetable turns, and pan sauces.</p>
+              <p>
+                Searing poultry, meats, fish, vegetable turns, and pan sauces.
+              </p>
             </div>
           </div>
         </div>
 
         <div class="menus-media">
-          <img 
-            src="/images/kitchen/chef_technique.jpg" 
-            alt="Chef instructor technique demonstration at Elite School of Hospitality" 
+          <img
+            src="/images/kitchen/chef_technique.jpg"
+            alt="Chef instructor technique demonstration at Elite School of Hospitality"
             class="menus-img"
-            width="650" 
+            width="650"
             height="700"
           />
         </div>
@@ -313,10 +394,14 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
       <div class="section-header-editorial">
         <div>
           <span class="eyebrow">Industry Experience</span>
-          <h2 class="headline-xl">STRUCTURED <span class="text-orange">INTERNSHIP.</span></h2>
+          <h2 class="headline-xl">
+            STRUCTURED <span class="text-orange">INTERNSHIP.</span>
+          </h2>
         </div>
         <p class="lead-text">
-          Upon completing kitchen practicals and menu examinations at our Pipalbot campus, students are placed into structured 3 to 6 months internships in Nepal's hotels, resorts, and fine dining restaurants.
+          Upon completing kitchen practicals and menu examinations at our
+          Pipalbot campus, students are placed into structured 3 to 6 months
+          internships in Nepal's hotels, resorts, and fine dining restaurants.
         </p>
       </div>
 
@@ -324,25 +409,37 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
         <div class="placement-step">
           <div class="step-num">STAGE 01</div>
           <h3 class="step-title">Campus Practical Mastery</h3>
-          <p class="step-desc">60+ days nonstop hot kitchen, bakery, sushi, and ten 4-course menu culinary masterclasses at Pipalbot, Old Baneshwor.</p>
+          <p class="step-desc">
+            60+ days nonstop hot kitchen, bakery, sushi, and ten 4-course menu
+            culinary masterclasses at Pipalbot, Old Baneshwor.
+          </p>
         </div>
 
         <div class="placement-step">
           <div class="step-num">STAGE 02</div>
           <h3 class="step-title">ODC Banqueting Certification</h3>
-          <p class="step-desc">Participation in outdoor catering (ODC) for luxury banquets and high-volume catering events, earning certified credentials.</p>
+          <p class="step-desc">
+            Participation in outdoor catering (ODC) for luxury banquets and
+            high-volume catering events, earning certified credentials.
+          </p>
         </div>
 
         <div class="placement-step">
           <div class="step-num">STAGE 03</div>
           <h3 class="step-title">3 to 6 Months Hotel Placement</h3>
-          <p class="step-desc">Structured industrial training across recognized hotels, resorts, and fine dining establishments in Nepal.</p>
+          <p class="step-desc">
+            Structured industrial training across recognized hotels, resorts,
+            and fine dining establishments in Nepal.
+          </p>
         </div>
 
         <div class="placement-step">
           <div class="step-num">STAGE 04</div>
           <h3 class="step-title">Career Pathway & Beyond</h3>
-          <p class="step-desc">Graduates build proven culinary resumes, paving the way for domestic executive roles and international hospitality transitions.</p>
+          <p class="step-desc">
+            Graduates build proven culinary resumes, paving the way for domestic
+            executive roles and international hospitality transitions.
+          </p>
         </div>
       </div>
     </div>
@@ -355,27 +452,38 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
         <span class="eyebrow">Next Intake Enrollment</span>
         <h2 class="headline-lg">RESERVE YOUR KITCHEN STATION</h2>
         <p class="admissions-lead">
-          To ensure every student receives direct access to commercial burners and knife coaching, DCA batches are capped at 16 students. Inquire now for current tuition fees, shift timings, and upcoming intake dates.
+          To ensure every student receives direct access to commercial burners
+          and knife coaching, DCA batches are capped at 16 students. Inquire now
+          for current tuition fees, shift timings, and upcoming intake dates.
         </p>
 
         <div class="admissions-actions">
-          <a 
-            href={whatsappLink} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
             class="btn btn-cib-solid btn-lg"
           >
             Chat with Admissions on WhatsApp
           </a>
-          <button type="button" class="btn btn-cib-outline btn-lg" data-open-inquiry-modal data-preselect-course="Diploma in Culinary Arts (DCA)">
+          <button
+            type="button"
+            class="btn btn-cib-outline btn-lg"
+            data-open-inquiry-modal
+            data-preselect-course="Diploma in Culinary Arts (DCA)"
+          >
             Request Full Syllabus & Fees
           </button>
         </div>
 
         <div class="admissions-direct-call">
           <span>Direct Admissions Desk: </span>
-          <a href={`tel:${SITE_DATA.institution.primaryPhone}`}>{SITE_DATA.institution.primaryPhone}</a> · 
-          <a href={`tel:${SITE_DATA.institution.mobilePhone}`}>{SITE_DATA.institution.mobilePhone}</a>
+          <a href={`tel:${SITE_DATA.institution.primaryPhone}`}
+            >{SITE_DATA.institution.primaryPhone}</a
+          > ·
+          <a href={`tel:${SITE_DATA.institution.mobilePhone}`}
+            >{SITE_DATA.institution.mobilePhone}</a
+          >
         </div>
       </div>
     </div>
@@ -427,7 +535,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     position: relative;
     padding-top: clamp(2.5rem, 5vw, 4.25rem);
     padding-bottom: clamp(3rem, 5vw, 4.75rem);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-bottom: 1px solid var(--color-border);
   }
 
@@ -674,7 +782,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     align-items: center;
     gap: 0.75rem;
     padding: 0.65rem 1rem;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-top: 1px solid var(--color-border);
     font-size: 0.75rem;
   }
@@ -685,7 +793,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     font-weight: 700;
     letter-spacing: 0.08em;
     background-color: var(--color-navy);
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 0.2rem 0.5rem;
     border-radius: 2px;
     white-space: nowrap;
@@ -740,7 +848,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     font-family: var(--font-mono);
     font-size: 0.625rem;
     font-weight: 700;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: 999px;
     padding: 0.25rem 0.65rem;
@@ -813,7 +921,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     position: sticky;
     top: 76px;
     z-index: 990;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-bottom: 1px solid var(--color-border);
     box-shadow: 0 2px 10px rgba(11, 19, 43, 0.03);
   }
@@ -854,7 +962,9 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
     border-bottom: 2px solid transparent;
     padding: 0 0.25rem;
     white-space: nowrap;
-    transition: color var(--transition-fast), border-color var(--transition-fast);
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast);
   }
 
   .subnav-link:hover {
@@ -949,13 +1059,15 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
   }
 
   .module-editorial-card {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xs);
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    transition:
+      transform var(--transition-normal),
+      box-shadow var(--transition-normal);
   }
 
   .module-editorial-card:hover {
@@ -1132,7 +1244,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
   }
 
   .placement-step {
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xs);
     padding: 2rem;
@@ -1206,90 +1318,94 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(dcaCourse.title);
 </style>
 
 <script>
-  import gsap from 'gsap';
+  import gsap from "gsap";
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // 1. DCA Masthead Editorial Animation
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (!prefersReducedMotion) {
-      const dcaTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      const dcaTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      const taxoItems = document.querySelectorAll('.dca-taxo-row > *');
+      const taxoItems = document.querySelectorAll(".dca-taxo-row > *");
       if (taxoItems.length) {
         dcaTl.fromTo(
           taxoItems,
           { opacity: 0, y: 10 },
-          { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 }
+          { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 },
         );
       }
 
-      if (document.querySelector('.dca-masthead-title')) {
+      if (document.querySelector(".dca-masthead-title")) {
         dcaTl.fromTo(
-          '.dca-masthead-title',
+          ".dca-masthead-title",
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.5 },
-          '-=0.25'
+          "-=0.25",
         );
       }
 
-      if (document.querySelector('.dca-masthead-lead')) {
+      if (document.querySelector(".dca-masthead-lead")) {
         dcaTl.fromTo(
-          '.dca-masthead-lead',
+          ".dca-masthead-lead",
           { opacity: 0, y: 15 },
           { opacity: 1, y: 0, duration: 0.45 },
-          '-=0.3'
+          "-=0.3",
         );
       }
 
-      if (document.querySelector('.dca-action-strip')) {
+      if (document.querySelector(".dca-action-strip")) {
         dcaTl.fromTo(
-          '.dca-action-strip',
+          ".dca-action-strip",
           { opacity: 0, y: 15 },
           { opacity: 1, y: 0, duration: 0.4 },
-          '-=0.3'
+          "-=0.3",
         );
       }
 
-      const metricCells = document.querySelectorAll('.dca-metric-cell');
+      const metricCells = document.querySelectorAll(".dca-metric-cell");
       if (metricCells.length) {
         dcaTl.fromTo(
           metricCells,
           { opacity: 0, y: 18 },
           { opacity: 1, y: 0, duration: 0.5, stagger: 0.08 },
-          '-=0.3'
+          "-=0.3",
         );
       }
 
-      if (document.querySelector('.dca-visual-col')) {
+      if (document.querySelector(".dca-visual-col")) {
         dcaTl.fromTo(
-          '.dca-visual-col',
+          ".dca-visual-col",
           { opacity: 0, y: 25, scale: 0.98 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power2.out' },
-          '-=0.5'
+          { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power2.out" },
+          "-=0.5",
         );
       }
     }
 
     // 2. Syllabus Subnav Active Spy
-    const sections = ['curriculum', 'menus', 'placement', 'admissions'];
-    const subnavLinks = document.querySelectorAll('.dca-subnav-links .subnav-link');
+    const sections = ["curriculum", "menus", "placement", "admissions"];
+    const subnavLinks = document.querySelectorAll(
+      ".dca-subnav-links .subnav-link",
+    );
 
-    if (subnavLinks.length && 'IntersectionObserver' in window) {
+    if (subnavLinks.length && "IntersectionObserver" in window) {
       const observerOptions = {
         root: null,
-        rootMargin: '-140px 0px -60% 0px',
-        threshold: 0
+        rootMargin: "-140px 0px -60% 0px",
+        threshold: 0,
       };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
+            const id = entry.target.getAttribute("id");
             subnavLinks.forEach((link) => {
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active");
               } else {
-                link.classList.remove('active');
+                link.classList.remove("active");
               }
             });
           }

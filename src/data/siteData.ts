@@ -14,19 +14,19 @@ export interface Course {
   subtitle: string;
   category: 'diploma' | 'certificate' | 'specialization';
   isFlagship?: boolean;
-  
+
   // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
   duration: string;
-  
+
   // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
   tuitionFee: string;
-  
+
   // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
   shifts: string[];
-  
+
   // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
   seatsPerBatch: number;
-  
+
   description: string;
   verifiedHighlights: string[];
   modules: {
@@ -45,26 +45,26 @@ export const SITE_DATA = {
     acronym: 'ESHM',
     tagline: 'Turn Your Passion into a Profession',
     foundedNote: 'Redefining professional hospitality education in Kathmandu',
-    
+
     // Verified Physical Address
     address: 'Pipalbot, Mid-Baneshwor / Old Baneshwor, Devkota Sadak, Kathmandu 44600, Nepal',
     locationShort: 'Pipalbot, Old Baneshwor, Kathmandu',
     plusCode: 'M8XQ+RC Kathmandu, Bagmati Province',
     googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.544719412151!2d85.3360204!3d27.6996083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19bfdd024785%3A0xd4cd57fed8566ce1!2sElite%20School%20Of%20Hospitality!5e0!3m2!1sen!2snp!4v1789364000000',
     googleMapsUrl: 'https://maps.google.com/?cid=15334009058329259233',
-    
+
     // Verified Contact Channels
     primaryPhone: '01-4471162',
     alternatePhone: '01-4571162',
     mobilePhone: '984-3338838',
     secondaryMobile: '9828820572',
     email: 'eliteschool.np@gmail.com',
-    
+
     // WhatsApp Inbound Admissions Routing
     // Live-verified from Elite's official Facebook Page CTA button
     whatsappNumber: '9779843338838',
     whatsappDisplay: '+977 984-3338838',
-    
+
     // Operating Hours (Verified from Instagram & Google)
     hours: 'Sunday – Friday: 08:00 AM – 05:00 PM (Saturday Closed)',
   },
@@ -140,19 +140,19 @@ export const SITE_DATA = {
       subtitle: 'Flagship Professional Chef Qualification with 60+ Days Nonstop Kitchen Practical',
       category: 'diploma',
       isFlagship: true,
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       duration: '6 Months (Full-Time Intensive)',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       tuitionFee: 'Inquire for Current Intake Fees & Installment Plan',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       shifts: ['Morning Shift: 07:00 AM – 11:00 AM', 'Afternoon Shift: 11:30 AM – 03:30 PM'],
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       seatsPerBatch: 16,
-      
+
       description: 'A career-defining professional diploma designed to build confident, high-speed chefs ready for modern commercial kitchens, fine dining resorts, and international hospitality careers.',
       verifiedHighlights: [
         'More than 60 days nonstop commercial kitchen practical',
@@ -205,19 +205,19 @@ export const SITE_DATA = {
       title: 'Diploma in Hotel Management (DHM)',
       subtitle: 'Comprehensive 360° Hospitality Leadership Program',
       category: 'diploma',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       duration: '1 Year (6 Months Campus + 6 Months Internship)',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       tuitionFee: 'Inquire for Current Intake Fees',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       shifts: ['Morning Shift: 07:00 AM – 10:30 AM', 'Day Shift: 11:00 AM – 02:30 PM'],
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       seatsPerBatch: 20,
-      
+
       description: 'All-round training covering the four core pillars of hospitality: Food & Beverage Service, Front Office Operations, Housekeeping Management, and Culinary Kitchen Basics.',
       verifiedHighlights: [
         'Practical F&B Service, banquet protocol & linen napkin artistry',
@@ -246,19 +246,19 @@ export const SITE_DATA = {
       title: 'Professional Barista Training',
       subtitle: 'Specialty Coffee Extraction, Steaming & Swan Latte Art',
       category: 'certificate',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       duration: '1 Month Intensive (Daily 2 Hours Practical)',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       tuitionFee: 'Inquire for Current Batch Fee',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       shifts: ['Morning: 07:30 – 09:30 AM', 'Afternoon: 01:00 – 03:00 PM', 'Evening: 03:30 – 05:30 PM'],
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       seatsPerBatch: 8,
-      
+
       description: 'Master commercial espresso machines, grinder calibration, milk microfoam science, cupping aromas, and free-pour latte art rosettas and swans.',
       verifiedHighlights: [
         'Dedicated specialty coffee lab with commercial dual-boiler espresso gear',
@@ -288,19 +288,19 @@ export const SITE_DATA = {
       title: 'Professional Bakery & Pastry Arts',
       subtitle: 'Boulangerie, Patisserie & Commercial Cake Crafting',
       category: 'certificate',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       duration: '2 Months (Hands-On Lab Practical)',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       tuitionFee: 'Inquire for Current Batch Fee',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       shifts: ['Morning: 08:00 – 11:00 AM', 'Day: 12:00 – 03:00 PM'],
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       seatsPerBatch: 12,
-      
+
       description: 'Develop commercial baking confidence: artisanal crusty loaves, soft milk buns, puff pastries, decadent chocolate mousse, mirror glazes, and tiered celebration cakes.',
       verifiedHighlights: [
         'Full hands-on dough kneading, proofing, and baking in deck & convection ovens',
@@ -329,19 +329,19 @@ export const SITE_DATA = {
       title: 'Bartending & Flair Mixology',
       subtitle: 'Modern Bar Craft, Cocktail Chemistry & Working Flair',
       category: 'certificate',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       duration: '1 Month Intensive (Elite Bar Studio)',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       tuitionFee: 'Inquire for Current Batch Fee',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       shifts: ['Morning: 09:00 – 11:00 AM', 'Afternoon: 02:00 – 04:00 PM'],
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       seatsPerBatch: 10,
-      
+
       description: 'Step behind our dedicated neon-lit Elite Bar. Learn classical and contemporary mixology, shaking, stirring, muddling, glassware etiquette, and working flair acrobatics.',
       verifiedHighlights: [
         'Training inside the dedicated "Elite Bar" counter setup',
@@ -371,19 +371,19 @@ export const SITE_DATA = {
       title: 'Professional Sushi Training',
       subtitle: 'Japanese Gastronomy, Rice Seasoning & Knife Art',
       category: 'specialization',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       duration: '2 Weeks Masterclass',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       tuitionFee: 'Inquire for Masterclass Fee',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       shifts: ['Flexible Intensive Schedules'],
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       seatsPerBatch: 8,
-      
+
       description: 'A specialized short-format program for chefs and culinary students wanting high-demand sushi bar proficiency.',
       verifiedHighlights: [
         'Proper sushi vinegar seasoning & short-grain rice washing techniques',
@@ -407,19 +407,19 @@ export const SITE_DATA = {
       title: 'Housekeeping & Front Office Operations',
       subtitle: 'Hospitality Rooms Division & Luxury Guest Relations',
       category: 'certificate',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       duration: '1 Month Intensive',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       tuitionFee: 'Inquire for Current Intake Fee',
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       shifts: ['Morning Shift: 08:00 – 10:00 AM'],
-      
+
       // APPROXIMATE DEMO VALUE — VERIFY WITH CLIENT
       seatsPerBatch: 12,
-      
+
       description: 'Practical training in hotel room preparation, linen origami, chemical cleaning standards, and front office communication protocols.',
       verifiedHighlights: [
         'Full hotel bedroom suite practical training on campus',
@@ -468,17 +468,17 @@ export const SITE_DATA = {
   getWhatsAppLink(courseTitle?: string, customNote?: string): string {
     const phone = SITE_DATA.institution.whatsappNumber;
     let message = `Namaste Elite School of Hospitality Management!`;
-    
+
     if (courseTitle) {
       message += ` I am interested in the ${courseTitle}. Please share the current fee structure, upcoming batch start date, and class schedule.`;
     } else {
       message += ` I would like to inquire about admissions and schedule a campus visit at your Pipalbot, Old Baneshwor campus.`;
     }
-    
+
     if (customNote) {
       message += ` (${customNote})`;
     }
-    
+
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   }
 };

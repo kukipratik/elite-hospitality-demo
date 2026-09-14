@@ -1,19 +1,29 @@
 ---
-import { SITE_DATA } from '../data/siteData';
+import { SITE_DATA } from "../data/siteData";
 
 interface Props {
   currentPath?: string;
 }
 
-const { currentPath = '/' } = Astro.props;
+const { currentPath = "/" } = Astro.props;
 const whatsappLink = SITE_DATA.getWhatsAppLink();
 ---
 
 <header class="site-header" id="mainHeader">
   <div class="header-inner container-wide">
     <!-- Brand Crest & Title -->
-    <a href="/" class="brand-link" aria-label="Elite School of Hospitality Management Home">
-      <img src="/images/brand/logo.jpg" alt="Elite School of Hospitality Management Crest" class="brand-crest-img" width="46" height="46" />
+    <a
+      href="/"
+      class="brand-link"
+      aria-label="Elite School of Hospitality Management Home"
+    >
+      <img
+        src="/images/brand/logo.jpg"
+        alt="Elite School of Hospitality Management Crest"
+        class="brand-crest-img"
+        width="46"
+        height="46"
+      />
       <div class="brand-text">
         <span class="brand-title">ELITE</span>
         <span class="brand-tagline">School of Hospitality Management</span>
@@ -24,35 +34,58 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     <nav class="desktop-nav" aria-label="Primary Navigation">
       <!-- Programs with Interactive Dropdown Sheet -->
       <div class="nav-item-dropdown" id="navDropdown">
-        <a 
-          href="/#courses" 
-          class={`nav-link dropdown-trigger ${currentPath === '/#courses' ? 'active' : ''}`}
+        <a
+          href="/#courses"
+          class={`nav-link dropdown-trigger ${currentPath === "/#courses" ? "active" : ""}`}
           aria-haspopup="true"
           aria-expanded="false"
           id="programsTrigger"
         >
           <span>Programs</span>
-          <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
-            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg
+            class="dropdown-chevron"
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1L5 5L9 1"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </a>
 
         <!-- Dropdown Menu Sheet (Light Mode Editorial Card) -->
-        <div class="dropdown-menu" role="menu" aria-labelledby="programsTrigger">
+        <div
+          class="dropdown-menu"
+          role="menu"
+          aria-labelledby="programsTrigger"
+        >
           <div class="dropdown-inner">
             <!-- Left: Flagship Showcase -->
             <div class="dropdown-col flagship-col">
-              <span class="dropdown-category-label">FLAGSHIP QUALIFICATION</span>
+              <span class="dropdown-category-label">FLAGSHIP QUALIFICATION</span
+              >
               <a href="/courses/dca" class="dropdown-flagship-card">
                 <div class="flagship-card-meta">
                   <span class="badge-flagship">6 MONTHS INTENSIVE</span>
                   <span class="badge-accent">60+ DAYS PRACTICAL</span>
                 </div>
-                <h4 class="flagship-card-title">Diploma in Culinary Arts (DCA)</h4>
+                <h4 class="flagship-card-title">
+                  Diploma in Culinary Arts (DCA)
+                </h4>
                 <p class="flagship-card-desc">
-                  Professional line chef training with ten 4-course European menu masterclasses, artisan bakery, sushi, and hotel internship in Nepal.
+                  Professional line chef training with ten 4-course European
+                  menu masterclasses, artisan bakery, sushi, and hotel
+                  internship in Nepal.
                 </p>
-                <span class="flagship-card-link">View Full DCA Curriculum &rarr;</span>
+                <span class="flagship-card-link"
+                  >View Full DCA Curriculum &rarr;</span
+                >
               </a>
             </div>
 
@@ -63,32 +96,48 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
                 <a href="/#courses" class="discipline-item">
                   <span class="discipline-tag tag-diploma">1 YEAR</span>
                   <div class="discipline-info">
-                    <strong class="discipline-title">Diploma in Hotel Management (DHM)</strong>
-                    <span class="discipline-sub">F&B, Front Office, Housekeeping</span>
+                    <strong class="discipline-title"
+                      >Diploma in Hotel Management (DHM)</strong
+                    >
+                    <span class="discipline-sub"
+                      >F&B, Front Office, Housekeeping</span
+                    >
                   </div>
                 </a>
 
                 <a href="/#courses" class="discipline-item">
                   <span class="discipline-tag tag-beverage">1 MONTH</span>
                   <div class="discipline-info">
-                    <strong class="discipline-title">Professional Barista Training</strong>
-                    <span class="discipline-sub">Espresso Science & Swan Latte Art</span>
+                    <strong class="discipline-title"
+                      >Professional Barista Training</strong
+                    >
+                    <span class="discipline-sub"
+                      >Espresso Science & Swan Latte Art</span
+                    >
                   </div>
                 </a>
 
                 <a href="/#courses" class="discipline-item">
                   <span class="discipline-tag tag-artisan">2 MONTHS</span>
                   <div class="discipline-info">
-                    <strong class="discipline-title">Professional Bakery & Pastry Arts</strong>
-                    <span class="discipline-sub">Boulangerie, Entremets & Cakes</span>
+                    <strong class="discipline-title"
+                      >Professional Bakery & Pastry Arts</strong
+                    >
+                    <span class="discipline-sub"
+                      >Boulangerie, Entremets & Cakes</span
+                    >
                   </div>
                 </a>
 
                 <a href="/#courses" class="discipline-item">
                   <span class="discipline-tag tag-beverage">1 MONTH</span>
                   <div class="discipline-info">
-                    <strong class="discipline-title">Bartending & Flair Mixology</strong>
-                    <span class="discipline-sub">The Elite Bar Studio Sessions</span>
+                    <strong class="discipline-title"
+                      >Bartending & Flair Mixology</strong
+                    >
+                    <span class="discipline-sub"
+                      >The Elite Bar Studio Sessions</span
+                    >
                   </div>
                 </a>
               </div>
@@ -106,61 +155,88 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
       </div>
 
       <!-- Direct Navigation Links -->
-      <a 
-        href="/courses/dca" 
-        class={`nav-link ${currentPath === '/courses/dca' ? 'active' : ''}`}
+      <a
+        href="/courses/dca"
+        class={`nav-link ${currentPath === "/courses/dca" ? "active" : ""}`}
         data-nav-item="dca"
       >
         Culinary Arts
       </a>
 
-      <a 
-        href="/#methodology" 
-        class="nav-link" 
-        data-nav-section="methodology"
-      >
+      <a href="/#methodology" class="nav-link" data-nav-section="methodology">
         Why Elite
       </a>
 
-      <a 
-        href="/#internship" 
-        class="nav-link" 
-        data-nav-section="internship"
-      >
+      <a href="/#internship" class="nav-link" data-nav-section="internship">
         Experience
       </a>
 
-      <a 
-        href="/#campus" 
-        class="nav-link" 
-        data-nav-section="campus"
-      >
-        Campus
-      </a>
+      <a href="/#campus" class="nav-link" data-nav-section="campus"> Campus </a>
     </nav>
 
     <!-- Header Actions: Direct Phone + Architectural Inquire + WhatsApp -->
     <div class="header-actions">
-      <a href={`tel:${SITE_DATA.institution.primaryPhone.replace('-', '')}`} class="header-phone" title="Admissions Desk Phone">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      <a
+        href={`tel:${SITE_DATA.institution.primaryPhone.replace("-", "")}`}
+        class="header-phone"
+        title="Admissions Desk Phone"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          ></path>
         </svg>
         <span>{SITE_DATA.institution.primaryPhone}</span>
       </a>
 
-      <button type="button" class="btn-header-inquire" data-open-inquiry-modal aria-haspopup="dialog">
+      <button
+        type="button"
+        class="btn-header-inquire"
+        data-open-inquiry-modal
+        aria-haspopup="dialog"
+      >
         Inquire
       </button>
 
-      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-header-wa" aria-label="WhatsApp admissions chat">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-header-wa"
+        aria-label="WhatsApp admissions chat"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"
+          ></path>
         </svg>
         <span>WhatsApp</span>
       </a>
 
       <!-- Mobile Hamburger Toggle -->
-      <button type="button" class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <button
+        type="button"
+        class="mobile-toggle"
+        id="mobileMenuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
@@ -184,18 +260,24 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
           <span class="mobile-nav-num">02</span>
           <div class="mobile-nav-stacked">
             <span class="mobile-nav-text">Diploma in Culinary Arts (DCA)</span>
-            <span class="mobile-nav-sub">Flagship · 60+ Days Kitchen Practical</span>
+            <span class="mobile-nav-sub"
+              >Flagship · 60+ Days Kitchen Practical</span
+            >
           </div>
         </a>
 
         <a href="/#methodology" class="mobile-nav-link">
           <span class="mobile-nav-num">03</span>
-          <span class="mobile-nav-text">Why Elite (Kitchen Reality vs Lecture)</span>
+          <span class="mobile-nav-text"
+            >Why Elite (Kitchen Reality vs Lecture)</span
+          >
         </a>
 
         <a href="/#video-gallery" class="mobile-nav-link">
           <span class="mobile-nav-num">04</span>
-          <span class="mobile-nav-text">Inside Elite (Documentary Video Reels)</span>
+          <span class="mobile-nav-text"
+            >Inside Elite (Documentary Video Reels)</span
+          >
         </a>
 
         <a href="/#internship" class="mobile-nav-link">
@@ -205,7 +287,9 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
 
         <a href="/#reviews" class="mobile-nav-link">
           <span class="mobile-nav-num">06</span>
-          <span class="mobile-nav-text">Student Reviews (4.7★ Google Verified)</span>
+          <span class="mobile-nav-text"
+            >Student Reviews (4.7★ Google Verified)</span
+          >
         </a>
 
         <a href="/#campus" class="mobile-nav-link">
@@ -215,17 +299,32 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
       </nav>
 
       <div class="mobile-actions">
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-cib-solid w-full text-center">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-cib-solid w-full text-center"
+        >
           Chat on WhatsApp
         </a>
-        <button type="button" class="btn-cib-outline w-full text-center" data-open-inquiry-modal>
+        <button
+          type="button"
+          class="btn-cib-outline w-full text-center"
+          data-open-inquiry-modal
+        >
           Book an In-Person Campus Tour
         </button>
       </div>
 
       <div class="mobile-footer">
-        <p class="mobile-address">Pipalbot, Old Baneshwor, Devkota Sadak, Kathmandu</p>
-        <p class="mobile-contact">Direct Desk: {SITE_DATA.institution.primaryPhone} / {SITE_DATA.institution.mobilePhone}</p>
+        <p class="mobile-address">
+          Pipalbot, Old Baneshwor, Devkota Sadak, Kathmandu
+        </p>
+        <p class="mobile-contact">
+          Direct Desk: {SITE_DATA.institution.primaryPhone} / {
+            SITE_DATA.institution.mobilePhone
+          }
+        </p>
       </div>
     </div>
   </div>
@@ -238,9 +337,11 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-bottom: 1px solid var(--color-border);
-    transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+    transition:
+      background-color var(--transition-normal),
+      box-shadow var(--transition-normal);
   }
 
   .site-header.scrolled {
@@ -319,7 +420,9 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     white-space: nowrap;
     border-bottom: 2px solid transparent;
     margin-bottom: -1px;
-    transition: color var(--transition-fast), border-color var(--transition-fast);
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast);
     text-decoration: none;
   }
 
@@ -359,14 +462,16 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     top: 76px;
     left: -1.5rem;
     width: 680px;
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xs);
     box-shadow: 0 20px 45px rgba(11, 19, 43, 0.12);
     opacity: 0;
     pointer-events: none;
     transform: translateY(8px);
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
     z-index: 1001;
   }
 
@@ -409,12 +514,14 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     border-radius: var(--radius-xs);
     text-decoration: none;
     height: 100%;
-    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast);
   }
 
   .dropdown-flagship-card:hover {
     border-color: var(--color-orange);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 
   .flagship-card-meta {
@@ -429,7 +536,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     font-size: 0.625rem;
     font-weight: 700;
     background-color: var(--color-navy);
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 0.15rem 0.45rem;
     border-radius: 2px;
   }
@@ -439,7 +546,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     font-size: 0.625rem;
     font-weight: 700;
     background-color: var(--color-orange);
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 0.15rem 0.45rem;
     border-radius: 2px;
   }
@@ -502,17 +609,17 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
 
   .tag-diploma {
     background-color: var(--color-navy);
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .tag-beverage {
     background-color: var(--color-emerald);
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .tag-artisan {
     background-color: var(--color-magenta);
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .discipline-info {
@@ -598,7 +705,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
   .btn-header-inquire:hover {
     border-color: var(--color-navy);
     background-color: var(--color-navy);
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .btn-header-wa {
@@ -614,7 +721,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     border: 1.5px solid var(--color-orange);
     border-radius: var(--radius-xs);
     background-color: var(--color-orange);
-    color: #FFFFFF;
+    color: #ffffff;
     white-space: nowrap;
     transition: all var(--transition-fast);
     text-decoration: none;
@@ -643,7 +750,9 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     width: 100%;
     height: 2px;
     background-color: var(--color-navy);
-    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    transition:
+      transform var(--transition-fast),
+      opacity var(--transition-fast);
   }
 
   .mobile-toggle.active .bar:first-child {
@@ -662,7 +771,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
     left: 0;
     width: 100%;
     height: calc(100vh - 76px);
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-top: 1px solid var(--color-border);
     overflow-y: auto;
     z-index: 999;
@@ -766,7 +875,7 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
   /* ==========================================================================
      RESPONSIVE BREAKPOINTS (ZERO WRAPPING AT ANY RES)
      ========================================================================== */
-  
+
   /* Laptops and Narrow Desktops: tighten gaps, hide secondary copy */
   @media (max-width: 1240px) {
     .desktop-nav {
@@ -832,63 +941,84 @@ const whatsappLink = SITE_DATA.getWhatsAppLink();
 
 <script>
   // 1. Header scroll detection (backdrop blur)
-  const header = document.getElementById('mainHeader');
-  const toggleBtn = document.getElementById('mobileMenuToggle');
-  const drawer = document.getElementById('mobileDrawer');
+  const header = document.getElementById("mainHeader");
+  const toggleBtn = document.getElementById("mobileMenuToggle");
+  const drawer = document.getElementById("mobileDrawer");
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 20) {
+        header?.classList.add("scrolled");
+      } else {
+        header?.classList.remove("scrolled");
+      }
+    },
+    { passive: true },
+  );
 
   // 2. Mobile Drawer Toggle
-  toggleBtn?.addEventListener('click', () => {
-    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', (!isExpanded).toString());
-    toggleBtn.classList.toggle('active');
-    drawer?.classList.toggle('open');
-    document.body.style.overflow = !isExpanded ? 'hidden' : '';
+  toggleBtn?.addEventListener("click", () => {
+    const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+    toggleBtn.setAttribute("aria-expanded", (!isExpanded).toString());
+    toggleBtn.classList.toggle("active");
+    drawer?.classList.toggle("open");
+    document.body.style.overflow = !isExpanded ? "hidden" : "";
   });
 
   // Close drawer on link click
-  drawer?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      toggleBtn?.setAttribute('aria-expanded', 'false');
-      toggleBtn?.classList.remove('active');
-      drawer?.classList.remove('open');
-      document.body.style.overflow = '';
+  drawer?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      toggleBtn?.setAttribute("aria-expanded", "false");
+      toggleBtn?.classList.remove("active");
+      drawer?.classList.remove("open");
+      document.body.style.overflow = "";
     });
   });
 
   // 3. Scrollspy: Highlight active section in desktop nav when on homepage
-  if (typeof window !== 'undefined' && (window.location.pathname === '/' || window.location.pathname === '')) {
+  if (
+    typeof window !== "undefined" &&
+    (window.location.pathname === "/" || window.location.pathname === "")
+  ) {
     const navSections = [
-      { id: 'courses', link: document.querySelector('.dropdown-trigger') },
-      { id: 'methodology', link: document.querySelector('[data-nav-section="methodology"]') },
-      { id: 'internship', link: document.querySelector('[data-nav-section="internship"]') },
-      { id: 'campus', link: document.querySelector('[data-nav-section="campus"]') }
+      { id: "courses", link: document.querySelector(".dropdown-trigger") },
+      {
+        id: "methodology",
+        link: document.querySelector('[data-nav-section="methodology"]'),
+      },
+      {
+        id: "internship",
+        link: document.querySelector('[data-nav-section="internship"]'),
+      },
+      {
+        id: "campus",
+        link: document.querySelector('[data-nav-section="campus"]'),
+      },
     ];
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const match = navSections.find(s => s.id === entry.target.id);
-          if (match && match.link) {
-            document.querySelectorAll('.desktop-nav .nav-link').forEach(l => l.classList.remove('active'));
-            match.link.classList.add('active');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const match = navSections.find((s) => s.id === entry.target.id);
+            if (match && match.link) {
+              document
+                .querySelectorAll(".desktop-nav .nav-link")
+                .forEach((l) => l.classList.remove("active"));
+              match.link.classList.add("active");
+            }
           }
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0
-    });
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      },
+    );
 
-    navSections.forEach(sec => {
+    navSections.forEach((sec) => {
       const el = document.getElementById(sec.id);
       if (el) observer.observe(el);
     });

@@ -1,12 +1,32 @@
 ---
-import { SITE_DATA } from '../data/siteData';
+import { SITE_DATA } from "../data/siteData";
 ---
 
-<div class="modal-backdrop" id="inquiryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div
+  class="modal-backdrop"
+  id="inquiryModal"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+>
   <div class="modal-card">
     <!-- Close Button -->
-    <button type="button" class="modal-close" data-close-inquiry-modal aria-label="Close modal">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button
+      type="button"
+      class="modal-close"
+      data-close-inquiry-modal
+      aria-label="Close modal"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
@@ -14,15 +34,22 @@ import { SITE_DATA } from '../data/siteData';
 
     <!-- Modal Header -->
     <div class="modal-header">
-      <img src="/images/brand/logo.jpg" alt="Elite Crest" class="modal-crest-img" width="44" height="44" />
+      <img
+        src="/images/brand/logo.jpg"
+        alt="Elite Crest"
+        class="modal-crest-img"
+        width="44"
+        height="44"
+      />
       <div>
         <span class="micro-label">Admissions & Campus Visit</span>
         <h3 class="modal-title" id="modalTitle">Inquire & Book a Tour</h3>
       </div>
     </div>
-    
+
     <p class="modal-lead">
-      Submit your details to start an immediate WhatsApp conversation with Elite's admissions counselors at Pipalbot, Old Baneshwor.
+      Submit your details to start an immediate WhatsApp conversation with
+      Elite's admissions counselors at Pipalbot, Old Baneshwor.
     </p>
 
     <!-- Interactive Form -->
@@ -30,64 +57,110 @@ import { SITE_DATA } from '../data/siteData';
       <!-- Full Name -->
       <div class="form-group">
         <label for="studentName" class="form-label">Full Name *</label>
-        <input 
-          type="text" 
-          id="studentName" 
-          name="studentName" 
-          class="form-input" 
-          placeholder="e.g. Aayush Sharma" 
-          required 
+        <input
+          type="text"
+          id="studentName"
+          name="studentName"
+          class="form-input"
+          placeholder="e.g. Aayush Sharma"
+          required
         />
       </div>
 
       <!-- Phone Number -->
       <div class="form-group">
-        <label for="studentPhone" class="form-label">WhatsApp Contact Number *</label>
-        <input 
-          type="tel" 
-          id="studentPhone" 
-          name="studentPhone" 
-          class="form-input" 
-          placeholder="e.g. 9841XXXXXX" 
-          required 
+        <label for="studentPhone" class="form-label"
+          >WhatsApp Contact Number *</label
+        >
+        <input
+          type="tel"
+          id="studentPhone"
+          name="studentPhone"
+          class="form-input"
+          placeholder="e.g. 9841XXXXXX"
+          required
         />
       </div>
 
       <!-- Program Selection -->
       <div class="form-group">
-        <label for="courseSelect" class="form-label">Program of Interest *</label>
-        <select id="courseSelect" name="courseSelect" class="form-select" required>
-          <option value="Diploma in Culinary Arts (DCA)">Diploma in Culinary Arts (DCA) — Flagship</option>
-          <option value="Diploma in Hotel Management (DHM)">Diploma in Hotel Management (DHM)</option>
-          <option value="Professional Barista Training">Professional Barista Training</option>
-          <option value="Bakery & Pastry Arts">Professional Bakery & Pastry Arts</option>
-          <option value="Bartending & Flair Mixology">Bartending & Flair Mixology</option>
-          <option value="Professional Sushi Training">Professional Sushi Masterclass</option>
-          <option value="Housekeeping & Front Office Operations">Housekeeping & Front Office Operations</option>
+        <label for="courseSelect" class="form-label"
+          >Program of Interest *</label
+        >
+        <select
+          id="courseSelect"
+          name="courseSelect"
+          class="form-select"
+          required
+        >
+          <option value="Diploma in Culinary Arts (DCA)"
+            >Diploma in Culinary Arts (DCA) — Flagship</option
+          >
+          <option value="Diploma in Hotel Management (DHM)"
+            >Diploma in Hotel Management (DHM)</option
+          >
+          <option value="Professional Barista Training"
+            >Professional Barista Training</option
+          >
+          <option value="Bakery & Pastry Arts"
+            >Professional Bakery & Pastry Arts</option
+          >
+          <option value="Bartending & Flair Mixology"
+            >Bartending & Flair Mixology</option
+          >
+          <option value="Professional Sushi Training"
+            >Professional Sushi Masterclass</option
+          >
+          <option value="Housekeeping & Front Office Operations"
+            >Housekeeping & Front Office Operations</option
+          >
         </select>
       </div>
 
       <!-- Inquiry Purpose -->
       <div class="form-group">
         <label for="inquiryPurpose" class="form-label">Inquiry Purpose *</label>
-        <select id="inquiryPurpose" name="inquiryPurpose" class="form-select" required>
-          <option value="Course fees, upcoming batch dates, and class shifts">Course fees, upcoming batch dates & shifts</option>
-          <option value="Scheduling an in-person campus and kitchen lab tour">Schedule an in-person kitchen tour at Pipalbot</option>
-          <option value="Internship placement details in Nepal and abroad">Internship & career placement details</option>
-          <option value="General admission counseling and eligibility">General admission counseling</option>
+        <select
+          id="inquiryPurpose"
+          name="inquiryPurpose"
+          class="form-select"
+          required
+        >
+          <option value="Course fees, upcoming batch dates, and class shifts"
+            >Course fees, upcoming batch dates & shifts</option
+          >
+          <option value="Scheduling an in-person campus and kitchen lab tour"
+            >Schedule an in-person kitchen tour at Pipalbot</option
+          >
+          <option value="Internship placement details in Nepal and abroad"
+            >Internship & career placement details</option
+          >
+          <option value="General admission counseling and eligibility"
+            >General admission counseling</option
+          >
         </select>
       </div>
 
       <!-- Submit CTA -->
       <button type="submit" class="btn btn-cib-solid btn-lg w-full submit-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"
+          ></path>
         </svg>
         <span>Send via WhatsApp</span>
       </button>
 
       <p class="form-disclaimer">
-        Direct connection to Elite's verified WhatsApp admissions line ({SITE_DATA.institution.whatsappDisplay}).
+        Direct connection to Elite's verified WhatsApp admissions line ({
+          SITE_DATA.institution.whatsappDisplay
+        }).
       </p>
     </form>
   </div>
@@ -117,7 +190,7 @@ import { SITE_DATA } from '../data/siteData';
   }
 
   .modal-card {
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xs);
     width: 100%;
@@ -144,7 +217,7 @@ import { SITE_DATA } from '../data/siteData';
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F1F5F9;
+    background: #f1f5f9;
     border-radius: var(--radius-xs);
     color: var(--color-navy);
     transition: all var(--transition-fast);
@@ -152,7 +225,7 @@ import { SITE_DATA } from '../data/siteData';
 
   .modal-close:hover {
     background: var(--color-navy);
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .modal-header {
@@ -205,22 +278,26 @@ import { SITE_DATA } from '../data/siteData';
     letter-spacing: 0.02em;
   }
 
-  .form-input, .form-select {
+  .form-input,
+  .form-select {
     width: 100%;
     padding: 0.8rem 1rem;
-    background: #F8FAFC;
+    background: #f8fafc;
     border: 1.5px solid var(--color-border-medium);
     border-radius: var(--radius-xs);
     color: var(--color-navy);
     font-family: var(--font-body);
     font-size: 0.875rem;
-    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast);
   }
 
-  .form-input:focus, .form-select:focus {
+  .form-input:focus,
+  .form-select:focus {
     outline: none;
     border-color: var(--color-orange);
-    background: #FFFFFF;
+    background: #ffffff;
   }
 
   .w-full {
@@ -240,71 +317,79 @@ import { SITE_DATA } from '../data/siteData';
 </style>
 
 <script>
-  import { SITE_DATA } from '../data/siteData';
+  import { SITE_DATA } from "../data/siteData";
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('inquiryModal');
-    const openBtns = document.querySelectorAll('[data-open-inquiry-modal]');
-    const closeBtns = document.querySelectorAll('[data-close-inquiry-modal]');
-    const form = document.getElementById('inquiryForm') as HTMLFormElement | null;
-    const courseSelect = document.getElementById('courseSelect') as HTMLSelectElement | null;
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("inquiryModal");
+    const openBtns = document.querySelectorAll("[data-open-inquiry-modal]");
+    const closeBtns = document.querySelectorAll("[data-close-inquiry-modal]");
+    const form = document.getElementById(
+      "inquiryForm",
+    ) as HTMLFormElement | null;
+    const courseSelect = document.getElementById(
+      "courseSelect",
+    ) as HTMLSelectElement | null;
 
     const openModal = (preselectedCourse?: string) => {
       if (preselectedCourse && courseSelect) {
         for (let i = 0; i < courseSelect.options.length; i++) {
-          if (courseSelect.options[i].value.toLowerCase().includes(preselectedCourse.toLowerCase())) {
+          if (
+            courseSelect.options[i].value
+              .toLowerCase()
+              .includes(preselectedCourse.toLowerCase())
+          ) {
             courseSelect.selectedIndex = i;
             break;
           }
         }
       }
-      modal?.classList.add('is-open');
-      modal?.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+      modal?.classList.add("is-open");
+      modal?.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
     };
 
     const closeModal = () => {
-      modal?.classList.remove('is-open');
-      modal?.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      modal?.classList.remove("is-open");
+      modal?.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
     };
 
-    openBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    openBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
         e.preventDefault();
-        const course = btn.getAttribute('data-preselect-course');
+        const course = btn.getAttribute("data-preselect-course");
         openModal(course || undefined);
       });
     });
 
-    closeBtns.forEach(btn => {
-      btn.addEventListener('click', closeModal);
+    closeBtns.forEach((btn) => {
+      btn.addEventListener("click", closeModal);
     });
 
-    modal?.addEventListener('click', (e) => {
+    modal?.addEventListener("click", (e) => {
       if (e.target === modal) {
         closeModal();
       }
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal?.classList.contains('is-open')) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal?.classList.contains("is-open")) {
         closeModal();
       }
     });
 
-    form?.addEventListener('submit', (e) => {
+    form?.addEventListener("submit", (e) => {
       e.preventDefault();
       const formData = new FormData(form);
-      const name = formData.get('studentName') as string;
-      const phone = formData.get('studentPhone') as string;
-      const course = formData.get('courseSelect') as string;
-      const purpose = formData.get('inquiryPurpose') as string;
+      const name = formData.get("studentName") as string;
+      const phone = formData.get("studentPhone") as string;
+      const course = formData.get("courseSelect") as string;
+      const purpose = formData.get("inquiryPurpose") as string;
 
       const message = `Namaste Elite Admissions,\n\nI would like to inquire about courses at Elite School of Hospitality Management.\n\n• Name: ${name}\n• Phone: ${phone}\n• Program: ${course}\n• Inquiry: ${purpose}\n\nPlease share the detailed syllabus, current batch schedule, and upcoming intake details. Thank you!`;
 
       const waUrl = `https://wa.me/${SITE_DATA.institution.whatsappNumber}?text=${encodeURIComponent(message)}`;
-      window.open(waUrl, '_blank');
+      window.open(waUrl, "_blank");
       closeModal();
       form.reset();
     });

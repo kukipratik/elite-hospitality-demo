@@ -1,5 +1,5 @@
 ---
-import { SITE_DATA } from '../data/siteData';
+import { SITE_DATA } from "../data/siteData";
 ---
 
 <footer class="site-footer" id="contact">
@@ -8,24 +8,40 @@ import { SITE_DATA } from '../data/siteData';
     <div class="footer-hero-band">
       <div class="footer-hero-copy">
         <span class="micro-label">Admissions & Campus Visit</span>
-        <h2 class="footer-title">Step Inside Kathmandu’s Leading Culinary Academy</h2>
+        <h2 class="footer-title">
+          Step Inside Kathmandu’s Leading Culinary Academy
+        </h2>
         <p class="footer-lead">
-          Visit our Pipalbot, Old Baneshwor campus for a live walk-through of the commercial kitchen stations, dedicated neon Elite Bar, and specialty barista lab.
+          Visit our Pipalbot, Old Baneshwor campus for a live walk-through of
+          the commercial kitchen stations, dedicated neon Elite Bar, and
+          specialty barista lab.
         </p>
       </div>
       <div class="footer-hero-cta">
-        <a 
-          href={SITE_DATA.getWhatsAppLink(undefined, 'Campus Visit Booking')} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={SITE_DATA.getWhatsAppLink(undefined, "Campus Visit Booking")}
+          target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-cib-solid"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04 82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04 82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"
+            ></path>
           </svg>
           Schedule via WhatsApp
         </a>
-        <button type="button" class="btn btn-cib-white-outline" data-open-inquiry-modal>
+        <button
+          type="button"
+          class="btn btn-cib-white-outline"
+          data-open-inquiry-modal
+        >
           Online Inquiry Form
         </button>
       </div>
@@ -36,17 +52,26 @@ import { SITE_DATA } from '../data/siteData';
       <!-- Col 1: Brand & Verified Information -->
       <div class="footer-col brand-col">
         <div class="brand-crest-large">
-          <img src="/images/brand/logo.jpg" alt="Elite Logo" width="52" height="52" />
+          <img
+            src="/images/brand/logo.jpg"
+            alt="Elite Logo"
+            width="52"
+            height="52"
+          />
           <div>
             <h3 class="footer-brand-title">{SITE_DATA.institution.name}</h3>
             <p class="footer-slogan">"{SITE_DATA.institution.tagline}"</p>
           </div>
         </div>
         <p class="footer-desc">
-          Kathmandu's premier practical hospitality academy. Built on commercial kitchen mastery, 60+ days nonstop cooking practicals, and structured hotel internships across Nepal.
+          Kathmandu's premier practical hospitality academy. Built on commercial
+          kitchen mastery, 60+ days nonstop cooking practicals, and structured
+          hotel internships across Nepal.
         </p>
         <div class="verified-stats-row">
-          <span class="stat-tag">★ 4.7 Google ({SITE_DATA.proofMetrics.googleReviewCount} Reviews)</span>
+          <span class="stat-tag"
+            >★ 4.7 Google ({SITE_DATA.proofMetrics.googleReviewCount} Reviews)</span
+          >
           <span class="stat-tag">7.1K+ FB Community</span>
         </div>
       </div>
@@ -55,7 +80,10 @@ import { SITE_DATA } from '../data/siteData';
       <div class="footer-col">
         <h4 class="col-heading">Programs</h4>
         <ul class="footer-links">
-          <li><a href="/courses/dca" class="highlight-link">Diploma in Culinary Arts (DCA)</a></li>
+          <li>
+            <a href="/courses/dca" class="highlight-link"
+              >Diploma in Culinary Arts (DCA)</a>
+          </li>
           <li><a href="/#courses">Diploma in Hotel Management (DHM)</a></li>
           <li><a href="/#courses">Professional Barista Training</a></li>
           <li><a href="/#courses">Bakery & Pastry Arts</a></li>
@@ -76,13 +104,21 @@ import { SITE_DATA } from '../data/siteData';
           <div class="contact-item">
             <span class="contact-label">Direct Phone:</span>
             <span class="contact-value">
-              <a href={`tel:${SITE_DATA.institution.primaryPhone}`}>{SITE_DATA.institution.primaryPhone}</a> / 
-              <a href={`tel:${SITE_DATA.institution.mobilePhone}`}>{SITE_DATA.institution.mobilePhone}</a>
+              <a href={`tel:${SITE_DATA.institution.primaryPhone}`}
+                >{SITE_DATA.institution.primaryPhone}</a
+              > /
+              <a href={`tel:${SITE_DATA.institution.mobilePhone}`}
+                >{SITE_DATA.institution.mobilePhone}</a
+              >
             </span>
           </div>
           <div class="contact-item">
             <span class="contact-label">Email:</span>
-            <span class="contact-value"><a href={`mailto:${SITE_DATA.institution.email}`}>{SITE_DATA.institution.email}</a></span>
+            <span class="contact-value"
+              ><a href={`mailto:${SITE_DATA.institution.email}`}
+                >{SITE_DATA.institution.email}</a
+              ></span
+            >
           </div>
           <div class="contact-item">
             <span class="contact-label">Hours:</span>
@@ -95,18 +131,22 @@ import { SITE_DATA } from '../data/siteData';
       <div class="footer-col map-col">
         <h4 class="col-heading">Campus Map</h4>
         <div class="map-container">
-          <iframe 
-            src={SITE_DATA.institution.googleMapsEmbedUrl} 
-            width="100%" 
-            height="180" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
+          <iframe
+            src={SITE_DATA.institution.googleMapsEmbedUrl}
+            width="100%"
+            height="180"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Elite School of Hospitality Location Map"
-          ></iframe>
+            title="Elite School of Hospitality Location Map"></iframe>
         </div>
-        <a href={SITE_DATA.institution.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="map-link">
+        <a
+          href={SITE_DATA.institution.googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-link"
+        >
           Open in Google Maps ({SITE_DATA.institution.plusCode}) &rarr;
         </a>
       </div>
@@ -115,15 +155,24 @@ import { SITE_DATA } from '../data/siteData';
     <!-- Bottom Legal / Demo Safety Band -->
     <div class="footer-bottom">
       <div class="bottom-left">
-        <p>&copy; {new Date().getFullYear()} {SITE_DATA.institution.name}. All rights reserved.</p>
-        <p class="demo-tag">Client Demo Presentation Build • Kathmandu, Nepal</p>
+        <p>
+          &copy; {new Date().getFullYear()}
+          {SITE_DATA.institution.name}. All rights reserved.
+        </p>
+        <p class="demo-tag">
+          Client Demo Presentation Build • Kathmandu, Nepal
+        </p>
       </div>
       <div class="bottom-right">
         <a href="/courses/dca">DCA Program</a>
         <span>•</span>
         <a href="/#courses">All Programs</a>
         <span>•</span>
-        <a href={SITE_DATA.getWhatsAppLink()} target="_blank" rel="noopener noreferrer">WhatsApp Direct</a>
+        <a
+          href={SITE_DATA.getWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer">WhatsApp Direct</a
+        >
       </div>
     </div>
   </div>
@@ -169,7 +218,7 @@ import { SITE_DATA } from '../data/siteData';
     letter-spacing: -0.03em;
     margin-top: 0.75rem;
     margin-bottom: 1rem;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .footer-lead {
@@ -223,7 +272,7 @@ import { SITE_DATA } from '../data/siteData';
     font-size: 1.05rem;
     font-weight: 800;
     line-height: 1.2;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .footer-slogan {
@@ -264,7 +313,7 @@ import { SITE_DATA } from '../data/siteData';
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 1.25rem;
   }
 
@@ -286,7 +335,7 @@ import { SITE_DATA } from '../data/siteData';
   }
 
   .footer-links .highlight-link {
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 600;
   }
 
@@ -316,7 +365,7 @@ import { SITE_DATA } from '../data/siteData';
   }
 
   .contact-value a {
-    color: #FFFFFF;
+    color: #ffffff;
     transition: color var(--transition-fast);
   }
 
@@ -379,6 +428,6 @@ import { SITE_DATA } from '../data/siteData';
   }
 
   .bottom-right a:hover {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 </style>
