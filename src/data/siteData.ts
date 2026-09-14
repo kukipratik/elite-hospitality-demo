@@ -237,7 +237,7 @@ export const SITE_DATA = {
           topics: ['Front Desk Operations', 'Room Inspections', 'Linen & Laundry Control', 'Swan & Decorative Towel Art']
         }
       ],
-      heroImage: '/images/housekeeping/guestroom_swan.jpg',
+      heroImage: '/images/housekeeping/hotel_management.jpg',
       accentColor: 'var(--color-gold)'
     },
     {
@@ -320,7 +320,7 @@ export const SITE_DATA = {
           topics: ['Pastry Creams & Ganaches', 'Choux Pastry Mastery', 'Piping & Floral Borders', 'Mirror Glazes']
         }
       ],
-      heroImage: '/images/kitchen/chef_technique.jpg',
+      heroImage: '/images/kitchen/bakery_artisan.jpg',
       accentColor: 'var(--color-copper)'
     },
     {
@@ -398,7 +398,7 @@ export const SITE_DATA = {
           topics: ['Short-grain Rice Seasoning', 'Makisu Bamboo Rolling', 'Maki & Uramaki Styling', 'Nigiri Hand-pressing']
         }
       ],
-      heroImage: '/images/kitchen/culinary_auditorium.jpg',
+      heroImage: '/images/kitchen/sushi_masterclass.jpg',
       accentColor: 'var(--color-copper)'
     },
     {
