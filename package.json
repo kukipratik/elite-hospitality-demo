@@ -7,14 +7,16 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "astro": "^5.4.2",
     "gsap": "^3.12.7"
   },
   "devDependencies": {
     "@types/node": "^22.13.9",
-    "typescript": "^5.7.3"
+    "typescript": "^5.9.3"
   }
 }

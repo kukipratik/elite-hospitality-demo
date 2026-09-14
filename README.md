@@ -73,6 +73,7 @@ elite_school_of_hospitality_management/
 ```bash
 # 1. Install dependencies
 npm install
+npm run check
 
 # 2. Start local development server (with HMR)
 npm run dev
