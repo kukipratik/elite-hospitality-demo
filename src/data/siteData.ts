@@ -161,7 +161,7 @@ export const SITE_DATA = {
         'Professional Bakery & Pastry arts (breads, sponges, laminated doughs)',
         'Professional Sushi crafting & Japanese cuisine fundamentals',
         'Artisan Chocolate making, confections & artistic fruit carving',
-        '3 to 6 Months guaranteed internship placement in Nepal (Hotels & Fine Dining)',
+        '3 to 6 Months internship placement in Nepal: Hotel, Resort & Fine Dining Restaurant',
         'ODC (Outdoor Catering) banqueting certificate upon completion'
       ],
       modules: [

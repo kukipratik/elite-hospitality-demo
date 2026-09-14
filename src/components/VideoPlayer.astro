@@ -29,10 +29,10 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
 
     <!-- Play/Pause Button Overlay -->
     <button type="button" class="video-play-btn" data-video-toggle={id} aria-label={`Play or pause video: ${title}`}>
-      <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <polygon points="5 3 19 12 5 21 5 3"></polygon>
       </svg>
-      <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <rect x="6" y="4" width="4" height="16"></rect>
         <rect x="14" y="4" width="4" height="16"></rect>
       </svg>
@@ -40,12 +40,12 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
 
     <!-- Mute/Unmute Toggle -->
     <button type="button" class="video-mute-btn" data-video-mute={id} aria-label="Toggle mute state">
-      <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
         <line x1="23" y1="9" x2="17" y2="15"></line>
         <line x1="17" y1="9" x2="23" y2="15"></line>
       </svg>
-      <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
         <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
       </svg>
@@ -53,14 +53,14 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
 
     <!-- Video Badges -->
     <div class="video-meta-top">
-      <span class="tag tag-copper">{tag}</span>
-      <span class="tag duration-tag">{durationText}</span>
+      <span class="video-tag-pill">{tag}</span>
+      <span class="video-duration">{durationText}</span>
     </div>
 
     <!-- Video Caption & Meta Bottom -->
     <div class="video-meta-bottom">
       <h4 class="video-title">{title}</h4>
-      <p class="video-source">Authentic Session • Elite School of Hospitality</p>
+      <p class="video-source">Authentic Practical • Elite Kitchen Kathmandu</p>
     </div>
   </div>
 </div>
@@ -68,17 +68,17 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
 <style>
   .video-card-wrap {
     position: relative;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-xs);
     overflow: hidden;
-    background: #0B0F14;
-    border: 1px solid var(--color-border-dark);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
-    transition: transform var(--transition-normal), border-color var(--transition-normal);
+    background: #0B132B;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-subtle);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   }
 
   .video-card-wrap:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-hover);
   }
 
   .video-container {
@@ -86,7 +86,7 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     width: 100%;
     aspect-ratio: 9 / 16;
     max-height: 520px;
-    background: #05080C;
+    background: #060B18;
     overflow: hidden;
   }
 
@@ -99,104 +99,122 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
   .video-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(9, 13, 18, 0.3) 0%, transparent 40%, rgba(9, 13, 18, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 60%, rgba(11, 19, 43, 0.85) 100%);
     pointer-events: none;
+    transition: opacity var(--transition-normal);
   }
 
-  /* Play/Pause Button */
   .video-play-btn {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
-    background: rgba(9, 13, 18, 0.75);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: rgba(232, 93, 4, 0.9);
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
     transition: all var(--transition-fast);
-    z-index: 5;
+    z-index: 2;
   }
 
   .video-play-btn:hover {
-    background: var(--color-copper);
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.08);
+    background: var(--color-orange);
   }
 
   .icon-pause {
     display: none;
   }
 
-  .is-playing .icon-play {
+  .video-card-wrap.is-playing .icon-play {
     display: none;
   }
 
-  .is-playing .icon-pause {
+  .video-card-wrap.is-playing .icon-pause {
     display: block;
   }
 
-  .is-playing .video-play-btn {
+  .video-card-wrap.is-playing .video-play-btn {
     opacity: 0;
   }
 
-  .video-card-wrap:hover .is-playing .video-play-btn {
-    opacity: 0.8;
+  .video-card-wrap.is-playing:hover .video-play-btn {
+    opacity: 1;
   }
 
-  /* Mute Toggle */
   .video-mute-btn {
     position: absolute;
-    bottom: 4.5rem;
+    top: 1rem;
     right: 1rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-xs);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
-    border: 1px solid var(--color-border-dark);
-    color: #fff;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 5;
-    transition: background var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    z-index: 2;
+    transition: all var(--transition-fast);
   }
 
   .video-mute-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.8);
   }
 
   .icon-unmuted {
     display: none;
   }
 
-  .is-unmuted .icon-muted {
+  .video-card-wrap.is-unmuted .icon-muted {
     display: none;
   }
 
-  .is-unmuted .icon-unmuted {
+  .video-card-wrap.is-unmuted .icon-unmuted {
     display: block;
   }
 
-  /* Meta Placement */
   .video-meta-top {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    right: 1rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 4;
+    gap: 0.5rem;
+    z-index: 2;
   }
 
-  .duration-tag {
-    background: rgba(0, 0, 0, 0.65);
+  .video-tag-pill {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.55rem;
+    background: var(--color-orange);
+    color: #FFFFFF;
+    border-radius: var(--radius-xs);
+  }
+
+  .video-duration {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.55rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    color: #FFFFFF;
+    border-radius: var(--radius-xs);
   }
 
   .video-meta-bottom {
@@ -204,70 +222,71 @@ const { videoSrc, posterSrc, title, tag, durationText = '0:15', id } = Astro.pro
     bottom: 1.25rem;
     left: 1.25rem;
     right: 1.25rem;
-    z-index: 4;
+    z-index: 2;
+    color: #FFFFFF;
   }
 
   .video-title {
     font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    line-height: 1.25;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.3;
     margin-bottom: 0.25rem;
+    color: #FFFFFF;
   }
 
   .video-source {
     font-size: 0.75rem;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.7);
   }
 </style>
 
 <script>
-  // Video playback controller
-  const playButtons = document.querySelectorAll('[data-video-toggle]');
-  const muteButtons = document.querySelectorAll('[data-video-mute]');
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('[data-video-card]');
+    
+    cards.forEach((card) => {
+      const video = card.querySelector('video') as HTMLVideoElement | null;
+      const toggleBtn = card.querySelector('[data-video-toggle]') as HTMLButtonElement | null;
+      const muteBtn = card.querySelector('[data-video-mute]') as HTMLButtonElement | null;
 
-  playButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const videoId = btn.getAttribute('data-video-toggle');
-      if (!videoId) return;
-      const video = document.getElementById(videoId) as HTMLVideoElement | null;
-      const card = btn.closest('[data-video-card]');
+      if (!video) return;
 
-      if (video && card) {
+      const togglePlay = () => {
         if (video.paused) {
-          // Pause all other videos first for performance
-          document.querySelectorAll('video').forEach((v) => {
-            if (v !== video) {
-              v.pause();
-              v.closest('[data-video-card]')?.classList.remove('is-playing');
-            }
+          video.play().then(() => {
+            card.classList.add('is-playing');
+          }).catch(() => {
+            // Autoplay policy fallback
           });
-          video.play();
-          card.classList.add('is-playing');
         } else {
           video.pause();
           card.classList.remove('is-playing');
         }
-      }
-    });
-  });
+      };
 
-  muteButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const videoId = btn.getAttribute('data-video-mute');
-      if (!videoId) return;
-      const video = document.getElementById(videoId) as HTMLVideoElement | null;
-      const card = btn.closest('[data-video-card]');
+      toggleBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        togglePlay();
+      });
 
-      if (video && card) {
+      card.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('[data-video-mute]')) return;
+        togglePlay();
+      });
+
+      muteBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
         video.muted = !video.muted;
         if (video.muted) {
           card.classList.remove('is-unmuted');
         } else {
           card.classList.add('is-unmuted');
         }
-      }
+      });
+
+      video.addEventListener('play', () => card.classList.add('is-playing'));
+      video.addEventListener('pause', () => card.classList.remove('is-playing'));
     });
   });
 </script>

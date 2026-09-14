@@ -18,13 +18,13 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(courseTitle);
     aria-label="Direct WhatsApp chat with Elite admissions"
   >
     <div class="whatsapp-icon-wrap">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
       </svg>
     </div>
     <div class="whatsapp-label-box">
       <span class="online-indicator"></span>
-      <span class="label-text">Chat with Elite</span>
+      <span class="label-text">WhatsApp Admissions</span>
     </div>
   </a>
 </aside>
@@ -40,26 +40,26 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(courseTitle);
   .floating-whatsapp-btn {
     display: flex;
     align-items: center;
-    background: #111A24;
-    border: 1px solid rgba(37, 211, 102, 0.4);
+    background: #FFFFFF;
+    border: 1px solid var(--color-border-medium);
     border-radius: var(--radius-full);
-    padding: 0.4rem 1.15rem 0.4rem 0.4rem;
+    padding: 0.35rem 1.15rem 0.35rem 0.35rem;
     gap: 0.65rem;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(37, 211, 102, 0.2);
+    box-shadow: 0 6px 24px rgba(11, 19, 43, 0.12);
     transition: all var(--transition-normal);
   }
 
   .floating-whatsapp-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 28px rgba(37, 211, 102, 0.35);
-    border-color: rgba(37, 211, 102, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(11, 19, 43, 0.16);
+    border-color: var(--color-whatsapp);
   }
 
   .whatsapp-icon-wrap {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background: var(--color-whatsapp);
-    color: #fff;
+    color: #FFFFFF;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -74,20 +74,18 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(courseTitle);
   }
 
   .online-indicator {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     background: var(--color-whatsapp);
     border-radius: 50%;
-    box-shadow: 0 0 6px var(--color-whatsapp);
   }
 
   .label-text {
     font-family: var(--font-display);
     font-size: 0.8125rem;
     font-weight: 700;
-    color: var(--color-text-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    color: var(--color-navy);
+    letter-spacing: 0.02em;
   }
 
   @media (max-width: 640px) {
@@ -101,13 +99,6 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(courseTitle);
     .floating-whatsapp-btn {
       padding: 0;
       border-radius: 50%;
-      border: none;
-      background: transparent;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    }
-    .whatsapp-icon-wrap {
-      width: 52px;
-      height: 52px;
     }
   }
 </style>

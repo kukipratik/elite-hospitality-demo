@@ -6,280 +6,97 @@ import { SITE_DATA } from '../data/siteData';
 
 const flagshipCourse = SITE_DATA.courses.find(c => c.isFlagship) || SITE_DATA.courses[0];
 const otherCourses = SITE_DATA.courses.filter(c => !c.isFlagship);
-const allCourses = SITE_DATA.courses;
 ---
 
 <BaseLayout 
   title="Elite School of Hospitality Management | Kathmandu, Nepal"
-  description="Kathmandu's premier culinary & hospitality academy at Pipalbot, Old Baneshwor. 60+ days nonstop commercial kitchen practicals, ten 4-course menus, dedicated Elite Bar, specialty barista studio, and structured hotel internships."
+  description="Kathmandu's premier practical hospitality academy at Pipalbot, Old Baneshwor. 60+ days nonstop commercial kitchen practicals, ten 4-course menus, dedicated Elite Bar, specialty barista studio, and structured hotel internships."
   currentPath="/"
 >
-  <!-- 1. HERO SECTION -->
+  <!-- =========================================================================
+       1. CIB-STYLE HERO: Pure White Canvas, Stepped Asymmetric Documentary Collage
+       ========================================================================= -->
   <section class="hero-section" id="hero">
-    <div class="hero-bg-media">
-      <img 
-        src="/images/brand/cover.jpg" 
-        alt="Elite School of Hospitality Management Commercial Kitchen" 
-        class="hero-bg-img"
-        fetchpriority="high"
-        width="1920" 
-        height="1080"
-      />
-      <div class="hero-bg-overlay"></div>
-      <div class="hero-glow-copper"></div>
-    </div>
-
-    <div class="container hero-container">
-      <div class="hero-content">
-        <!-- Location & Accreditation Eyebrow -->
-        <div class="hero-eyebrow fade-in">
-          <span class="pulse-dot"></span>
-          <span class="eyebrow-text">Pipalbot, Old Baneshwor · Kathmandu, Nepal</span>
+    <div class="container-wide hero-grid">
+      <!-- Left Editorial Column -->
+      <div class="hero-text-col">
+        <div class="eyebrow">
+          <span>Kathmandu · Old Baneshwor · Devkota Sadak</span>
         </div>
 
-        <!-- Master Editorial Headline -->
-        <h1 class="hero-title fade-in">
-          Turn Your Passion <br />
-          Into a <span class="font-serif italic text-copper">Professional Career</span>
+        <h1 class="hero-headline">
+          CRAFT YOUR FUTURE IN <span class="text-orange">HOSPITALITY.</span>
         </h1>
 
-        <!-- Subtitle -->
-        <p class="hero-lead fade-in">
-          Kathmandu’s dedicated culinary and hospitality academy. Master high-heat commercial cookery through 
-          <strong>60+ days nonstop kitchen practicals</strong>, ten complete 4-course menus, neon-lit mixology, and 
-          guaranteed 3–6 month hotel internships.
+        <p class="hero-serif-lead">
+          Kathmandu’s premier hands-on culinary academy. Where students transition into disciplined professional chefs through 60+ days of nonstop commercial kitchen practicals and structured hotel internships.
         </p>
 
-        <!-- CTA Action Cluster -->
-        <div class="hero-cta-group fade-in">
-          <a href="/courses/dca" class="btn btn-primary btn-lg">
-            <span>Explore Flagship DCA</span>
-            <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+        <!-- Hairline Action Cluster -->
+        <div class="hero-actions">
+          <a href="/courses/dca" class="btn btn-cib-solid">
+            Explore Flagship DCA &rarr;
           </a>
-
-          <button type="button" class="btn btn-secondary btn-lg" data-open-modal="true" data-course-context="General Campus Inquiry">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <span>Book Campus Tour</span>
+          <button type="button" class="btn btn-cib-outline" data-open-inquiry-modal>
+            Book Campus Tour
           </button>
         </div>
 
-        <!-- Verified Live Proof Badges -->
-        <div class="hero-proof-bar fade-in">
-          <div class="proof-pill">
-            <span class="proof-star">★</span>
-            <span class="proof-val">4.7</span>
-            <span class="proof-label">Google Rating (74 Reviews)</span>
+        <!-- Direct WhatsApp Micro-Link -->
+        <div class="hero-wa-note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="wa-icon">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
+          </svg>
+          <span>Direct Admissions Desk: <a href={SITE_DATA.getWhatsAppLink()} target="_blank" rel="noopener noreferrer" class="wa-num">{SITE_DATA.institution.whatsappDisplay}</a> (08:00 AM – 05:00 PM)</span>
+        </div>
+
+        <!-- Unboxed Metrics Line -->
+        <div class="hero-proof-strip">
+          <div class="proof-metric-unit">
+            <span class="metric-bold">4.7★</span>
+            <span class="metric-desc">Google Verified (74 Reviews)</span>
           </div>
-          <div class="proof-divider"></div>
-          <div class="proof-pill">
-            <span class="proof-val text-copper">60+ Days</span>
-            <span class="proof-label">Nonstop Kitchen Practical</span>
+          <div class="proof-sep">/</div>
+          <div class="proof-metric-unit">
+            <span class="metric-bold text-orange">60+</span>
+            <span class="metric-desc">Days Practical Kitchen</span>
           </div>
-          <div class="proof-divider"></div>
-          <div class="proof-pill">
-            <span class="proof-val text-gold">100%</span>
-            <span class="proof-label">Facebook Recommendation</span>
+          <div class="proof-sep">/</div>
+          <div class="proof-metric-unit">
+            <span class="metric-bold">10</span>
+            <span class="metric-desc">4-Course Menus</span>
           </div>
         </div>
       </div>
 
-      <!-- Hero Visual Accent Floating Card -->
-      <div class="hero-visual-card fade-in">
-        <div class="hero-card-inner">
-          <div class="card-media-wrapper">
+      <!-- Right Asymmetric Stepped Collage -->
+      <div class="hero-visual-col">
+        <div class="stepped-collage">
+          <!-- Primary Action Photo with Offset Frame -->
+          <div class="collage-main-frame">
             <img 
               src="/images/kitchen/searing_chicken.jpg" 
-              alt="Live Hot Kitchen Searing at Elite School of Hospitality" 
-              class="card-img-main"
-              width="600"
-              height="450"
+              alt="Elite Culinary Student Searing Pan on Commercial Flame" 
+              class="collage-img-main"
+              width="640" 
+              height="440"
+              fetchpriority="high"
             />
-            <div class="card-badge-floating">
-              <span class="live-indicator"></span>
-              <span>Commercial Hot Kitchen</span>
-            </div>
-          </div>
-          <div class="card-caption-block">
-            <div class="caption-header">
-              <span class="caption-tag">DCA Practical Station</span>
-              <span class="caption-meta">Batch 2026</span>
-            </div>
-            <h3 class="caption-heading">High-Heat Searing & Pan Basting</h3>
-            <p class="caption-desc">Every student works live commercial burners with fresh ingredients, real protein cuts, and classical sauce reductions.</p>
-            <div class="caption-footer">
-              <a href="/courses/dca" class="card-link">View DCA Curriculum →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. PROOF MARQUEE RIBBON -->
-  <section class="proof-ribbon" aria-label="Verified highlights ticker">
-    <div class="marquee-track">
-      <div class="marquee-content">
-        <span>★ 4.7 Google Business Rating (74 Reviews)</span>
-        <span class="separator">✦</span>
-        <span>60+ Days Nonstop Commercial Kitchen Practical</span>
-        <span class="separator">✦</span>
-        <span>Ten Complete 4-Course Menu Executions</span>
-        <span class="separator">✦</span>
-        <span>Dedicated "Elite Bar" Mixology Studio</span>
-        <span class="separator">✦</span>
-        <span>Specialty Barista Lab with Swan Art Pouring</span>
-        <span class="separator">✦</span>
-        <span>3 to 6 Months Hotel & Resort Internship Placement</span>
-        <span class="separator">✦</span>
-        <span>Pipalbot, Old Baneshwor, Kathmandu</span>
-        <span class="separator">✦</span>
-      </div>
-      <!-- Duplicate for seamless CSS marquee scroll -->
-      <div class="marquee-content" aria-hidden="true">
-        <span>★ 4.7 Google Business Rating (74 Reviews)</span>
-        <span class="separator">✦</span>
-        <span>60+ Days Nonstop Commercial Kitchen Practical</span>
-        <span class="separator">✦</span>
-        <span>Ten Complete 4-Course Menu Executions</span>
-        <span class="separator">✦</span>
-        <span>Dedicated "Elite Bar" Mixology Studio</span>
-        <span class="separator">✦</span>
-        <span>Specialty Barista Lab with Swan Art Pouring</span>
-        <span class="separator">✦</span>
-        <span>3 to 6 Months Hotel & Resort Internship Placement</span>
-        <span class="separator">✦</span>
-        <span>Pipalbot, Old Baneshwor, Kathmandu</span>
-        <span class="separator">✦</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. FLAGSHIP SPOTLIGHT: DIPLOMA IN CULINARY ARTS (DCA) -->
-  <section class="section dca-spotlight-section" id="flagship-dca">
-    <div class="container">
-      <div class="spotlight-wrapper">
-        <!-- Left Content -->
-        <div class="spotlight-text-col fade-in">
-          <div class="section-eyebrow">
-            <span class="tag tag-copper">Flagship Qualification</span>
-            <span class="text-muted">6 Months Intensive</span>
+            <div class="collage-accent-line"></div>
           </div>
 
-          <h2 class="spotlight-title">
-            Diploma in <br />
-            <span class="font-serif italic text-copper">Culinary Arts (DCA)</span>
-          </h2>
-
-          <p class="spotlight-summary">
-            A career-defining professional diploma designed to build confident, high-speed chefs ready for 
-            five-star hotels, luxury resorts, and high-volume commercial kitchens in Nepal and overseas.
-          </p>
-
-          <div class="spotlight-specs-grid">
-            <div class="spec-box">
-              <span class="spec-number text-copper">60+</span>
-              <span class="spec-label">Days Nonstop Practical</span>
-              <p class="spec-sub">No filler lectures. Real daily cooking on commercial line stations.</p>
-            </div>
-            <div class="spec-box">
-              <span class="spec-number text-gold">10</span>
-              <span class="spec-label">Four-Course Menus</span>
-              <p class="spec-sub">Complete full-course service execution from soup to dessert.</p>
-            </div>
-            <div class="spec-box">
-              <span class="spec-number">16</span>
-              <span class="spec-label">Seats Max Per Batch</span>
-              <p class="spec-sub">Intimate batch size guarantees 1:1 supervision by senior chefs.</p>
-            </div>
-            <div class="spec-box">
-              <span class="spec-number">3–6</span>
-              <span class="spec-label">Months Internship</span>
-              <p class="spec-sub">Structured placement in leading Nepal hotels, resorts & fine dining.</p>
-            </div>
-          </div>
-
-          <div class="spotlight-highlights-list">
-            <h4 class="highlights-heading">What You Will Master:</h4>
-            <div class="highlights-grid">
-              <div class="hl-item">
-                <span class="hl-dot"></span>
-                <span>Hot Kitchen Searing & Pan Cookery</span>
-              </div>
-              <div class="hl-item">
-                <span class="hl-dot"></span>
-                <span>Artisan Bakery & Laminated Pastries</span>
-              </div>
-              <div class="hl-item">
-                <span class="hl-dot"></span>
-                <span>Japanese Sushi & Asian Wok Art</span>
-              </div>
-              <div class="hl-item">
-                <span class="hl-dot"></span>
-                <span>Chocolate Tempering & Fruit Carving</span>
-              </div>
-              <div class="hl-item">
-                <span class="hl-dot"></span>
-                <span>Banquet & Outdoor Catering (ODC)</span>
-              </div>
-              <div class="hl-item">
-                <span class="hl-dot"></span>
-                <span>Commercial Kitchen Safety & HACCP</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="spotlight-actions">
-            <a href="/courses/dca" class="btn btn-primary btn-lg">
-              <span>View Full DCA Syllabus & Modules</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-
-            <button type="button" class="btn btn-secondary" data-open-modal="true" data-course-context="Diploma in Culinary Arts (DCA)">
-              <span>Inquire on WhatsApp</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Right Visual Showcase -->
-        <div class="spotlight-media-col fade-in">
-          <div class="media-composition">
-            <div class="media-frame-primary">
-              <img 
-                src="/images/kitchen/chef_technique.jpg" 
-                alt="Elite School chef demonstrating pastry and culinary technique" 
-                class="media-img-1"
-                loading="lazy"
-                width="700" 
-                height="800"
-              />
-              <div class="frame-overlay"></div>
-              <div class="experience-badge">
-                <span class="badge-num">100%</span>
-                <span class="badge-text">Hands-On Kitchen Line</span>
-              </div>
-            </div>
-
-            <div class="media-frame-secondary">
-              <img 
-                src="/images/kitchen/cooking_demo.jpg" 
-                alt="Elite School student practical cooking session" 
-                class="media-img-2"
-                loading="lazy"
-                width="400" 
-                height="300"
-              />
-              <div class="badge-accent">
-                <span>Ten 4-Course Menus</span>
-              </div>
+          <!-- Secondary Stepped Vertical Photo -->
+          <div class="collage-sub-frame">
+            <img 
+              src="/images/kitchen/chef_technique.jpg" 
+              alt="Culinary Technique Masterclass at Elite Kathmandu" 
+              class="collage-img-sub"
+              width="320" 
+              height="420"
+            />
+            <div class="sub-frame-caption">
+              <span>Actual Practical Session</span>
+              <strong>Elite Kitchen, Old Baneshwor</strong>
             </div>
           </div>
         </div>
@@ -287,421 +104,459 @@ const allCourses = SITE_DATA.courses;
     </div>
   </section>
 
-  <!-- 4. INSIDE THE ACADEMY: VERIFIED VIDEO REEL STUDIO -->
-  <section class="section reels-section" id="reels">
-    <div class="container">
-      <div class="section-head-editorial fade-in">
-        <div class="section-badge-row">
-          <span class="tag tag-copper">Real Academy Footage</span>
-          <span class="text-muted">Filmed at Pipalbot Campus</span>
-        </div>
-        <h2 class="section-title">
-          Inside Elite: <span class="font-serif italic text-copper">Watch Students at Work</span>
-        </h2>
-        <p class="section-subtitle">
-          No staged actors or stock footage. These are real daily training sessions filmed inside our commercial kitchen and barista studio in Old Baneshwor.
-        </p>
+  <!-- =========================================================================
+       2. PROOF MANIFESTO & UNBOXED METRICS (ZERO GENERIC BOXES)
+       ========================================================================= -->
+  <section class="section section-warm manifesto-section" id="proof">
+    <div class="container watermark-quote-wrapper">
+      <div class="watermark-quote-bg">“</div>
+
+      <div class="manifesto-header">
+        <span class="micro-label">The Elite Philosophy</span>
+        <blockquote class="manifesto-quote serif-quote">
+          “In a craft defined by knife precision, fire control, and timing under pressure, lectures are never enough. Elite is built around the daily rhythm of a working commercial kitchen.”
+        </blockquote>
       </div>
 
-      <div class="reels-grid">
-        <!-- Reel 1: Culinary Technique -->
-        <div class="reel-item fade-in">
-          <VideoPlayer 
-            id="reel-culinary"
-            videoSrc="/video/elite_reel_1.mp4"
-            posterSrc="/images/kitchen/searing_chicken.jpg"
-            title="Student Chef Kitchen Technique"
-            tag="Culinary Station"
-            durationText="0:15"
-          />
+      <!-- Unboxed Statistics Row -->
+      <div class="unboxed-stats-grid">
+        <div class="unboxed-stat-item">
+          <div class="stat-number-unboxed">60<span class="accent">+</span></div>
+          <div class="stat-label-unboxed">Days Nonstop Commercial Kitchen Practical</div>
+          <p class="stat-subtext">Hands-on cooking every single morning and afternoon shift.</p>
         </div>
 
-        <!-- Reel 2: 4-Course Menu Tasting -->
-        <div class="reel-item fade-in">
-          <VideoPlayer 
-            id="reel-menu"
-            videoSrc="/video/elite_reel_2.mp4"
-            posterSrc="/images/kitchen/cooking_demo.jpg"
-            title="4-Course Meal Plating & Tasting"
-            tag="DCA Plating Lab"
-            durationText="0:30"
-          />
+        <div class="unboxed-stat-item">
+          <div class="stat-number-unboxed">10</div>
+          <div class="stat-label-unboxed">Complete 4-Course Menu Masterclasses</div>
+          <p class="stat-subtext">Appetizers, classical soups, pasta precision, and hotel-grade entrees.</p>
         </div>
 
-        <!-- Reel 3: Barista Extraction -->
-        <div class="reel-item fade-in">
-          <VideoPlayer 
-            id="reel-barista"
-            videoSrc="/video/elite_reel_3.mp4"
-            posterSrc="/images/barista/espresso_machine.jpg"
-            title="Specialty Barista & Swan Latte Art"
-            tag="Barista Studio"
-            durationText="0:45"
-          />
+        <div class="unboxed-stat-item">
+          <div class="stat-number-unboxed">4.7<span class="accent">★</span></div>
+          <div class="stat-label-unboxed">Google Rating Across 74 Reviews</div>
+          <p class="stat-subtext">89% five-star student ratings verified on Google Maps.</p>
         </div>
-      </div>
 
-      <div class="reels-footnote fade-in">
-        <p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg>
-          Tap any video to play or unmute. Daily practical classes run in morning and afternoon batches.
-        </p>
+        <div class="unboxed-stat-item">
+          <div class="stat-number-unboxed">3–6</div>
+          <div class="stat-label-unboxed">Months Hotel & Resort Internship</div>
+          <p class="stat-subtext">Nepal hotel, resort & fine dining placement with ODC certification.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. PROGRAMS DISCOVERY (ALL COURSES) -->
-  <section class="section courses-section" id="courses">
-    <div class="container">
-      <div class="courses-header-row fade-in">
+  <!-- =========================================================================
+       3. CHOOSE YOUR DISCIPLINE: INTENT-BASED COURSE DISCOVERY
+       ========================================================================= -->
+  <section class="section section-white" id="courses">
+    <div class="container-wide">
+      <div class="section-header-editorial">
         <div>
-          <div class="section-badge-row">
-            <span class="tag tag-gold">Complete Curriculum</span>
-            <span class="text-muted">Affiliated & Industry Recognized</span>
+          <span class="eyebrow">Academic Disciplines</span>
+          <h2 class="headline-xl">CHOOSE YOUR <span class="text-orange">PATH.</span></h2>
+        </div>
+        <p class="lead-text">
+          Whether your goal is to command a commercial line kitchen, master hotel management, or specialize in third-wave specialty espresso and mixology, our programs provide rigorous hands-on training from day one.
+        </p>
+      </div>
+
+      <!-- Flagship Feature Spread: DCA -->
+      <div class="flagship-feature-spread">
+        <div class="flagship-media-col">
+          <img 
+            src="/images/kitchen/cooking_demo.jpg" 
+            alt="Practical Kitchen Cooking Demo at Elite" 
+            class="flagship-feature-img"
+            width="800" 
+            height="520"
+          />
+          <div class="flagship-media-tag">
+            <span class="micro-label text-white">FLAGSHIP QUALIFICATION</span>
+            <span class="flagship-duration">6 Months Full-Time</span>
           </div>
-          <h2 class="section-title">
-            Hospitality & Culinary <span class="font-serif italic text-gold">Programs</span>
+        </div>
+
+        <div class="flagship-content-col">
+          <div class="flagship-badge-line">
+            <span class="micro-label">DIPLOMA IN CULINARY ARTS (DCA)</span>
+          </div>
+          <h3 class="flagship-title">Professional Chef Qualification</h3>
+          <p class="flagship-desc">
+            Our premier qualification built for serious culinary professionals. Over 60 continuous practical kitchen days covering classical culinary foundations, master sauces, commercial pan-searing, bakery & pastry, sushi art, and chocolate crafting.
+          </p>
+
+          <ul class="flagship-highlights-list">
+            <li>
+              <span class="bullet-dot"></span>
+              <strong>60+ Days Nonstop Practical:</strong> Workstation sanitation, butchery cuts, high-heat sautéing, and flame wok cooking.
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <strong>Ten 4-Course Menu Executions:</strong> Classical French & European multi-course banquets timed to fine-dining standards.
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <strong>Multi-Disciplinary Modules:</strong> Professional Bakery, Sushi Rolling, Chocolate Tempering & Fruit Carving.
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <strong>Hotel & Resort Internship:</strong> 3 to 6 months placement in Nepal with official ODC banqueting certificate.
+            </li>
+          </ul>
+
+          <div class="flagship-cta-row">
+            <a href="/courses/dca" class="btn btn-cib-solid">
+              View Complete DCA Curriculum &rarr;
+            </a>
+            <a 
+              href={SITE_DATA.getWhatsAppLink('Diploma in Culinary Arts (DCA)')} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-cib-outline"
+            >
+              Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial Hairline Divider -->
+      <div class="hairline-divider my-2xl"></div>
+
+      <!-- Other Specialized Disciplines Grid (<15% Boxed, Editorial Architecture) -->
+      <div class="courses-editorial-grid">
+        {otherCourses.map((course, idx) => (
+          <CourseCard course={course} index={idx} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. TRAINING METHODOLOGY: NOT A LECTURE HALL. A WORKING KITCHEN.
+       ========================================================================= -->
+  <section class="section section-warm" id="methodology">
+    <div class="container-wide">
+      <div class="methodology-grid">
+        <!-- Left Content -->
+        <div class="methodology-copy">
+          <span class="eyebrow">Training Reality</span>
+          <h2 class="headline-lg">
+            NOT A LECTURE HALL. <br />
+            A WORKING <span class="text-orange">COMMERCIAL KITCHEN.</span>
           </h2>
-          <p class="section-subtitle">
-            From comprehensive 1-year management diplomas to intensive 1-month barista and flair mixology certifications.
+
+          <p class="methodology-lead">
+            Hospitality is an embodied discipline. You cannot learn knife balance, oil temperature, emulsion stability, or table service from a textbook slide.
           </p>
-        </div>
 
-        <!-- Filter Buttons -->
-        <div class="filter-btn-group" id="courseFilterGroup">
-          <button type="button" class="filter-btn active" data-filter="all">All Programs</button>
-          <button type="button" class="filter-btn" data-filter="diploma">Diplomas</button>
-          <button type="button" class="filter-btn" data-filter="certificate">Certificates</button>
-          <button type="button" class="filter-btn" data-filter="specialization">Specializations</button>
-        </div>
-      </div>
+          <div class="pillars-editorial-list">
+            <div class="pillar-row">
+              <div class="pillar-num">01</div>
+              <div class="pillar-body">
+                <h4 class="pillar-heading">Dedicated Commercial Stations</h4>
+                <p class="pillar-text">
+                  Every student operates real high-power gas burners, stainless steel prep tables, commercial ovens, and heavy-gauge cookware rather than observer benches.
+                </p>
+              </div>
+            </div>
 
-      <!-- Course Cards Grid -->
-      <div class="courses-grid" id="coursesGrid">
-        {allCourses.map((course, idx) => (
-          <div class="course-card-wrapper" data-category={course.category}>
-            <CourseCard course={course} index={idx} />
+            <div class="pillar-row">
+              <div class="pillar-num">02</div>
+              <div class="pillar-body">
+                <h4 class="pillar-heading">The Elite Bar — Mixology & Flair Studio</h4>
+                <p class="pillar-text">
+                  A custom neon-lit training bar equipped with speed rails, glassware, spirit jiggers, and shaker tins. Students master real service speed and flair techniques.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-row">
+              <div class="pillar-num">03</div>
+              <div class="pillar-body">
+                <h4 class="pillar-heading">Specialty Espresso Barista Lab</h4>
+                <p class="pillar-text">
+                  Commercial dual-boiler espresso machinery, burr grinders, and milk frothing stations. Training covers extraction yield, sensory tasting, and swan latte art.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-row">
+              <div class="pillar-num">04</div>
+              <div class="pillar-body">
+                <h4 class="pillar-heading">ODC Banqueting & Event Certification</h4>
+                <p class="pillar-text">
+                  Outdoor Catering (ODC) experience managing real event banquets and fine dining galas, leading to certified event credentials upon graduation.
+                </p>
+              </div>
+            </div>
           </div>
-        ))}
+        </div>
+
+        <!-- Right Visual Collage -->
+        <div class="methodology-media">
+          <div class="methodology-photo-wrapper">
+            <img 
+              src="/images/kitchen/culinary_auditorium.jpg" 
+              alt="Elite Culinary Masterclass Session" 
+              class="methodology-main-img"
+              width="700" 
+              height="500"
+            />
+            <div class="methodology-frame-accent"></div>
+          </div>
+
+          <div class="methodology-bar-card">
+            <img 
+              src="/images/bar/elite_bar_neon.jpg" 
+              alt="The Elite Bar Mixology Session" 
+              class="bar-sub-img"
+              width="400" 
+              height="280"
+            />
+            <div class="bar-caption">
+              <span class="micro-label">THE ELITE BAR</span>
+              <p>Cocktail mixology, flair bartending & beverage service lab.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. THE 4 PRACTICAL PILLARS: WHY ELITE STANDS APART -->
-  <section class="section pillars-section" id="methodology">
-    <div class="container">
-      <div class="section-head-editorial fade-in">
-        <div class="section-badge-row">
-          <span class="tag tag-copper">The Elite Advantage</span>
-          <span class="text-muted">Vocational Immersion</span>
+  <!-- =========================================================================
+       5. INSIDE ELITE: DOCUMENTARY VIDEO REELS STUDIO
+       ========================================================================= -->
+  <section class="section section-white" id="video-gallery">
+    <div class="container-wide">
+      <div class="section-header-editorial">
+        <div>
+          <span class="eyebrow">Documentary Evidence</span>
+          <h2 class="headline-xl">INSIDE THE <span class="text-orange">KITCHEN.</span></h2>
         </div>
-        <h2 class="section-title">
-          Built for the Kitchen Line, <br />
-          <span class="font-serif italic text-copper">Not the Lecture Hall</span>
-        </h2>
-        <p class="section-subtitle">
-          Traditional colleges spend months on theoretical textbooks. Elite puts you on active commercial workstations from day one.
+        <p class="lead-text">
+          Watch authentic moments recorded directly during practical sessions at our Pipalbot campus. Live pan searing, swan latte art, and high-energy bar flair.
         </p>
       </div>
 
-      <div class="pillars-grid">
-        <div class="pillar-card fade-in">
-          <div class="pillar-icon-box">
-            <span class="pillar-num">01</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <h3 class="pillar-title">60+ Days Nonstop Cooking</h3>
-          <p class="pillar-desc">
-            Continuous daily kitchen practicals. You master sautéing, high-heat searing, roasting, stocks, mother sauces, and precision knife work through sheer muscle memory.
-          </p>
-          <ul class="pillar-points">
-            <li>Individual burner & station time</li>
-            <li>Commercial chef knives & cookware</li>
-            <li>Fresh daily ingredients provided</li>
-          </ul>
-        </div>
+      <!-- 3 Video Reels Grid -->
+      <div class="reels-editorial-grid">
+        <VideoPlayer 
+          videoSrc="/video/elite_reel_1.mp4" 
+          posterSrc="/images/kitchen/searing_chicken.jpg"
+          title="Hot Kitchen Pan-Searing & High Flame Cooking"
+          tag="Kitchen Practical"
+          durationText="0:15"
+          id="reel-kitchen"
+        />
 
-        <div class="pillar-card fade-in">
-          <div class="pillar-icon-box">
-            <span class="pillar-num">02</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polygon points="10 8 16 12 10 16 10 8"></polygon>
-            </svg>
-          </div>
-          <h3 class="pillar-title">Ten 4-Course Menu Mastery</h3>
-          <p class="pillar-desc">
-            Cooking single dishes doesn't teach restaurant timing. Elite requires every DCA student to execute ten full 4-course banquet and restaurant services under realistic clock pressure.
-          </p>
-          <ul class="pillar-points">
-            <li>Appetizers & crisp salad compositions</li>
-            <li>Classical soups & reduction broths</li>
-            <li>Entrées, poultry, seafood & glazes</li>
-          </ul>
-        </div>
+        <VideoPlayer 
+          videoSrc="/video/elite_reel_2.mp4" 
+          posterSrc="/images/barista/latte_tasting.jpg"
+          title="Specialty Espresso Extraction & Swan Latte Art"
+          tag="Barista Studio"
+          durationText="0:15"
+          id="reel-barista"
+        />
 
-        <div class="pillar-card fade-in">
-          <div class="pillar-icon-box">
-            <span class="pillar-num">03</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
-            </svg>
-          </div>
-          <h3 class="pillar-title">Dedicated Bar & Barista Studios</h3>
-          <p class="pillar-desc">
-            Step behind our real neon-lit "Elite Bar" counter for mixology, jigger accuracy, and bottle flair. Train on commercial dual-boiler espresso machines for swan latte art.
-          </p>
-          <ul class="pillar-points">
-            <li>Real bar layout with cocktail glasses</li>
-            <li>Commercial grinder & espresso calibration</li>
-            <li>Sensory cupping & milk texture microfoam</li>
-          </ul>
-        </div>
-
-        <div class="pillar-card fade-in">
-          <div class="pillar-icon-box">
-            <span class="pillar-num">04</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
-          </div>
-          <h3 class="pillar-title">3–6 Mo Internship & ODC</h3>
-          <p class="pillar-desc">
-            Graduate with verified industry experience. Elite coordinates 3 to 6-month internships at premier Nepal hotels and resorts, alongside hands-on Outdoor Catering (ODC) certifications.
-          </p>
-          <ul class="pillar-points">
-            <li>Hotel, resort & fine dining placements</li>
-            <li>Grand banquet & event catering exposure</li>
-            <li>Strong foundation for Gulf & Europe pathways</li>
-          </ul>
-        </div>
+        <VideoPlayer 
+          videoSrc="/video/elite_reel_3.mp4" 
+          posterSrc="/images/bar/elite_bar_neon.jpg"
+          title="The Elite Bar: Mixology & Flair Routine"
+          tag="The Elite Bar"
+          durationText="0:15"
+          id="reel-bar"
+        />
       </div>
     </div>
   </section>
 
-  <!-- 7. ACADEMIC & INSTITUTIONAL PARTICIPATION PROOF -->
-  <section class="section collab-section">
-    <div class="container">
-      <div class="collab-box fade-in">
-        <div class="collab-header">
-          <span class="tag tag-gold">Institutional Sessions</span>
-          <h3 class="collab-heading">Trusted by Kathmandu Colleges for Hands-On Workshops</h3>
-          <p class="collab-text">
-            Elite has welcomed visiting hospitality students from prestigious Kathmandu institutions for intensive practical culinary and beverage workshops.
-          </p>
-        </div>
-
-        <div class="collab-grid">
-          {SITE_DATA.collaborativeProof.map((collab) => (
-            <div class="collab-card">
-              <div class="collab-badge">Host & Practical Trainer</div>
-              <h4 class="collab-name">{collab.name}</h4>
-              <p class="collab-context">{collab.context}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. VERIFIED GOOGLE & COMMUNITY REVIEWS -->
-  <section class="section reviews-section" id="reviews">
-    <div class="container">
-      <div class="section-head-editorial fade-in">
-        <div class="section-badge-row">
-          <span class="tag tag-copper">Verified Feedback</span>
-          <span class="text-muted">4.7★ on Google Business</span>
-        </div>
-        <h2 class="section-title">
-          What Our Students <span class="font-serif italic text-copper">& Alumni Say</span>
-        </h2>
-        <p class="section-subtitle">
-          Authentic student and community feedback from our Google Business Profile and official social channels.
+  <!-- =========================================================================
+       6. REAL-WORLD EXPERIENCE: INTERNSHIPS & ODC BANQUETING
+       ========================================================================= -->
+  <section class="section section-warm" id="internship">
+    <div class="container-wide">
+      <div class="experience-header">
+        <span class="eyebrow">Career Launchpad</span>
+        <h2 class="headline-lg">REAL-WORLD INDUSTRY <span class="text-orange">IMMERSION.</span></h2>
+        <p class="lead-text">
+          Elite does not leave students at the classroom door. Our programs transition seamlessly into structured hotel and fine dining placements across Nepal.
         </p>
       </div>
 
-      <div class="reviews-grid">
-        {SITE_DATA.reviews.map((rev) => (
-          <article class="review-card fade-in">
-            <div class="review-stars-row">
-              {Array.from({ length: rev.rating }).map(() => (
-                <span class="star-icon">★</span>
-              ))}
-              <span class="review-badge-tag">{rev.badge}</span>
-            </div>
-
-            <p class="review-quote">“{rev.reviewText}”</p>
-
-            <div class="review-author-block">
-              <div class="author-avatar-initial">
-                {rev.author.charAt(0)}
-              </div>
-              <div class="author-meta">
-                <h4 class="author-name">{rev.author}</h4>
-                <span class="author-source">{rev.dateText}</span>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <!-- Google Business Banner -->
-      <div class="google-proof-banner fade-in">
-        <div class="google-badge-left">
-          <svg class="google-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
-          </svg>
-          <div>
-            <strong>4.7 Out of 5.0 Stars</strong>
-            <span class="text-muted">· Based on 74 verified Google Reviews</span>
+      <!-- Unboxed 3-Column Outcomes Layout -->
+      <div class="unboxed-experience-grid">
+        <div class="exp-column">
+          <div class="exp-index">01</div>
+          <h3 class="exp-title">3 to 6 Months Hotel & Resort Internship</h3>
+          <p class="exp-desc">
+            Structured practical internships in Nepal’s prominent hotels, boutique resorts, and fine dining establishments. Students gain verified line experience under executive chefs and F&B directors.
+          </p>
+          <div class="exp-tag-row">
+            <span class="micro-label">VERIFIED SCOPE</span>
+            <span class="exp-note">Hotels & Fine Dining in Nepal</span>
           </div>
         </div>
-        <a 
-          href={SITE_DATA.institution.googleMapsUrl} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="btn btn-secondary btn-sm"
-        >
-          <span>View on Google Maps →</span>
+
+        <div class="exp-column">
+          <div class="exp-index">02</div>
+          <h3 class="exp-title">ODC (Outdoor Catering) Certification</h3>
+          <p class="exp-desc">
+            Students actively participate in large-scale banqueting and high-end outdoor events, earning official ODC credentials that demonstrate capability to handle high-volume service.
+          </p>
+          <div class="exp-tag-row">
+            <span class="micro-label">CERTIFIED</span>
+            <span class="exp-note">Banquet & Event Operations</span>
+          </div>
+        </div>
+
+        <div class="exp-column">
+          <div class="exp-index">03</div>
+          <h3 class="exp-title">Institutional Workshops & Practical Collaborations</h3>
+          <p class="exp-desc">
+            Elite has welcomed and conducted practical culinary training sessions with visiting hospitality students from colleges across Kathmandu including Janapremi College and The Times International College.
+          </p>
+          <div class="exp-tag-row">
+            <span class="micro-label">OBSERVED PROOF</span>
+            <span class="exp-note">College Skill Workshops</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. VERIFIED GOOGLE REVIEWS (TYPOGRAPHIC QUOTES, ZERO GENERIC CARDS)
+       ========================================================================= -->
+  <section class="section section-white" id="reviews">
+    <div class="container-wide watermark-quote-wrapper">
+      <div class="watermark-quote-bg">“</div>
+
+      <div class="section-header-editorial">
+        <div>
+          <span class="eyebrow">Verified Feedback</span>
+          <h2 class="headline-xl">RATED <span class="text-orange">4.7 STARS</span> ON GOOGLE.</h2>
+        </div>
+        <div class="reviews-summary-badge">
+          <span class="stars">★★★★★</span>
+          <span class="count">74 Verified Student Reviews (89% 5-Star)</span>
+        </div>
+      </div>
+
+      <!-- Editorial Typographic Reviews List (Direct on White Canvas) -->
+      <div class="editorial-reviews-grid">
+        <div class="editorial-review-item">
+          <div class="review-stars">★★★★★</div>
+          <blockquote class="review-text serif-quote">
+            “Elite is the best place to learn professional culinary skills in Kathmandu. The instructors give personal attention to knife cuts, sauce reduction, and real kitchen discipline. The 60+ days nonstop practical made all the difference.”
+          </blockquote>
+          <div class="review-author-meta">
+            <strong class="author-name">Pradeep Lama</strong>
+            <span class="author-tag">Verified Google Review · DCA Graduate</span>
+          </div>
+        </div>
+
+        <div class="editorial-review-item">
+          <div class="review-stars">★★★★★</div>
+          <blockquote class="review-text serif-quote">
+            “The hands-on environment here is completely different from ordinary colleges. In the barista lab, you don’t just watch—you extract, steam milk, and pour latte art every single class.”
+          </blockquote>
+          <div class="review-author-meta">
+            <strong class="author-name">Aashish Thapa</strong>
+            <span class="author-tag">Verified Google Review · Barista & F&B</span>
+          </div>
+        </div>
+
+        <div class="editorial-review-item">
+          <div class="review-stars">★★★★★</div>
+          <blockquote class="review-text serif-quote">
+            “Clean commercial workstations, passionate chefs, and genuine guidance for hotel internships. Best decision for anyone serious about a career in hospitality.”
+          </blockquote>
+          <div class="review-author-meta">
+            <strong class="author-name">Prajwol Shrestha</strong>
+            <span class="author-tag">Verified Google Review · Hospitality Student</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-footer-action">
+        <a href={SITE_DATA.institution.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-cib-outline">
+          Read All 74 Reviews on Google Maps &rarr;
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 9. CAMPUS LOCATION & VISIT SCHEDULER -->
-  <section class="section location-section" id="location">
-    <div class="container">
-      <div class="location-wrapper">
-        <div class="location-info-col fade-in">
-          <div class="section-badge-row">
-            <span class="tag tag-copper">Kathmandu Campus</span>
-            <span class="text-muted">Pipalbot, Old Baneshwor</span>
-          </div>
-          <h2 class="location-title">
-            Visit Our Campus & <br />
-            <span class="font-serif italic text-copper">Watch a Live Class</span>
-          </h2>
-          <p class="location-desc">
-            We encourage every prospective student and parent to tour our facilities in person. Smell the kitchen, watch the chef demos, and test the barista machine before you register.
+  <!-- =========================================================================
+       8. PIPALBOT CAMPUS & VISIT PLANNER
+       ========================================================================= -->
+  <section class="section section-warm" id="campus">
+    <div class="container-wide">
+      <div class="campus-layout-grid">
+        <!-- Left: Address & Booking -->
+        <div class="campus-info-col">
+          <span class="eyebrow">Visit Us in Kathmandu</span>
+          <h2 class="headline-lg">SEE THE KITCHENS <span class="text-orange">IN PERSON.</span></h2>
+          <p class="lead-text">
+            We welcome prospective students and parents for an in-person walk-through of our commercial kitchen stations, dedicated neon bar, and barista studio.
           </p>
 
-          <div class="location-details-list">
-            <div class="loc-item">
-              <div class="loc-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </div>
-              <div>
-                <strong>Physical Address:</strong>
-                <p>{SITE_DATA.institution.address}</p>
-                <span class="text-copper">Plus Code: {SITE_DATA.institution.plusCode}</span>
-              </div>
+          <div class="campus-contact-details">
+            <div class="campus-detail-row">
+              <span class="detail-label">Physical Campus:</span>
+              <p class="detail-value">{SITE_DATA.institution.address}</p>
             </div>
 
-            <div class="loc-item">
-              <div class="loc-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div>
-                <strong>Campus Hours:</strong>
-                <p>{SITE_DATA.institution.hours}</p>
-                <span class="text-muted">Walk-ins welcome during office hours</span>
-              </div>
+            <div class="campus-detail-row">
+              <span class="detail-label">Direct Inquiries:</span>
+              <p class="detail-value">
+                <a href={`tel:${SITE_DATA.institution.primaryPhone}`}>{SITE_DATA.institution.primaryPhone}</a> / 
+                <a href={`tel:${SITE_DATA.institution.mobilePhone}`}>{SITE_DATA.institution.mobilePhone}</a>
+              </p>
             </div>
 
-            <div class="loc-item">
-              <div class="loc-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-              </div>
-              <div>
-                <strong>Direct Telephone & WhatsApp:</strong>
-                <p>Phone: {SITE_DATA.institution.primaryPhone} / {SITE_DATA.institution.alternatePhone}</p>
-                <p class="text-copper">WhatsApp Direct: {SITE_DATA.institution.whatsappDisplay}</p>
-              </div>
+            <div class="campus-detail-row">
+              <span class="detail-label">Admissions Hours:</span>
+              <p class="detail-value">{SITE_DATA.institution.hours}</p>
             </div>
           </div>
 
-          <div class="location-action-row">
-            <button type="button" class="btn btn-primary" data-open-modal="true" data-course-context="Campus Visit Booking">
-              <span>Schedule Guided Campus Tour</span>
+          <div class="campus-actions">
+            <button type="button" class="btn btn-cib-solid" data-open-inquiry-modal>
+              Book a Campus Visit
             </button>
             <a 
-              href={SITE_DATA.institution.googleMapsUrl} 
+              href={SITE_DATA.getWhatsAppLink(undefined, 'Campus Visit Booking')} 
               target="_blank" 
               rel="noopener noreferrer" 
-              class="btn btn-secondary"
+              class="btn btn-cib-outline"
             >
-              <span>Get Directions</span>
+              Chat on WhatsApp
             </a>
           </div>
         </div>
 
-        <div class="location-map-col fade-in">
-          <div class="map-frame-wrapper">
+        <!-- Right: Interactive Google Map -->
+        <div class="campus-map-col">
+          <div class="campus-map-container">
             <iframe 
               src={SITE_DATA.institution.googleMapsEmbedUrl} 
-              class="google-map-iframe" 
-              title="Elite School of Hospitality Management Location Map"
+              width="100%" 
+              height="460" 
+              style="border:0;" 
+              allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
+              title="Elite School of Hospitality Location Map"
             ></iframe>
-            <div class="map-caption-badge">
-              <span class="map-dot"></span>
-              <span>Pipalbot, Old Baneshwor Campus</span>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. FINAL CONVERSION BANNER -->
-  <section class="section cta-banner-section">
-    <div class="container">
-      <div class="banner-box fade-in">
-        <div class="banner-glow"></div>
-        <div class="banner-content">
-          <span class="tag tag-copper">Limited Batch Intakes</span>
-          <h2 class="banner-title">
-            Your Culinary Career Starts on the <span class="font-serif italic text-copper">Kitchen Line</span>
-          </h2>
-          <p class="banner-sub">
-            Each workstation batch is strictly capped at 16 students to ensure every student gets individual burner time, chef attention, and real ingredient mastery.
-          </p>
-          <div class="banner-actions">
-            <a 
-              href={SITE_DATA.getWhatsAppLink('Flagship DCA')} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="btn btn-primary btn-lg"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-              </svg>
-              <span>Inquire via WhatsApp</span>
+          <div class="map-caption-bar">
+            <span>Pipalbot, Old Baneshwor, Kathmandu</span>
+            <a href={SITE_DATA.institution.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="map-direct-link">
+              Open Full Directions &rarr;
             </a>
-
-            <button type="button" class="btn btn-secondary btn-lg" data-open-modal="true" data-course-context="General Admission Inquiry">
-              <span>Request Fee Structure</span>
-            </button>
           </div>
         </div>
       </div>
@@ -710,1155 +565,759 @@ const allCourses = SITE_DATA.courses;
 </BaseLayout>
 
 <style>
-  /* Hero Section Styles */
+  /* =========================================================================
+     1. HERO STYLES
+     ========================================================================= */
   .hero-section {
     position: relative;
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    padding: 7rem 0 5rem;
-    overflow: hidden;
+    padding-top: clamp(3.5rem, 6vw, 6rem);
+    padding-bottom: clamp(4.5rem, 8vw, 7.5rem);
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .hero-bg-media {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
-  }
-
-  .hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    opacity: 0.35;
-    filter: brightness(0.7) contrast(1.1);
-    transform: scale(1.04);
-  }
-
-  .hero-bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(9, 13, 18, 0.75) 0%,
-      rgba(9, 13, 18, 0.92) 60%,
-      rgba(9, 13, 18, 1) 100%
-    );
-  }
-
-  .hero-glow-copper {
-    position: absolute;
-    top: -20%;
-    right: 10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(217, 119, 54, 0.18) 0%, rgba(9, 13, 18, 0) 70%);
-    pointer-events: none;
-  }
-
-  .hero-container {
-    position: relative;
-    z-index: 2;
+  .hero-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: clamp(3rem, 5vw, 5rem);
     align-items: center;
   }
 
-  .hero-eyebrow {
-    display: inline-flex;
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.15fr 0.95fr;
+    }
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.75rem, 5.2vw, 4.85rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    color: var(--color-navy);
+    margin-bottom: 1.5rem;
+  }
+
+  .text-orange {
+    color: var(--color-orange);
+  }
+
+  .hero-serif-lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+    line-height: 1.38;
+    color: var(--color-navy);
+    margin-bottom: 2.25rem;
+    max-width: 58ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.4rem 0.9rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-full);
-    margin-bottom: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
   }
 
-  .pulse-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--color-copper);
-    box-shadow: 0 0 10px var(--color-copper);
-    animation: pulse 2s infinite ease-in-out;
+  .hero-wa-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.5rem;
   }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.85); }
+  .wa-icon {
+    color: var(--color-whatsapp);
+    flex-shrink: 0;
   }
 
-  .eyebrow-text {
-    font-size: 0.82rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-cream-dim);
+  .wa-num {
+    color: var(--color-navy);
+    font-weight: 700;
+    text-decoration: underline;
   }
 
-  .hero-title {
-    font-size: clamp(2.4rem, 4.8vw, 4.4rem);
-    line-height: 1.08;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
-    color: var(--color-cream);
-  }
-
-  .hero-lead {
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
-    line-height: 1.65;
-    color: var(--color-cream-dim);
-    max-width: 580px;
-    margin-bottom: 2.2rem;
-  }
-
-  .hero-cta-group {
+  .hero-proof-strip {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2rem;
-    margin-bottom: 3rem;
+    align-items: center;
+    gap: 1.25rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--color-border);
   }
 
-  .hero-proof-bar {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    padding-top: 1.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .proof-pill {
+  .proof-metric-unit {
     display: flex;
     align-items: baseline;
     gap: 0.45rem;
   }
 
-  .proof-star {
-    color: var(--color-gold);
-    font-size: 1.1rem;
-  }
-
-  .proof-val {
-    font-weight: 800;
-    font-size: 1.15rem;
-    color: var(--color-cream);
-  }
-
-  .proof-label {
-    font-size: 0.82rem;
-    color: var(--color-muted);
-  }
-
-  .proof-divider {
-    width: 1px;
-    height: 18px;
-    background: rgba(255, 255, 255, 0.15);
-  }
-
-  /* Hero Visual Floating Card */
-  .hero-visual-card {
-    position: relative;
-  }
-
-  .hero-card-inner {
-    background: var(--color-dark-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-    transition: transform var(--transition-normal);
-  }
-
-  .hero-card-inner:hover {
-    transform: translateY(-4px);
-    border-color: rgba(217, 119, 54, 0.4);
-  }
-
-  .card-media-wrapper {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-  }
-
-  .card-img-main {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-slow);
-  }
-
-  .hero-card-inner:hover .card-img-main {
-    transform: scale(1.05);
-  }
-
-  .card-badge-floating {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.8rem;
-    background: rgba(9, 13, 18, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-full);
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-cream);
-  }
-
-  .live-indicator {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #22C55E;
-    box-shadow: 0 0 8px #22C55E;
-  }
-
-  .card-caption-block {
-    padding: 1.5rem;
-  }
-
-  .caption-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.6rem;
-  }
-
-  .caption-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-copper);
-  }
-
-  .caption-meta {
-    font-size: 0.75rem;
-    color: var(--color-muted);
-  }
-
-  .caption-heading {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--color-cream);
-  }
-
-  .caption-desc {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: var(--color-cream-dim);
-    margin-bottom: 1.2rem;
-  }
-
-  .caption-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 1rem;
-  }
-
-  .card-link {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--color-copper-light);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: color var(--transition-fast);
-  }
-
-  .card-link:hover {
-    color: var(--color-cream);
-  }
-
-  /* Proof Ribbon */
-  .proof-ribbon {
-    background: #0B1017;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    overflow: hidden;
-    padding: 1rem 0;
-    position: relative;
-    z-index: 5;
-  }
-
-  .marquee-track {
-    display: flex;
-    width: fit-content;
-    animation: ticker 38s linear infinite;
-  }
-
-  .marquee-track:hover {
-    animation-play-state: paused;
-  }
-
-  .marquee-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    white-space: nowrap;
-    padding-right: 2rem;
-    font-size: 0.88rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-cream-dim);
-  }
-
-  .separator {
-    color: var(--color-copper);
-    font-size: 0.85rem;
-  }
-
-  @keyframes ticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* Flagship Spotlight */
-  .dca-spotlight-section {
-    background: radial-gradient(circle at 10% 20%, rgba(217, 119, 54, 0.06) 0%, transparent 60%),
-                var(--color-dark-surface);
-    position: relative;
-  }
-
-  .spotlight-wrapper {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 4.5rem;
-    align-items: center;
-  }
-
-  .section-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .spotlight-title {
-    font-size: clamp(2.2rem, 3.8vw, 3.6rem);
-    line-height: 1.1;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
-  }
-
-  .spotlight-summary {
-    font-size: 1.1rem;
-    line-height: 1.65;
-    color: var(--color-cream-dim);
-    margin-bottom: 2.5rem;
-  }
-
-  .spotlight-specs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .spec-box {
-    background: var(--color-dark-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.2rem;
-  }
-
-  .spec-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: 800;
+  .metric-bold {
     font-family: var(--font-display);
-    line-height: 1;
-    margin-bottom: 0.3rem;
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: var(--color-navy);
   }
 
-  .spec-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-cream);
-    margin-bottom: 0.35rem;
+  .metric-desc {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
   }
 
-  .spec-sub {
-    font-size: 0.78rem;
-    color: var(--color-muted);
-    line-height: 1.4;
-    margin: 0;
+  .proof-sep {
+    color: var(--color-border-medium);
+    font-weight: 300;
   }
 
-  .spotlight-highlights-list {
-    margin-bottom: 2.5rem;
-  }
-
-  .highlights-heading {
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-copper);
-    margin-bottom: 1rem;
-  }
-
-  .highlights-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem 1.5rem;
-  }
-
-  .hl-item {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.88rem;
-    color: var(--color-cream-dim);
-  }
-
-  .hl-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--color-copper);
-    flex-shrink: 0;
-  }
-
-  .spotlight-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-  }
-
-  /* Right Media Composition */
-  .media-composition {
+  /* Stepped Asymmetric Collage */
+  .stepped-collage {
     position: relative;
+    padding-bottom: 2.5rem;
   }
 
-  .media-frame-primary {
+  .collage-main-frame {
     position: relative;
-    border-radius: var(--radius-lg);
+    width: 88%;
+    border-radius: var(--radius-xs);
     overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-cream);
+    box-shadow: var(--shadow-hover);
   }
 
-  .media-img-1 {
+  .collage-img-main {
     width: 100%;
     height: auto;
-    display: block;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+  }
+
+  .collage-accent-line {
+    position: absolute;
+    inset: 1rem -1rem -1rem 1rem;
+    border: 1.5px solid var(--color-orange);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .collage-sub-frame {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 16px 36px rgba(11, 19, 43, 0.14);
+    border: 4px solid #FFFFFF;
+  }
+
+  .collage-img-sub {
+    width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
   }
 
-  .frame-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 60%, rgba(9, 13, 18, 0.85) 100%);
-  }
-
-  .experience-badge {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    background: rgba(9, 13, 18, 0.88);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-md);
-    padding: 0.8rem 1.2rem;
+  .sub-frame-caption {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.6875rem;
+    background: #FFFFFF;
+    color: var(--color-navy);
     display: flex;
-    align-items: center;
-    gap: 0.8rem;
+    flex-direction: column;
   }
 
-  .badge-num {
-    font-size: 1.6rem;
-    font-weight: 800;
-    font-family: var(--font-display);
-    color: var(--color-copper);
-    line-height: 1;
-  }
-
-  .badge-text {
-    font-size: 0.82rem;
-    font-weight: 700;
+  .sub-frame-caption span {
+    font-family: var(--font-mono);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-cream);
-    max-width: 120px;
+    color: var(--color-orange);
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* =========================================================================
+     2. MANIFESTO & UNBOXED STATS
+     ========================================================================= */
+  .manifesto-section {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .manifesto-header {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin-bottom: 4rem;
+  }
+
+  .manifesto-quote {
+    font-size: clamp(1.5rem, 2.8vw, 2.35rem);
+    color: var(--color-navy);
+    margin-top: 1rem;
     line-height: 1.3;
   }
 
-  .media-frame-secondary {
-    position: absolute;
-    bottom: -2.5rem;
-    right: -2rem;
-    width: 55%;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
-    border: 2px solid var(--color-dark-bg);
-  }
-
-  .media-img-2 {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-  }
-
-  .badge-accent {
-    position: absolute;
-    bottom: 0.8rem;
-    left: 0.8rem;
-    background: rgba(9, 13, 18, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-sm);
-    padding: 0.3rem 0.6rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--color-gold);
-  }
-
-  /* Reels Section */
-  .reels-section {
-    background: #090D12;
+  .unboxed-stats-grid {
     position: relative;
-  }
-
-  .section-head-editorial {
-    max-width: 720px;
-    margin-bottom: 3.5rem;
-  }
-
-  .section-badge-row {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-size: clamp(2rem, 3.5vw, 3.2rem);
-    line-height: 1.15;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.2rem;
-  }
-
-  .section-subtitle {
-    font-size: 1.05rem;
-    line-height: 1.65;
-    color: var(--color-cream-dim);
-  }
-
-  .reels-grid {
+    z-index: 1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-border);
   }
 
-  .reels-footnote {
-    text-align: center;
-    padding-top: 1rem;
-  }
-
-  .reels-footnote p {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: var(--color-muted);
-  }
-
-  /* Courses Discovery Section */
-  .courses-section {
-    background: var(--color-dark-surface);
-  }
-
-  .courses-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .filter-btn-group {
-    display: flex;
-    gap: 0.5rem;
-    background: var(--color-dark-card);
-    padding: 0.35rem;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--color-border);
-  }
-
-  .filter-btn {
-    padding: 0.5rem 1.1rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    border-radius: var(--radius-full);
-    color: var(--color-cream-dim);
-    background: transparent;
-    transition: all var(--transition-fast);
-  }
-
-  .filter-btn:hover {
-    color: var(--color-cream);
-  }
-
-  .filter-btn.active {
-    background: var(--color-copper);
-    color: #fff;
-    box-shadow: 0 2px 10px rgba(217, 119, 54, 0.4);
-  }
-
-  .courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-  }
-
-  .course-card-wrapper {
-    transition: opacity var(--transition-normal), transform var(--transition-normal);
-  }
-
-  .course-card-wrapper.hidden {
-    display: none;
-  }
-
-  /* Pillars Section */
-  .pillars-section {
-    background: #090D12;
-  }
-
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 2rem;
-  }
-
-  .pillar-card {
-    background: var(--color-dark-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2.2rem 1.8rem;
-    transition: transform var(--transition-normal), border-color var(--transition-normal);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .pillar-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(217, 119, 54, 0.4);
-  }
-
-  .pillar-icon-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--color-copper);
-    margin-bottom: 1.5rem;
-  }
-
-  .pillar-num {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.2);
-  }
-
-  .pillar-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    color: var(--color-cream);
-  }
-
-  .pillar-desc {
-    font-size: 0.92rem;
-    line-height: 1.6;
-    color: var(--color-cream-dim);
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-  }
-
-  .pillar-points {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .pillar-points li {
-    font-size: 0.82rem;
-    color: var(--color-muted);
-    position: relative;
-    padding-left: 1rem;
-  }
-
-  .pillar-points li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--color-copper);
-  }
-
-  /* Collaboration Section */
-  .collab-section {
-    padding: 2rem 0 5rem;
-    background: #090D12;
-  }
-
-  .collab-box {
-    background: linear-gradient(135deg, rgba(229, 169, 60, 0.08) 0%, rgba(17, 23, 32, 0.9) 100%);
-    border: 1px solid rgba(229, 169, 60, 0.25);
-    border-radius: var(--radius-xl);
-    padding: 3rem;
-  }
-
-  .collab-header {
-    max-width: 680px;
-    margin-bottom: 2.5rem;
-  }
-
-  .collab-heading {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0.8rem 0;
-    color: var(--color-cream);
-  }
-
-  .collab-text {
-    font-size: 0.95rem;
-    color: var(--color-cream-dim);
-    line-height: 1.6;
-  }
-
-  .collab-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .collab-card {
-    background: rgba(9, 13, 18, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-md);
-    padding: 1.5rem;
-  }
-
-  .collab-badge {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-gold);
-    margin-bottom: 0.6rem;
-  }
-
-  .collab-name {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    color: var(--color-cream);
-  }
-
-  .collab-context {
-    font-size: 0.85rem;
-    color: var(--color-cream-dim);
-    line-height: 1.45;
-  }
-
-  /* Reviews Section */
-  .reviews-section {
-    background: var(--color-dark-surface);
-  }
-
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .review-card {
-    background: var(--color-dark-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2.2rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .review-stars-row {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .star-icon {
-    color: var(--color-gold);
-    font-size: 1.1rem;
-  }
-
-  .review-badge-tag {
-    margin-left: auto;
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius-full);
-    color: var(--color-muted);
-  }
-
-  .review-quote {
-    font-size: 0.98rem;
-    line-height: 1.65;
-    color: var(--color-cream-dim);
-    font-style: italic;
-    margin-bottom: 1.8rem;
-    flex-grow: 1;
-  }
-
-  .review-author-block {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 1.2rem;
-  }
-
-  .author-avatar-initial {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(217, 119, 54, 0.15);
-    border: 1px solid rgba(217, 119, 54, 0.4);
-    color: var(--color-copper-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-
-  .author-name {
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin: 0;
-    color: var(--color-cream);
-  }
-
-  .author-source {
-    font-size: 0.78rem;
-    color: var(--color-muted);
-  }
-
-  .google-proof-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    background: #0B1017;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
-    padding: 1.2rem 2rem;
-  }
-
-  .google-badge-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.95rem;
-  }
-
-  /* Location Section */
-  .location-section {
-    background: #090D12;
-  }
-
-  .location-wrapper {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .location-title {
-    font-size: clamp(2rem, 3.4vw, 3.2rem);
-    line-height: 1.15;
-    font-weight: 800;
-    margin-bottom: 1.2rem;
-  }
-
-  .location-desc {
-    font-size: 1.05rem;
-    line-height: 1.65;
-    color: var(--color-cream-dim);
-    margin-bottom: 2rem;
-  }
-
-  .location-details-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .loc-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .loc-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: var(--radius-sm);
-    background: rgba(217, 119, 54, 0.1);
-    border: 1px solid rgba(217, 119, 54, 0.25);
-    color: var(--color-copper);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .loc-item strong {
-    display: block;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-cream);
-    margin-bottom: 0.25rem;
-  }
-
-  .loc-item p {
-    margin: 0;
-    font-size: 0.92rem;
-    color: var(--color-cream-dim);
-    line-height: 1.45;
-  }
-
-  .location-action-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-  }
-
-  .map-frame-wrapper {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    aspect-ratio: 4 / 3;
-    min-height: 420px;
-  }
-
-  .google-map-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(110%);
-  }
-
-  .map-caption-badge {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.45rem 0.9rem;
-    background: rgba(9, 13, 18, 0.9);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-full);
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-cream);
-  }
-
-  .map-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--color-copper);
-    box-shadow: 0 0 8px var(--color-copper);
-  }
-
-  /* Final CTA Banner */
-  .cta-banner-section {
-    padding: 2rem 0 6rem;
-    background: #090D12;
-  }
-
-  .banner-box {
-    position: relative;
-    background: linear-gradient(135deg, rgba(217, 119, 54, 0.15) 0%, rgba(17, 23, 32, 0.95) 100%);
-    border: 1px solid rgba(217, 119, 54, 0.35);
-    border-radius: var(--radius-xl);
-    padding: 4.5rem 3rem;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .banner-glow {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(217, 119, 54, 0.25) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .banner-content {
-    position: relative;
-    z-index: 2;
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .banner-title {
-    font-size: clamp(2.2rem, 4vw, 3.6rem);
-    line-height: 1.15;
-    font-weight: 800;
-    margin: 1.2rem 0;
-  }
-
-  .banner-sub {
-    font-size: 1.1rem;
-    line-height: 1.65;
-    color: var(--color-cream-dim);
-    margin-bottom: 2.5rem;
-  }
-
-  .banner-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-  }
-
-  /* Responsive Breakpoints */
-  @media (max-width: 1024px) {
-    .hero-container,
-    .spotlight-wrapper,
-    .location-wrapper {
-      grid-template-columns: 1fr;
-      gap: 3.5rem;
-    }
-
-    .hero-visual-card {
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    .media-frame-secondary {
-      right: 0;
-      bottom: -1.5rem;
-    }
-
-    .reels-grid {
+  @media (min-width: 640px) {
+    .unboxed-stats-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (max-width: 768px) {
-    .hero-section {
-      padding: 5rem 0 3.5rem;
+  @media (min-width: 1024px) {
+    .unboxed-stats-grid {
+      grid-template-columns: repeat(4, 1fr);
     }
+  }
 
-    .hero-title {
-      font-size: 2.4rem;
-    }
+  .unboxed-stat-item {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .spotlight-specs-grid,
-    .highlights-grid {
-      grid-template-columns: 1fr;
-    }
+  .stat-subtext {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-top: 0.4rem;
+  }
 
-    .reels-grid {
-      grid-template-columns: 1fr;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  /* =========================================================================
+     3. CHOOSE YOUR DISCIPLINE
+     ========================================================================= */
+  .section-header-editorial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
 
-    .courses-header-row {
-      flex-direction: column;
-      align-items: flex-start;
+  @media (min-width: 992px) {
+    .section-header-editorial {
+      flex-direction: row;
+      align-items: flex-end;
     }
+  }
 
-    .filter-btn-group {
-      width: 100%;
-      overflow-x: auto;
-      justify-content: flex-start;
-      border-radius: var(--radius-md);
-    }
+  .flagship-feature-spread {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    background-color: var(--color-bg-warm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+  }
 
-    .media-frame-secondary {
-      position: relative;
-      width: 100%;
-      right: auto;
-      bottom: auto;
-      margin-top: 1rem;
+  @media (min-width: 1024px) {
+    .flagship-feature-spread {
+      grid-template-columns: 1.15fr 1fr;
     }
+  }
 
-    .banner-box {
-      padding: 3rem 1.5rem;
+  .flagship-media-col {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    background-color: var(--color-bg-cream);
+    overflow: hidden;
+  }
+
+  .flagship-feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 15%;
+  }
+
+  .flagship-media-tag {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(11, 19, 43, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--radius-xs);
+  }
+
+  .text-white {
+    color: #FFFFFF;
+  }
+
+  .flagship-duration {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-orange-light);
+    font-weight: 600;
+  }
+
+  .flagship-content-col {
+    padding: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .flagship-badge-line {
+    margin-bottom: 0.5rem;
+  }
+
+  .flagship-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--color-navy);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .flagship-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--color-text-body);
+    margin-bottom: 1.5rem;
+  }
+
+  .flagship-highlights-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .flagship-highlights-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  .bullet-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-orange);
+    border-radius: 50%;
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  .flagship-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .courses-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .courses-editorial-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  @media (min-width: 1024px) {
+    .courses-editorial-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .my-2xl {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  /* =========================================================================
+     4. METHODOLOGY
+     ========================================================================= */
+  .methodology-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(3rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .methodology-grid {
+      grid-template-columns: 1.15fr 0.95fr;
+    }
+  }
+
+  .methodology-lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    line-height: 1.45;
+    color: var(--color-navy);
+    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillars-editorial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .pillar-row {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .pillar-row:last-child {
+    border-bottom: none;
+  }
+
+  .pillar-num {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--color-orange);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .pillar-heading {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--color-navy);
+    margin-bottom: 0.35rem;
+  }
+
+  .pillar-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .methodology-photo-wrapper {
+    position: relative;
+    width: 90%;
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    box-shadow: var(--shadow-hover);
+  }
+
+  .methodology-main-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .methodology-frame-accent {
+    position: absolute;
+    inset: 1rem -1rem -1rem 1rem;
+    border: 1.5px solid var(--color-orange);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .methodology-bar-card {
+    position: relative;
+    width: 65%;
+    margin-left: auto;
+    margin-top: -3.5rem;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    box-shadow: var(--shadow-hover);
+  }
+
+  .bar-sub-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .bar-caption {
+    padding: 0.85rem 1rem;
+  }
+
+  .bar-caption p {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-top: 2px;
+  }
+
+  /* =========================================================================
+     5. REELS GRID
+     ========================================================================= */
+  .reels-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .reels-editorial-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .reels-editorial-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* =========================================================================
+     6. REAL-WORLD EXPERIENCE
+     ========================================================================= */
+  .experience-header {
+    max-width: 760px;
+    margin-bottom: 3.5rem;
+  }
+
+  .unboxed-experience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .unboxed-experience-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .exp-column {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--color-navy);
+  }
+
+  .exp-index {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.75rem;
+    color: var(--color-orange);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .exp-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--color-navy);
+    margin-bottom: 0.85rem;
+  }
+
+  .exp-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .exp-tag-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .exp-note {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  /* =========================================================================
+     7. GOOGLE REVIEWS (EDITORIAL TYPOGRAPHY)
+     ========================================================================= */
+  .reviews-summary-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-navy);
+  }
+
+  .stars {
+    color: var(--color-gold);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .editorial-reviews-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .editorial-reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .editorial-review-item {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+  }
+
+  .review-stars {
+    color: var(--color-gold);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .review-text {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--color-navy);
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+  }
+
+  .review-author-meta {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .author-name {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 800;
+    color: var(--color-navy);
+  }
+
+  .author-tag {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+
+  .reviews-footer-action {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  /* =========================================================================
+     8. CAMPUS & VISIT PLANNER
+     ========================================================================= */
+  .campus-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(3rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .campus-layout-grid {
+      grid-template-columns: 1.1fr 1fr;
+    }
+  }
+
+  .campus-contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .campus-detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .detail-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-orange);
+    font-weight: 700;
+  }
+
+  .detail-value {
+    font-size: 0.95rem;
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
+  .detail-value a {
+    color: var(--color-navy);
+    transition: color var(--transition-fast);
+  }
+
+  .detail-value a:hover {
+    color: var(--color-orange);
+  }
+
+  .campus-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .campus-map-container {
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .map-caption-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0.25rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+  }
+
+  .map-direct-link {
+    color: var(--color-orange);
+    font-weight: 700;
+  }
+
+  .map-direct-link:hover {
+    text-decoration: underline;
   }
 </style>
-
-<script>
-  // Filter Interactive Handler
-  function initCourseFilters() {
-    const buttons = document.querySelectorAll<HTMLButtonElement>('#courseFilterGroup .filter-btn');
-    const cards = document.querySelectorAll<HTMLElement>('#coursesGrid .course-card-wrapper');
-
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        buttons.forEach((b) => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter || 'all';
-
-        cards.forEach((card) => {
-          const category = card.dataset.category;
-          if (filter === 'all' || category === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    initCourseFilters();
-  });
-</script>

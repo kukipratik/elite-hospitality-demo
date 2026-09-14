@@ -11,32 +11,30 @@ const { course, index = 0 } = Astro.props;
 const whatsappLink = SITE_DATA.getWhatsAppLink(course.title);
 ---
 
-<article class={`course-card ${course.isFlagship ? 'flagship-card' : ''}`} data-course-id={course.id}>
-  <div class="card-media-wrap">
+<article class="cib-course-card" data-course-id={course.id}>
+  <!-- Course Image with Offset Architectural Framing -->
+  <div class="card-media">
     <img 
       src={course.heroImage} 
       alt={course.title} 
       class="card-img" 
       loading="lazy" 
       width="600" 
-      height="400" 
+      height="380" 
     />
-    <div class="card-media-overlay"></div>
-    <div class="card-badge-row">
-      <span class={`tag ${course.isFlagship ? 'tag-copper' : 'tag-gold'}`}>
-        {course.isFlagship ? 'Flagship Diploma' : course.category}
+    <div class="card-tag-badge">
+      <span class="micro-label card-category-label">
+        {course.isFlagship ? 'FLAGSHIP DIPLOMA' : course.category.toUpperCase()}
       </span>
-      <span class="tag duration-tag">
-        {course.duration}
-      </span>
+      <span class="card-duration">{course.duration}</span>
     </div>
   </div>
 
-  <div class="card-body">
-    <div class="card-header-group">
+  <div class="card-content">
+    <div class="card-title-group">
       <h3 class="card-title">
         {course.isFlagship ? (
-          <a href="/courses/dca">{course.title}</a>
+          <a href="/courses/dca" class="card-link">{course.title}</a>
         ) : (
           course.title
         )}
@@ -46,44 +44,30 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(course.title);
 
     <p class="card-desc">{course.description}</p>
 
-    <!-- Verified Highlights List -->
+    <!-- Verified Highlights (Strict hairline separators) -->
     <ul class="card-highlights">
       {course.verifiedHighlights.slice(0, 3).map((item) => (
-        <li>
-          <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
+        <li class="highlight-item">
+          <span class="accent-bullet"></span>
           <span>{item}</span>
         </li>
       ))}
     </ul>
 
-    <!-- Card Metadata Strip -->
-    <div class="card-meta-strip">
-      <div class="meta-unit">
-        <span class="meta-label">Batch Cap</span>
-        <span class="meta-val">{course.seatsPerBatch} Students / Station</span>
-      </div>
-      <div class="meta-unit">
-        <span class="meta-label">Class Shifts</span>
-        <span class="meta-val">Morning & Afternoon</span>
-      </div>
-    </div>
-
-    <!-- Actions -->
-    <div class="card-actions">
+    <!-- Footer Actions: Architectural Buttons -->
+    <div class="card-footer">
       {course.isFlagship ? (
-        <a href="/courses/dca" class="btn btn-primary btn-sm">
+        <a href="/courses/dca" class="btn btn-cib-solid btn-sm">
           Explore DCA &rarr;
         </a>
       ) : (
         <button 
           type="button" 
-          class="btn btn-secondary btn-sm" 
+          class="btn btn-cib-outline btn-sm" 
           data-open-inquiry-modal 
           data-preselect-course={course.title}
         >
-          Details
+          Syllabus & Info
         </button>
       )}
 
@@ -91,194 +75,184 @@ const whatsappLink = SITE_DATA.getWhatsAppLink(course.title);
         href={whatsappLink} 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="btn btn-whatsapp btn-sm"
+        class="card-wa-link"
         aria-label={`Inquire about ${course.title} on WhatsApp`}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.58 2.029.924 3.149.925h.005c3.182 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.767-5.773-5.767zm0 10.375c-.981 0-1.898-.284-2.697-.79l-.193-.115-1.393.365.372-1.357-.126-.201c-.552-.881-.844-1.867-.843-2.88.001-2.535 2.062-4.597 4.6-4.597 2.536 0 4.601 2.061 4.601 4.597 0 2.537-2.064 4.598-4.598 4.598zm2.525-3.447c-.138-.07-.82-.405-.947-.451-.128-.046-.221-.07-.314.07-.093.139-.36.452-.441.545-.081.093-.163.105-.302.035-.139-.07-.588-.217-1.12-.692-.414-.37-.693-.827-.775-.966-.081-.139-.009-.215.061-.284.063-.062.139-.163.209-.244.07-.081.093-.139.139-.232.047-.093.023-.174-.012-.244-.035-.07-.314-.755-.43-1.034-.113-.271-.228-.234-.314-.239l-.268-.005c-.093 0-.244.035-.371.174-.128.139-.488.476-.488 1.16 0 .685.499 1.346.569 1.439.07.093.982 1.5 2.38 2.104.333.144.593.229.796.294.335.106.639.091.88.055.269-.04.82-.336.936-.661.116-.325.116-.603.081-.661-.035-.059-.128-.094-.267-.163z"/>
         </svg>
-        WhatsApp
+        <span>WhatsApp</span>
       </a>
     </div>
   </div>
 </article>
 
 <style>
-  .course-card {
-    background: #0E141C;
-    border: 1px solid var(--color-border-dark);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
+  .cib-course-card {
     display: flex;
     flex-direction: column;
-    transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
   }
 
-  .course-card:hover {
+  .cib-course-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-border-medium);
   }
 
-  /* Flagship Styling */
-  .flagship-card {
-    border-color: rgba(217, 119, 54, 0.35);
-    background: linear-gradient(180deg, #121924 0%, #0E141C 100%);
-    box-shadow: 0 10px 30px rgba(217, 119, 54, 0.1);
-  }
-
-  .flagship-card:hover {
-    border-color: var(--color-copper);
-    box-shadow: 0 20px 50px rgba(217, 119, 54, 0.25);
-  }
-
-  /* Media */
-  .card-media-wrap {
+  .card-media {
     position: relative;
     width: 100%;
-    height: 240px;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
-    background: #05080C;
+    background-color: var(--color-bg-cream);
   }
 
   .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .course-card:hover .card-img {
-    transform: scale(1.05);
+  .cib-course-card:hover .card-img {
+    transform: scale(1.04);
   }
 
-  .card-media-overlay {
+  .card-tag-badge {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(9, 13, 18, 0.1) 0%, rgba(9, 13, 18, 0.8) 100%);
-  }
-
-  .card-badge-row {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
+    bottom: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
-    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius-xs);
+    border: 1px solid rgba(11, 19, 43, 0.08);
   }
 
-  .duration-tag {
-    background: rgba(9, 13, 18, 0.75);
-    backdrop-filter: blur(4px);
+  .card-category-label {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  /* Body */
-  .card-body {
+  .card-duration {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
     padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
     flex-grow: 1;
-    gap: 1.25rem;
   }
 
-  .card-header-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
+  .card-title-group {
+    margin-bottom: 0.75rem;
   }
 
   .card-title {
     font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: var(--color-text-primary);
+    color: var(--color-navy);
   }
 
-  .card-title a:hover {
-    color: var(--color-copper-light);
+  .card-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .card-link:hover {
+    color: var(--color-orange);
   }
 
   .card-subtitle {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 0.875rem;
-    color: var(--color-copper-light);
-    line-height: 1.35;
+    color: var(--color-text-secondary);
+    margin-top: 0.35rem;
+    line-height: 1.4;
   }
 
   .card-desc {
     font-size: 0.875rem;
-    color: var(--color-text-secondary);
     line-height: 1.6;
+    color: var(--color-text-body);
+    margin-bottom: 1.25rem;
   }
 
-  /* Highlights */
   .card-highlights {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-top: auto;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border-dark);
+    gap: 0.6rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1.5rem;
   }
 
-  .card-highlights li {
-    font-size: 0.8125rem;
-    color: var(--color-text-secondary);
+  .highlight-item {
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.65rem;
+    font-size: 0.8125rem;
     line-height: 1.45;
+    color: var(--color-text-secondary);
   }
 
-  .check-icon {
-    color: var(--color-copper);
+  .accent-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-orange);
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 0.45rem;
   }
 
-  /* Meta Strip */
-  .card-meta-strip {
+  .card-footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius-xs);
-    padding: 0.65rem 0.85rem;
-    border: 1px solid var(--color-border-dark);
+    gap: 1rem;
+    margin-top: auto;
   }
 
-  .meta-unit {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
-
-  .meta-label {
-    font-size: 0.6875rem;
-    color: var(--color-text-muted);
+  .card-wa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-navy);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
+    transition: color var(--transition-fast);
   }
 
-  .meta-val {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-text-primary);
-  }
-
-  /* Actions */
-  .card-actions {
-    display: flex;
-    gap: 0.75rem;
-  }
-
-  .card-actions .btn {
-    flex: 1;
+  .card-wa-link:hover {
+    color: var(--color-emerald);
   }
 </style>

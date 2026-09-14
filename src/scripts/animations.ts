@@ -18,160 +18,113 @@ export function initGlobalAnimations() {
 
   const mm = gsap.matchMedia();
 
-  // Desktop Motion (> 992px)
-  mm.add('(min-width: 992px)', () => {
+  // Desktop Motion (> 768px)
+  mm.add('(min-width: 768px)', () => {
     // 1. Staged Hero Sequence
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    
-    if (document.querySelector('.hero-eyebrow')) {
+
+    if (document.querySelector('.hero-headline')) {
       heroTl.fromTo(
-        '.hero-eyebrow',
+        '.hero-headline',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, delay: 0.1 }
+      );
+    }
+
+    if (document.querySelector('.hero-serif-lead')) {
+      heroTl.fromTo(
+        '.hero-serif-lead',
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, delay: 0.1 }
-      );
-    }
-    
-    if (document.querySelector('.hero-title-line')) {
-      heroTl.fromTo(
-        '.hero-title-line',
-        { opacity: 0, y: 40, skewY: 2 },
-        { opacity: 1, y: 0, skewY: 0, duration: 0.8, stagger: 0.12 },
-        '-=0.3'
-      );
-    }
-    
-    if (document.querySelector('.hero-lead')) {
-      heroTl.fromTo(
-        '.hero-lead',
-        { opacity: 0, y: 25 },
         { opacity: 1, y: 0, duration: 0.6 },
-        '-=0.4'
+        '-=0.5'
       );
     }
-    
+
     if (document.querySelector('.hero-actions')) {
       heroTl.fromTo(
         '.hero-actions',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6 },
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.5 },
         '-=0.4'
       );
     }
 
-    if (document.querySelector('.hero-media-card')) {
+    if (document.querySelector('.stepped-collage')) {
       heroTl.fromTo(
-        '.hero-media-card',
-        { opacity: 0, scale: 0.95, y: 30 },
-        { opacity: 1, scale: 1, y: 0, duration: 1, ease: 'power2.out' },
-        '-=0.7'
+        '.stepped-collage',
+        { opacity: 0, scale: 0.96, y: 25 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: 'power2.out' },
+        '-=0.6'
       );
     }
 
-    // 2. Metrics Counter Animation
-    const metricCards = document.querySelectorAll('.metric-item');
-    if (metricCards.length > 0) {
+    // 2. Unboxed Statistics Stagger
+    const statItems = document.querySelectorAll('.unboxed-stat-item');
+    if (statItems.length > 0) {
       ScrollTrigger.create({
-        trigger: '.metrics-band',
-        start: 'top 85%',
+        trigger: '.manifesto-section',
+        start: 'top 80%',
         once: true,
         onEnter: () => {
           gsap.fromTo(
-            metricCards,
+            statItems,
             { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: 'power2.out' }
+            { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power2.out' }
           );
         }
       });
     }
 
-    // 3. Editorial Section Reveals
-    const revealSections = document.querySelectorAll('.editorial-reveal');
-    revealSections.forEach((sec) => {
-      gsap.fromTo(
-        sec,
-        { opacity: 0, y: 35 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sec,
-            start: 'top 82%',
-            toggleActions: 'play none none none',
-            once: true
-          }
-        }
-      );
-    });
-
-    // 4. Practical Story Progression (Subtle Sticky Narrative)
-    const storySteps = document.querySelectorAll('.story-step-item');
-    if (storySteps.length > 0) {
-      storySteps.forEach((step, idx) => {
-        ScrollTrigger.create({
-          trigger: step,
-          start: 'top 70%',
-          end: 'bottom 40%',
-          toggleClass: { targets: step, className: 'is-active-step' },
-          onEnter: () => {
-            const previewTarget = (step as HTMLElement).dataset.targetImage;
-            if (previewTarget) {
-              const allPreviews = document.querySelectorAll('.story-preview-media');
-              allPreviews.forEach((p) => p.classList.remove('is-visible'));
-              const activeMedia = document.getElementById(previewTarget);
-              if (activeMedia) activeMedia.classList.add('is-visible');
-            }
-          }
-        });
-      });
-    }
-
-    // 5. Course Cards Staggered Reveal
-    const courseCards = document.querySelectorAll('.course-card');
-    if (courseCards.length > 0) {
-      ScrollTrigger.batch(courseCards, {
-        start: 'top 90%',
-        once: true,
-        onEnter: (batch) => {
-          gsap.from(batch, {
-            opacity: 0,
-            y: 30,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: 'power2.out',
-          });
-        }
-      });
-    }
-  });
-
-  // Mobile / Tablet (< 991px) - Clean, fast vertical reveals without scroll-jacking
-  mm.add('(max-width: 991px)', () => {
-    // Staged hero with quicker duration
-    gsap.fromTo(
-      ['.hero-eyebrow', '.hero-title', '.hero-lead', '.hero-cta-group'],
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out', delay: 0.1 }
-    );
-
-    // Section triggers
-    const reveals = document.querySelectorAll('.editorial-reveal, .metric-item, .pillar-card, .review-card');
-    reveals.forEach((el) => {
+    // 3. Course Cards Subtle Stagger
+    const cards = document.querySelectorAll('.cib-course-card');
+    if (cards.length > 0) {
       ScrollTrigger.create({
-        trigger: el,
-        start: 'top 90%',
+        trigger: '.courses-editorial-grid',
+        start: 'top 85%',
         once: true,
         onEnter: () => {
-          gsap.from(el, {
-            opacity: 0,
-            y: 20,
-            duration: 0.5,
-            ease: 'power2.out'
-          });
+          gsap.fromTo(
+            cards,
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' }
+          );
         }
       });
-    });
+    }
+
+    // 4. Experience Columns Stagger
+    const expCols = document.querySelectorAll('.exp-column');
+    if (expCols.length > 0) {
+      ScrollTrigger.create({
+        trigger: '.unboxed-experience-grid',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.fromTo(
+            expCols,
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out' }
+          );
+        }
+      });
+    }
+
+    // 5. Google Reviews Stagger
+    const reviewItems = document.querySelectorAll('.editorial-review-item');
+    if (reviewItems.length > 0) {
+      ScrollTrigger.create({
+        trigger: '.editorial-reviews-grid',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.fromTo(
+            reviewItems,
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out' }
+          );
+        }
+      });
+    }
   });
 
   return () => {
