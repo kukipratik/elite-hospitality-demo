@@ -4,8 +4,6 @@ import CourseCard from "../components/CourseCard.astro";
 import VideoPlayer from "../components/VideoPlayer.astro";
 import { SITE_DATA } from "../data/siteData";
 
-const flagshipCourse =
-  SITE_DATA.courses.find((c) => c.isFlagship) || SITE_DATA.courses[0];
 const otherCourses = SITE_DATA.courses.filter((c) => !c.isFlagship);
 ---
 

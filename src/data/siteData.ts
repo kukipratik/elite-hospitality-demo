@@ -437,7 +437,7 @@ export const SITE_DATA = {
       heroImage: '/images/housekeeping/guestroom_swan.jpg',
       accentColor: 'var(--color-gold)'
     }
-  ],
+  ] as Course[],
 
   // Real Reviews from Live Google Business Presence (Verified)
   reviews: [
